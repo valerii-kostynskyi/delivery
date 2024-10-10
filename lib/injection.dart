@@ -33,6 +33,7 @@ Future<void> initApp() async {
   );
 
   // // Register ApiDataSource with dependencies in GetIt
+  // ignore: unused_local_variable
   final ApiDataSource apiDataSource =
       GetIt.instance.registerSingleton<ApiDataSource>(
     ApiDataSourceImpl(
