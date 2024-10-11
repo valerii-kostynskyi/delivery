@@ -1,3 +1,4 @@
+import 'package:dostavka/presentation/custom_widget/dotted_separator.dart';
 import 'package:dostavka/presentation/utility/extension/change_localization.dart';
 import 'package:flutter/material.dart';
 
@@ -116,7 +117,7 @@ class SectorProgressComponent extends StatelessWidget {
                       end: Alignment.centerRight,
                       colors: [
                         item.baseColor,
-                        item.baseColor.withOpacity(0.65),
+                        item.baseColor.withOpacity(0.8),
                       ],
                     );
                     return Flexible(
@@ -155,31 +156,44 @@ class SectorProgressComponent extends StatelessWidget {
           ),
           const SizedBox(height: 16),
           Column(
-            children: items.map((item) {
-              return Padding(
-                padding: const EdgeInsets.symmetric(vertical: 4.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Row(
+            children: List.generate(items.length, (index) {
+              return Column(
+                children: [
+                  Container(
+                    padding: const EdgeInsets.symmetric(vertical: 4.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Icon(Icons.person, color: item.baseColor),
-                        const SizedBox(width: 8),
+                        Row(
+                          children: [
+                            Container(
+                              height: 18,
+                              width: 4,
+                              decoration: BoxDecoration(
+                                color: items[index].baseColor,
+                                borderRadius:
+                                    const BorderRadius.all(Radius.circular(10)),
+                              ),
+                            ),
+                            const SizedBox(width: 8),
+                            Text(
+                              items[index].name,
+                              style: Theme.of(context).textTheme.bodyLarge,
+                            ),
+                          ],
+                        ),
                         Text(
-                          item.name,
-                          style: Theme.of(context).textTheme.bodyLarge,
+                          '${items[index].currentUnits} т',
+                          style: Theme.of(context)
+                              .textTheme
+                              .bodyLarge
+                              ?.copyWith(fontWeight: FontWeight.bold),
                         ),
                       ],
                     ),
-                    Text(
-                      '${item.currentUnits} т',
-                      style: Theme.of(context)
-                          .textTheme
-                          .bodyLarge
-                          ?.copyWith(fontWeight: FontWeight.bold),
-                    ),
-                  ],
-                ),
+                  ),
+                  if (index != items.length - 1) const DottedSeparator(),
+                ],
               );
             }).toList(),
           ),

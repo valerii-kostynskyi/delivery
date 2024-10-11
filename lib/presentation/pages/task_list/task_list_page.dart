@@ -48,53 +48,76 @@ class _TaskListPageState extends State<TaskListPage> {
             pinned: true,
             centerTitle: false,
             expandedHeight: 140.0,
-            leadingWidth: 48,
-            leading: BackButtonWidget(
-              onTap: () => context.pop(),
-            ),
+            leading: const SizedBox(),
             flexibleSpace: LayoutBuilder(
               builder: (BuildContext context, BoxConstraints constraints) {
                 final double top = constraints.biggest.height;
-                final bool isCollapsed = top <= kToolbarHeight + 50;
+                final bool isCollapsed = top <= kToolbarHeight + 90;
 
                 return FlexibleSpaceBar(
                   centerTitle: true,
                   titlePadding:
                       const EdgeInsets.symmetric(horizontal: 0, vertical: 16),
                   title: isCollapsed
-                      ? Text(
-                          context.localizations.selectTask,
-                          style: Theme.of(context)
-                              .textTheme
-                              .headlineSmall
-                              ?.copyWith(fontWeight: FontWeight.bold),
+                      ? SizedBox(
+                          height: 30,
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              BackButtonWidget(
+                                onTap: () => context.pop(),
+                              ),
+                              const SizedBox(width: 10),
+                              Text(
+                                context.localizations.selectTask,
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .headlineSmall
+                                    ?.copyWith(fontWeight: FontWeight.bold),
+                              ),
+                            ],
+                          ),
                         )
-                      : null,
+                      : const SizedBox(height: 0),
                   background: Padding(
                     padding: const EdgeInsets.only(top: 60.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
+                    child: Stack(
+                      alignment: AlignmentDirectional.topCenter,
                       children: [
-                        Text(
-                          context.localizations.sectorNumber(widget.index),
-                          style: Theme.of(context).textTheme.bodyLarge,
-                        ),
-                        const SizedBox(height: 8),
-                        Text(
-                          'AA 1234 AA',
-                          style: Theme.of(context)
-                              .textTheme
-                              .labelMedium
-                              ?.copyWith(fontSize: 20),
-                        ),
-                        const SizedBox(height: 8),
-                        Text(
-                          context.localizations.selectTask,
-                          style:
-                              Theme.of(context).textTheme.labelMedium?.copyWith(
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Text(
+                              context.localizations.sectorNumber(widget.index),
+                              style: Theme.of(context).textTheme.bodyLarge,
+                            ),
+                            const SizedBox(height: 8),
+                            Text(
+                              'AA 1234 AA',
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .labelMedium
+                                  ?.copyWith(fontSize: 20),
+                            ),
+                            const SizedBox(height: 8),
+                            Text(
+                              context.localizations.selectTask,
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .labelMedium
+                                  ?.copyWith(
                                     color: Colors.grey,
                                     fontSize: 20,
                                   ),
+                            ),
+                          ],
+                        ),
+                        Positioned(
+                          left: 0,
+                          top: 0,
+                          child: BackButtonWidget(
+                            onTap: () => context.pop(),
+                          ),
                         ),
                       ],
                     ),
