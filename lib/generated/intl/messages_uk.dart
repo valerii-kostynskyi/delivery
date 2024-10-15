@@ -26,11 +26,13 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m2(number) => "Рейс № ${number}";
 
-  static String m3(number) => "Дільниця № ${number}";
+  static String m3(number) => "Пташник № ${number}";
 
-  static String m4(number) => "Завдання № ${number}";
+  static String m4(number) => "Дільниця № ${number}";
 
-  static String m5(number) => "ТТН № ${number}";
+  static String m5(number) => "Завдання № ${number}";
+
+  static String m6(number) => "ТТН № ${number}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
@@ -72,26 +74,28 @@ class MessageLookup extends MessageLookupByLibrary {
         "pointCameraToBarcode": MessageLookupByLibrary.simpleMessage(
             "Наведіть камеру на штрих-код накладної"),
         "poultryHouse": MessageLookupByLibrary.simpleMessage("Пташник"),
+        "poultryHouseNumber": m3,
         "pressButtonToScanTtn": MessageLookupByLibrary.simpleMessage(
             "Натисніть на кнопку, щоб почати сканування ТТН"),
         "required": MessageLookupByLibrary.simpleMessage("Потрібно"),
         "scanTtn": MessageLookupByLibrary.simpleMessage("Скануйте ТТН"),
         "scanTtnButton": MessageLookupByLibrary.simpleMessage("Сканувати ТТН"),
         "sector": MessageLookupByLibrary.simpleMessage("Дільниця"),
-        "sectorNumber": m3,
+        "sectorNumber": m4,
         "selectBunker": MessageLookupByLibrary.simpleMessage("Оберіть бункер"),
+        "selectFlight": MessageLookupByLibrary.simpleMessage("Оберіть РЕЙС"),
         "selectPoultryHouse":
             MessageLookupByLibrary.simpleMessage("Оберіть пташник"),
         "selectSector":
             MessageLookupByLibrary.simpleMessage("Оберіть дільницю"),
         "selectTask": MessageLookupByLibrary.simpleMessage("Оберіть завдання"),
         "start": MessageLookupByLibrary.simpleMessage("Старт"),
-        "taskNumber": m4,
+        "taskNumber": m5,
         "totalActual": MessageLookupByLibrary.simpleMessage("Факт загальний"),
         "tryAgain": MessageLookupByLibrary.simpleMessage("Спробувати ще раз"),
         "tryRescanTtn": MessageLookupByLibrary.simpleMessage(
             "Будь ласка, спробуйте ще раз відсканувати ТТН"),
-        "ttnNumber": m5,
+        "ttnNumber": m6,
         "ttnTask": MessageLookupByLibrary.simpleMessage("Завдання ТТН")
       };
 }

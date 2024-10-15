@@ -1,11 +1,11 @@
 import 'package:dostavka/presentation/pages/auth_page/auth_page.dart';
 import 'package:dostavka/presentation/pages/detail_page.dart/detail_page.dart';
 import 'package:dostavka/presentation/pages/main_page/main_page.dart';
-import 'package:dostavka/presentation/pages/progress_page/progress_page.dart';
 import 'package:dostavka/presentation/pages/scaning_page/scaning_page.dart';
 import 'package:dostavka/presentation/pages/sector_list/sector_list_page.dart';
 import 'package:dostavka/presentation/pages/splash/splash_page.dart';
 import 'package:dostavka/presentation/pages/task_list/task_list_page.dart';
+import 'package:dostavka/presentation/pages/task_page/task_page.dart';
 import 'package:go_router/go_router.dart';
 
 final GoRouter router = GoRouter(
@@ -27,6 +27,13 @@ final GoRouter router = GoRouter(
       },
     ),
     GoRoute(
+      path: '/task-page/:index',
+      builder: (context, state) {
+        final index = state.pathParameters['index'];
+        return TaskPage(taskNumber: int.parse(index!));
+      },
+    ),
+    GoRoute(
       path: '/sector-list-page',
       builder: (context, state) => const SectorListPage(),
     ),
@@ -37,10 +44,6 @@ final GoRouter router = GoRouter(
     GoRoute(
       path: '/scaning-page',
       builder: (context, state) => const ScaningPage(),
-    ),
-    GoRoute(
-      path: '/progress-page',
-      builder: (context, state) => const ProgressPage(),
     ),
     GoRoute(
       path: '/detail-page/:index',
