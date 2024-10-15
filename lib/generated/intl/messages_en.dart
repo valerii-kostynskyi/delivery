@@ -26,11 +26,13 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m2(number) => "Flight № ${number}";
 
-  static String m3(number) => "Sector № ${number}";
+  static String m3(number) => "Poultry № ${number}";
 
-  static String m4(number) => "Task № ${number}";
+  static String m4(number) => "Sector № ${number}";
 
-  static String m5(number) => "TTN № ${number}";
+  static String m5(number) => "Task № ${number}";
+
+  static String m6(number) => "TTN № ${number}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
@@ -72,25 +74,27 @@ class MessageLookup extends MessageLookupByLibrary {
         "pointCameraToBarcode": MessageLookupByLibrary.simpleMessage(
             "Point the camera at the invoice barcode"),
         "poultryHouse": MessageLookupByLibrary.simpleMessage("Poultry house"),
+        "poultryHouseNumber": m3,
         "pressButtonToScanTtn": MessageLookupByLibrary.simpleMessage(
             "Press the button to start scanning TTN"),
         "required": MessageLookupByLibrary.simpleMessage("Required"),
         "scanTtn": MessageLookupByLibrary.simpleMessage("Scan TTN"),
         "scanTtnButton": MessageLookupByLibrary.simpleMessage("Scan TTN"),
         "sector": MessageLookupByLibrary.simpleMessage("Sector"),
-        "sectorNumber": m3,
+        "sectorNumber": m4,
         "selectBunker": MessageLookupByLibrary.simpleMessage("Select bunker"),
+        "selectFlight": MessageLookupByLibrary.simpleMessage("Select Flight"),
         "selectPoultryHouse":
             MessageLookupByLibrary.simpleMessage("Select poultry house"),
         "selectSector": MessageLookupByLibrary.simpleMessage("Select sector"),
         "selectTask": MessageLookupByLibrary.simpleMessage("Select task"),
         "start": MessageLookupByLibrary.simpleMessage("Start"),
-        "taskNumber": m4,
+        "taskNumber": m5,
         "totalActual": MessageLookupByLibrary.simpleMessage("Total actual"),
         "tryAgain": MessageLookupByLibrary.simpleMessage("Try again"),
         "tryRescanTtn":
             MessageLookupByLibrary.simpleMessage("Please rescan TTN"),
-        "ttnNumber": m5,
+        "ttnNumber": m6,
         "ttnTask": MessageLookupByLibrary.simpleMessage("TTN task")
       };
 }

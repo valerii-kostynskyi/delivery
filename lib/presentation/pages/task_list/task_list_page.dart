@@ -132,7 +132,11 @@ class _TaskListPageState extends State<TaskListPage> {
               ),
               SliverPadding(
                 padding: const EdgeInsets.only(
-                    top: 16, right: 16, left: 16, bottom: 75),
+                  top: 16,
+                  right: 16,
+                  left: 16,
+                  bottom: 75,
+                ),
                 sliver: SliverList(
                   delegate: SliverChildBuilderDelegate(
                     (context, index) {
@@ -146,7 +150,7 @@ class _TaskListPageState extends State<TaskListPage> {
                       return TaskListItem(
                         taskItemModel: taskItemModel,
                         isTaskItem: true,
-                        onTap: () => context.push('/progress-page'),
+                        onTap: () => context.push('/task-page/${index + 1}'),
                       );
                     },
                     childCount: 17,

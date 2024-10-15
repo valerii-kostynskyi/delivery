@@ -360,6 +360,16 @@ class S {
     );
   }
 
+  /// `Select Flight`
+  String get selectFlight {
+    return Intl.message(
+      'Select Flight',
+      name: 'selectFlight',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Task № {number}`
   String taskNumber(Object number) {
     return Intl.message(
@@ -447,6 +457,16 @@ class S {
       name: 'poultryHouse',
       desc: '',
       args: [],
+    );
+  }
+
+  /// `Poultry № {number}`
+  String poultryHouseNumber(Object number) {
+    return Intl.message(
+      'Poultry № $number',
+      name: 'poultryHouseNumber',
+      desc: '',
+      args: [number],
     );
   }
 

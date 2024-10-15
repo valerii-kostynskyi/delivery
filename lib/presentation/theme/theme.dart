@@ -25,7 +25,7 @@ final lightTheme = ThemeData(
   colorScheme: const ColorScheme(
     primary: AppColors.white,
     secondary: AppColors.blue,
-    background: AppColors.scaffoldBackgroundColor,
+    background: AppColors.lightGray,
     surface: AppColors.lightBlue,
     onSurface: AppColors.lightGreen,
     error: AppColors.error,
