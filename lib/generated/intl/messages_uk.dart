@@ -62,7 +62,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Неправильний код"),
         "incorrectPassword": MessageLookupByLibrary.simpleMessage(
             "Пароль невірний. Зверніться до керівника"),
-        "kkzDelivery": MessageLookupByLibrary.simpleMessage("Доставка ККЗ"),
+        "kkzDelivery":
+            MessageLookupByLibrary.simpleMessage("Доставка комбікорму"),
         "loadingPleaseWait":
             MessageLookupByLibrary.simpleMessage("Зачекайте, йде завантаження"),
         "next": MessageLookupByLibrary.simpleMessage("Далі"),

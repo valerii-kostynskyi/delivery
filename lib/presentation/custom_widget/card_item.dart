@@ -2,14 +2,15 @@ import 'package:dostavka/presentation/pages/main_page/main_page.dart';
 import 'package:dostavka/presentation/utility/extension/change_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:go_router/go_router.dart';
 
 class CardItem extends StatelessWidget {
   final CardItemModel cardItemModel;
+  final void Function()? onTap;
 
   const CardItem({
     super.key,
     required this.cardItemModel,
+    required this.onTap,
   });
 
   @override
@@ -19,7 +20,7 @@ class CardItem extends StatelessWidget {
           ? Theme.of(context).secondaryHeaderColor
           : Theme.of(context).colorScheme.onSurface,
       child: InkWell(
-        onTap: () => context.push('/detail-page/${cardItemModel.index}'),
+        onTap: onTap,
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
@@ -32,16 +33,22 @@ class CardItem extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SizedBox(
-                      height: 72,
-                      child: Text(
-                        '${cardItemModel.index}',
-                        style: Theme.of(context).textTheme.labelLarge!.copyWith(
-                              fontSize: 60,
-                              color: cardItemModel.isEmpty
-                                  ? Theme.of(context).colorScheme.onPrimary
-                                  : Theme.of(context).focusColor,
-                            ),
+                    Hero(
+                      tag: 'cardItem-${cardItemModel.index}',
+                      child: SizedBox(
+                        height: 72,
+                        child: Text(
+                          '${cardItemModel.index}',
+                          style: Theme.of(context)
+                              .textTheme
+                              .labelLarge!
+                              .copyWith(
+                                fontSize: 60,
+                                color: cardItemModel.isEmpty
+                                    ? Theme.of(context).colorScheme.onPrimary
+                                    : Theme.of(context).focusColor,
+                              ),
+                        ),
                       ),
                     ),
                     if (cardItemModel.isEmpty)

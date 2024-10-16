@@ -8,7 +8,7 @@
   "scanTtnButton": "Сканувати ТТН",
   "pointCameraToBarcode": "Наведіть камеру на штрих-код накладної",
   "pressButtonToScanTtn": "Натисніть на кнопку, щоб почати сканування ТТН",
-  "kkzDelivery": "Доставка ККЗ",
+  "kkzDelivery": "Доставка комбікорму",
   "selectBunker": "Оберіть бункер",
   "sectorNumber": "Дільниця № {number}",
   "ttnNumber": "ТТН № {number}",
