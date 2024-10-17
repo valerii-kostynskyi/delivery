@@ -1,5 +1,6 @@
 import 'package:dostavka/presentation/pages/auth_page/auth_page.dart';
-import 'package:dostavka/presentation/pages/detail_page.dart/detail_page.dart';
+import 'package:dostavka/presentation/pages/detail_bunker_page/detail_bunker_page.dart';
+import 'package:dostavka/presentation/pages/detail_task_page/detail_task_page.dart';
 import 'package:dostavka/presentation/pages/main_page/main_page.dart';
 import 'package:dostavka/presentation/pages/scaning_page/scaning_page.dart';
 import 'package:dostavka/presentation/pages/sector_list/sector_list_page.dart';
@@ -20,11 +21,8 @@ final GoRouter router = GoRouter(
       builder: (context, state) => const MainPage(),
     ),
     GoRoute(
-      path: '/task-list-page/:index',
-      builder: (context, state) {
-        final index = state.pathParameters['index'];
-        return TaskListPage(index: int.parse(index!));
-      },
+      path: '/task-list-page',
+      builder: (context, state) => const TaskListPage(),
     ),
     GoRoute(
       path: '/task-page/:index',
@@ -46,10 +44,17 @@ final GoRouter router = GoRouter(
       builder: (context, state) => const ScaningPage(),
     ),
     GoRoute(
-      path: '/detail-page/:index',
+      path: '/detail-bunker-page/:index',
       builder: (context, state) {
         final index = state.pathParameters['index'];
-        return DetailPage(index: int.parse(index!));
+        return DetailBunkerPage(index: int.parse(index!));
+      },
+    ),
+    GoRoute(
+      path: '/detail-task-page/:index',
+      builder: (context, state) {
+        final index = state.pathParameters['index'];
+        return DetailTaskPage(index: int.parse(index!));
       },
     ),
   ],

@@ -360,11 +360,11 @@ class S {
     );
   }
 
-  /// `Select Flight`
-  String get selectFlight {
+  /// `Select Shipment`
+  String get selectShipment {
     return Intl.message(
-      'Select Flight',
-      name: 'selectFlight',
+      'Select Shipment',
+      name: 'selectShipment',
       desc: '',
       args: [],
     );
@@ -430,11 +430,11 @@ class S {
     );
   }
 
-  /// `Flight № {number}`
-  String flightNumber(Object number) {
+  /// `Shipment № {number}`
+  String shipmentNumber(Object number) {
     return Intl.message(
-      'Flight № $number',
-      name: 'flightNumber',
+      'Shipment № $number',
+      name: 'shipmentNumber',
       desc: '',
       args: [number],
     );

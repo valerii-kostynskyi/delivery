@@ -33,8 +33,8 @@ class TaskListItem extends StatelessWidget {
           boxShadow: [
             BoxShadow(
               color: theme.primaryColor.withOpacity(0.15),
-              offset: const Offset(2, 2),
-              blurRadius: 2,
+              offset: isCompleted ? const Offset(0, 0) : const Offset(2, 2),
+              blurRadius: isCompleted ? 0 : 2,
             ),
           ],
         ),

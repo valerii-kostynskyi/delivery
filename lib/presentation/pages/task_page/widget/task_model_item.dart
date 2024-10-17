@@ -56,18 +56,23 @@ class TaskModelItem extends StatelessWidget {
           boxShadow: [
             BoxShadow(
               color: theme.primaryColor.withOpacity(0.15),
-              offset: const Offset(2, 2),
-              blurRadius: 2,
+              offset: itemModel.status == Status.full
+                  ? const Offset(0, 0)
+                  : const Offset(2, 2),
+              blurRadius: itemModel.status == Status.full ? 0 : 2,
             ),
           ],
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
-              '${itemModel.index}',
-              style: theme.textTheme.labelLarge!.copyWith(
-                color: textColor,
+            Hero(
+              tag: 'task-${itemModel.index}',
+              child: Text(
+                '${itemModel.index}',
+                style: theme.textTheme.labelLarge!.copyWith(
+                  color: textColor,
+                ),
               ),
             ),
             const SizedBox(width: 16.0),

@@ -5,10 +5,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 
-class DetailPage extends StatelessWidget {
+class DetailBunkerPage extends StatelessWidget {
   final int index;
 
-  const DetailPage({super.key, required this.index});
+  const DetailBunkerPage({super.key, required this.index});
 
   @override
   Widget build(BuildContext context) {
@@ -55,7 +55,7 @@ class DetailPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Hero(
-                  tag: 'cardItem-$index',
+                  tag: 'task-$index',
                   child: Text(
                     '$index ',
                     style: theme.textTheme.labelLarge!.copyWith(fontSize: 60),

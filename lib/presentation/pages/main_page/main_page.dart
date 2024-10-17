@@ -106,8 +106,8 @@ class _MainPageState extends State<MainPage> {
 
                   return CardItem(
                     cardItemModel: cardItemModel,
-                    onTap: () =>
-                        context.push('/detail-page/${cardItemModel.index}'),
+                    onTap: () => context
+                        .push('/detail-bunker-page/${cardItemModel.index}'),
                   );
                 },
                 childCount: 17,

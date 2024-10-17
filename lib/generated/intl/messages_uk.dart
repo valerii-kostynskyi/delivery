@@ -24,11 +24,11 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m1(number) => "Бункер № ${number}";
 
-  static String m2(number) => "Рейс № ${number}";
+  static String m2(number) => "Пташник № ${number}";
 
-  static String m3(number) => "Пташник № ${number}";
+  static String m3(number) => "Дільниця № ${number}";
 
-  static String m4(number) => "Дільниця № ${number}";
+  static String m4(number) => "Рейс № ${number}";
 
   static String m5(number) => "Завдання № ${number}";
 
@@ -55,7 +55,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "enterPassword": MessageLookupByLibrary.simpleMessage("Введіть пароль"),
         "entrance": MessageLookupByLibrary.simpleMessage("Вхід"),
         "finish": MessageLookupByLibrary.simpleMessage("Фініш"),
-        "flightNumber": m2,
         "full": MessageLookupByLibrary.simpleMessage("Повний"),
         "growth": MessageLookupByLibrary.simpleMessage("Ріст"),
         "incorrectCode":
@@ -75,21 +74,22 @@ class MessageLookup extends MessageLookupByLibrary {
         "pointCameraToBarcode": MessageLookupByLibrary.simpleMessage(
             "Наведіть камеру на штрих-код накладної"),
         "poultryHouse": MessageLookupByLibrary.simpleMessage("Пташник"),
-        "poultryHouseNumber": m3,
+        "poultryHouseNumber": m2,
         "pressButtonToScanTtn": MessageLookupByLibrary.simpleMessage(
             "Натисніть на кнопку, щоб почати сканування ТТН"),
         "required": MessageLookupByLibrary.simpleMessage("Потрібно"),
         "scanTtn": MessageLookupByLibrary.simpleMessage("Скануйте ТТН"),
         "scanTtnButton": MessageLookupByLibrary.simpleMessage("Сканувати ТТН"),
         "sector": MessageLookupByLibrary.simpleMessage("Дільниця"),
-        "sectorNumber": m4,
+        "sectorNumber": m3,
         "selectBunker": MessageLookupByLibrary.simpleMessage("Оберіть бункер"),
-        "selectFlight": MessageLookupByLibrary.simpleMessage("Оберіть РЕЙС"),
         "selectPoultryHouse":
             MessageLookupByLibrary.simpleMessage("Оберіть пташник"),
         "selectSector":
             MessageLookupByLibrary.simpleMessage("Оберіть дільницю"),
+        "selectShipment": MessageLookupByLibrary.simpleMessage("Оберіть РЕЙС"),
         "selectTask": MessageLookupByLibrary.simpleMessage("Оберіть завдання"),
+        "shipmentNumber": m4,
         "start": MessageLookupByLibrary.simpleMessage("Старт"),
         "taskNumber": m5,
         "totalActual": MessageLookupByLibrary.simpleMessage("Факт загальний"),

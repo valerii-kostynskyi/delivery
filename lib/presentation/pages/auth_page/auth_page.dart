@@ -52,6 +52,11 @@ class _AuthPageState extends State<AuthPage> {
     }
   }
 
+  Future<void> _onSubmit_2() async {
+    if (!mounted) return;
+    context.go('/task-list-page');
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -103,6 +108,12 @@ class _AuthPageState extends State<AuthPage> {
               label: context.localizations.enter,
               isLoading: _isLoading,
               onPressed: _onSubmit,
+            ),
+            const SizedBox(height: 32),
+            CustomButton(
+              label: context.localizations.enter + '2 водій',
+              isLoading: _isLoading,
+              onPressed: _onSubmit_2,
             ),
             if (_showWarning) ...[
               const SizedBox(height: 32),

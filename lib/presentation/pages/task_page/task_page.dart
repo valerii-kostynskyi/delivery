@@ -52,7 +52,7 @@ class _TaskPageState extends State<TaskPage> {
             flexibleSpace: LayoutBuilder(
               builder: (BuildContext context, BoxConstraints constraints) {
                 final double top = constraints.biggest.height;
-                final bool isCollapsed = top <= kToolbarHeight + 90;
+                final bool isCollapsed = top <= kToolbarHeight + 80;
 
                 return FlexibleSpaceBar(
                   centerTitle: true,
@@ -69,7 +69,7 @@ class _TaskPageState extends State<TaskPage> {
                               ),
                               const SizedBox(width: 10),
                               Text(
-                                context.localizations.selectFlight,
+                                context.localizations.selectShipment,
                                 style: Theme.of(context)
                                     .textTheme
                                     .headlineSmall
@@ -94,7 +94,7 @@ class _TaskPageState extends State<TaskPage> {
                             ),
                             const SizedBox(height: 8),
                             Text(
-                              context.localizations.selectFlight,
+                              context.localizations.selectShipment,
                               style: Theme.of(context)
                                   .textTheme
                                   .labelMedium
@@ -141,7 +141,8 @@ class _TaskPageState extends State<TaskPage> {
 
                 return TaskModelItem(
                   itemModel: taskItemModel,
-                  onTap: () {},
+                  onTap: () =>
+                      context.push('/detail-task-page/${taskItemModel.index}'),
                 );
               }),
             ),

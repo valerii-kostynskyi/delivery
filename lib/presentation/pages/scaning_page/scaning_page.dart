@@ -40,13 +40,6 @@ class ScaningPage extends StatelessWidget {
                 height: 120,
                 iconName: 'scan',
               ),
-              const SizedBox(height: 12),
-              CustomButton(
-                label: 'другий водій',
-                onPressed: () => context.go('/sector-list-page'),
-                height: 120,
-                iconName: 'scan',
-              )
             ],
           ),
         ),
