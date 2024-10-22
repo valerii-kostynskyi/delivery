@@ -15,7 +15,7 @@ class CustomErrorWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          const ErrorIconWidget(
+          const BigIconWidget(
             iconName: 'alert-octagon',
           ),
           const SizedBox(height: 24),

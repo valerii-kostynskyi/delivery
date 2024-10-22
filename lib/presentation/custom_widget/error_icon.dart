@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class ErrorIconWidget extends StatelessWidget {
+class BigIconWidget extends StatelessWidget {
   final String iconName;
   final Color? backgroundColor;
   final Color? iconColor;
-  const ErrorIconWidget({
+  const BigIconWidget({
     super.key,
     required this.iconName,
     this.backgroundColor,

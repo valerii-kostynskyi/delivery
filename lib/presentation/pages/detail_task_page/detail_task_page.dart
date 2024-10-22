@@ -173,7 +173,7 @@ class DetailTaskPageState extends State<DetailTaskPage> {
               Center(
                 child: Column(
                   children: [
-                    ErrorIconWidget(
+                    BigIconWidget(
                       iconName: 'check',
                       backgroundColor: theme.colorScheme.onSurface,
                       iconColor: theme.focusColor,

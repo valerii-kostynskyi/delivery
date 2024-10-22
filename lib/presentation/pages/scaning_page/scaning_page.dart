@@ -1,4 +1,5 @@
 import 'package:dostavka/presentation/custom_widget/custom_button.dart';
+import 'package:dostavka/presentation/custom_widget/error_icon.dart';
 import 'package:dostavka/presentation/custom_widget/license_palet.dart';
 import 'package:dostavka/presentation/utility/extension/change_localization.dart';
 import 'package:flutter/material.dart';
@@ -9,13 +10,14 @@ class ScaningPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+        backgroundColor: theme.scaffoldBackgroundColor,
         title: Text(
           context.localizations.kkzDelivery,
-          style: Theme.of(context).textTheme.titleMedium,
+          style: theme.textTheme.titleMedium,
         ),
       ),
       body: Padding(
@@ -25,6 +27,12 @@ class ScaningPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const SizedBox(height: 36),
+              BigIconWidget(
+                iconName: 'truck',
+                backgroundColor: theme.colorScheme.onSurface,
+                iconColor: theme.focusColor,
+              ),
+              const SizedBox(height: 16),
               const LicensePlate(adminNumber: 'AA 1234 AA'),
               const SizedBox(height: 36),
               Divider(thickness: 1, color: Theme.of(context).hintColor),
