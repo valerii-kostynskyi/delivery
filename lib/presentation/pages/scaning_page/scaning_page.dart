@@ -1,4 +1,5 @@
 import 'package:dostavka/presentation/custom_widget/custom_button.dart';
+import 'package:dostavka/presentation/custom_widget/license_palet.dart';
 import 'package:dostavka/presentation/utility/extension/change_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -23,16 +24,11 @@ class ScaningPage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              SizedBox(
-                width: double.infinity,
-                height: 250,
-                child: Center(
-                  child: Text(
-                    'AA 1234 AA',
-                    style: Theme.of(context).textTheme.labelLarge,
-                  ),
-                ),
-              ),
+              const SizedBox(height: 36),
+              const LicensePlate(adminNumber: 'AA 1234 AA'),
+              const SizedBox(height: 36),
+              Divider(thickness: 1, color: Theme.of(context).hintColor),
+              const SizedBox(height: 36),
               Text(
                 context.localizations.pressButtonToScanTtn,
                 textAlign: TextAlign.center,
@@ -44,13 +40,6 @@ class ScaningPage extends StatelessWidget {
                 height: 120,
                 iconName: 'scan',
               ),
-              const SizedBox(height: 12),
-              CustomButton(
-                label: 'другий водій',
-                onPressed: () => context.go('/sector-list-page'),
-                height: 120,
-                iconName: 'scan',
-              )
             ],
           ),
         ),

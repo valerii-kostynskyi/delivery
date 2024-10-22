@@ -3,9 +3,13 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 class ErrorIconWidget extends StatelessWidget {
   final String iconName;
+  final Color? backgroundColor;
+  final Color? iconColor;
   const ErrorIconWidget({
     super.key,
     required this.iconName,
+    this.backgroundColor,
+    this.iconColor,
   });
 
   @override
@@ -15,7 +19,7 @@ class ErrorIconWidget extends StatelessWidget {
       height: 96,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
-        color: Theme.of(context).colorScheme.onError,
+        color: backgroundColor ?? Theme.of(context).colorScheme.onError,
       ),
       child: Center(
         child: SizedBox(
@@ -23,6 +27,10 @@ class ErrorIconWidget extends StatelessWidget {
           height: 48,
           child: SvgPicture.asset(
             'assets/icons/$iconName.svg',
+            colorFilter: ColorFilter.mode(
+              iconColor ?? Theme.of(context).iconTheme.color!,
+              BlendMode.srcIn,
+            ),
           ),
         ),
       ),

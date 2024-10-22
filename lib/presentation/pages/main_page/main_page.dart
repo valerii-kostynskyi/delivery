@@ -1,6 +1,7 @@
 import 'package:dostavka/presentation/custom_widget/card_item.dart';
 import 'package:dostavka/presentation/utility/extension/change_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -103,7 +104,11 @@ class _MainPageState extends State<MainPage> {
                     isEmpty: index % 3 != 0,
                   );
 
-                  return CardItem(cardItemModel: cardItemModel);
+                  return CardItem(
+                    cardItemModel: cardItemModel,
+                    onTap: () => context
+                        .push('/detail-bunker-page/${cardItemModel.index}'),
+                  );
                 },
                 childCount: 17,
               ),

@@ -24,11 +24,11 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m1(number) => "Bunker № ${number}";
 
-  static String m2(number) => "Flight № ${number}";
+  static String m2(number) => "Poultry № ${number}";
 
-  static String m3(number) => "Poultry № ${number}";
+  static String m3(number) => "Sector № ${number}";
 
-  static String m4(number) => "Sector № ${number}";
+  static String m4(number) => "Shipment № ${number}";
 
   static String m5(number) => "Task № ${number}";
 
@@ -56,7 +56,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "enterPassword": MessageLookupByLibrary.simpleMessage("Enter password"),
         "entrance": MessageLookupByLibrary.simpleMessage("Entrance"),
         "finish": MessageLookupByLibrary.simpleMessage("Finish"),
-        "flightNumber": m2,
         "full": MessageLookupByLibrary.simpleMessage("Full"),
         "growth": MessageLookupByLibrary.simpleMessage("Growth"),
         "incorrectCode": MessageLookupByLibrary.simpleMessage("Incorrect code"),
@@ -74,20 +73,22 @@ class MessageLookup extends MessageLookupByLibrary {
         "pointCameraToBarcode": MessageLookupByLibrary.simpleMessage(
             "Point the camera at the invoice barcode"),
         "poultryHouse": MessageLookupByLibrary.simpleMessage("Poultry house"),
-        "poultryHouseNumber": m3,
+        "poultryHouseNumber": m2,
         "pressButtonToScanTtn": MessageLookupByLibrary.simpleMessage(
             "Press the button to start scanning TTN"),
         "required": MessageLookupByLibrary.simpleMessage("Required"),
         "scanTtn": MessageLookupByLibrary.simpleMessage("Scan TTN"),
         "scanTtnButton": MessageLookupByLibrary.simpleMessage("Scan TTN"),
         "sector": MessageLookupByLibrary.simpleMessage("Sector"),
-        "sectorNumber": m4,
+        "sectorNumber": m3,
         "selectBunker": MessageLookupByLibrary.simpleMessage("Select bunker"),
-        "selectFlight": MessageLookupByLibrary.simpleMessage("Select Flight"),
         "selectPoultryHouse":
             MessageLookupByLibrary.simpleMessage("Select poultry house"),
         "selectSector": MessageLookupByLibrary.simpleMessage("Select sector"),
+        "selectShipment":
+            MessageLookupByLibrary.simpleMessage("Select Shipment"),
         "selectTask": MessageLookupByLibrary.simpleMessage("Select task"),
+        "shipmentNumber": m4,
         "start": MessageLookupByLibrary.simpleMessage("Start"),
         "taskNumber": m5,
         "totalActual": MessageLookupByLibrary.simpleMessage("Total actual"),
