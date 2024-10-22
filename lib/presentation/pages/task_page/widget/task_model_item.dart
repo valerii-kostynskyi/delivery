@@ -27,7 +27,7 @@ class TaskModelItem extends StatelessWidget {
         textColor = theme.unselectedWidgetColor;
         break;
       case Status.inProcess:
-        backgroundColor = theme.colorScheme.onBackground;
+        backgroundColor = theme.secondaryHeaderColor;
         textColor = theme.colorScheme.onSecondary;
         break;
     }

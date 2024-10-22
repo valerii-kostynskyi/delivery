@@ -141,8 +141,9 @@ class _TaskPageState extends State<TaskPage> {
 
                 return TaskModelItem(
                   itemModel: taskItemModel,
-                  onTap: () =>
-                      context.push('/detail-task-page/${taskItemModel.index}'),
+                  onTap: () => context.push(
+                    '/detail-task-page/${taskItemModel.index}',
+                  ),
                 );
               }),
             ),

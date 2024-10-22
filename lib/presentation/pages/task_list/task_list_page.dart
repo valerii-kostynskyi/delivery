@@ -64,34 +64,30 @@ class TaskListPage extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 32),
-                  SectorProgressComponent(
-                    totalCapacity: 300,
-                    items: [
-                      ProgressListItem(
-                        name: 'AA 1234 AA',
-                        currentUnits: 42,
-                        baseColor: const Color(0xFF3697FF),
-                      ),
-                      ProgressListItem(
-                        name: 'BB 1234 BB',
-                        currentUnits: 150,
-                        baseColor: const Color(0xFFF57851),
-                      ),
-                      ProgressListItem(
-                        name: 'BB 1234 BB',
-                        currentUnits: 24,
-                        baseColor: const Color.fromARGB(255, 7, 168, 7),
-                      ),
-                      ProgressListItem(
-                        name: 'BB 1234 BB',
-                        currentUnits: 14,
-                        baseColor: const Color(0xFFF57851),
-                      ),
-                    ],
-                  ),
                 ],
               ),
             ),
+          ),
+          const Spacer(),
+          SectorProgressComponent(
+            totalCapacity: 300,
+            items: [
+              ProgressListItem(
+                name: 'AA 1234 AA',
+                currentUnits: 42,
+                baseColor: const Color(0xFF3697FF),
+              ),
+              ProgressListItem(
+                name: 'BB 1234 BB',
+                currentUnits: 150,
+                baseColor: const Color(0xFFF57851),
+              ),
+              ProgressListItem(
+                name: 'BB 1234 BB',
+                currentUnits: 24,
+                baseColor: const Color.fromARGB(255, 7, 168, 7),
+              ),
+            ],
           ),
         ],
       ),

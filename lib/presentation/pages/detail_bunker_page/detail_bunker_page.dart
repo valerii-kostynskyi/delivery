@@ -55,7 +55,7 @@ class DetailBunkerPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Hero(
-                  tag: 'task-$index',
+                  tag: 'cardItem-$index',
                   child: Text(
                     '$index ',
                     style: theme.textTheme.labelLarge!.copyWith(fontSize: 60),
