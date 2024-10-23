@@ -1,6 +1,7 @@
 import 'package:dostavka/presentation/pages/task_list/task_list_page.dart';
 import 'package:dostavka/presentation/utility/extension/change_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class TaskListItem extends StatelessWidget {
   final TaskItemModel taskItemModel;
@@ -20,6 +21,7 @@ class TaskListItem extends StatelessWidget {
     String title = isTaskItem
         ? context.localizations.taskNumber(taskItemModel.index)
         : context.localizations.sectorNumber(taskItemModel.index);
+    String iconName = isCompleted ? 'check' : 'arrow-right';
     return GestureDetector(
       onTap: onTap,
       child: Container(
@@ -40,12 +42,18 @@ class TaskListItem extends StatelessWidget {
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text(
-              title,
-              style: theme.textTheme.labelMedium!.copyWith(fontSize: 20),
+            Expanded(
+              child: Text(
+                title,
+                style: theme.textTheme.labelMedium!.copyWith(fontSize: 20),
+              ),
             ),
             Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.baseline,
+              textBaseline: TextBaseline.alphabetic,
               children: [
                 if (isTaskItem) ...[
                   Text(
@@ -65,11 +73,14 @@ class TaskListItem extends StatelessWidget {
                   ),
                   const SizedBox(width: 8.0),
                 ],
-                Icon(
-                  isCompleted ? Icons.check : Icons.arrow_forward_ios,
-                  color: isCompleted ? theme.focusColor : theme.dividerColor,
-                )
               ],
+            ),
+            SvgPicture.asset(
+              'assets/icons/$iconName.svg',
+              colorFilter: ColorFilter.mode(
+                isCompleted ? theme.focusColor : theme.dividerColor,
+                BlendMode.srcIn,
+              ),
             ),
           ],
         ),

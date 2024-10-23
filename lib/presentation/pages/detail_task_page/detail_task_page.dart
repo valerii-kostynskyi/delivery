@@ -4,6 +4,7 @@ import 'package:dostavka/presentation/custom_widget/error_icon.dart';
 
 import 'package:dostavka/presentation/utility/extension/change_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 
 class DetailTaskPage extends StatefulWidget {
@@ -56,92 +57,121 @@ class DetailTaskPageState extends State<DetailTaskPage> {
   ) {
     return Column(
       children: [
-        const SizedBox(height: 16),
-        Container(
-          padding: const EdgeInsets.all(16),
-          decoration: BoxDecoration(
-            color: theme.secondaryHeaderColor,
-            borderRadius: BorderRadius.circular(12),
-          ),
+        Expanded(
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisSize: MainAxisSize.max,
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Пташник:',
-                    style: theme.textTheme.bodyMedium,
-                  ),
-                  Text(
-                    '3',
-                    style: theme.textTheme.bodyMedium,
-                  ),
-                ],
+              Text(
+                context.localizations.shipmentNumber(widget.index),
+                style: theme.textTheme.labelLarge,
               ),
-              const SizedBox(height: 4),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Потрібно:',
-                    style: theme.textTheme.bodyMedium?.copyWith(
-                      color: theme.colorScheme.onPrimary,
+              const SizedBox(height: 16),
+              Container(
+                padding: const EdgeInsets.all(16),
+                decoration: BoxDecoration(
+                  color: theme.secondaryHeaderColor,
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Text(
+                          'Пташник:',
+                          style: theme.textTheme.bodyMedium,
+                        ),
+                        Text(
+                          '3',
+                          style: theme.textTheme.bodyMedium,
+                        ),
+                      ],
                     ),
-                  ),
-                  Text(
-                    '3.4т',
-                    style: theme.textTheme.labelMedium?.copyWith(
-                      color: theme.colorScheme.onPrimary,
+                    const SizedBox(height: 4),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Expanded(
+                          child: Text(
+                            'Потрібно:',
+                            style: theme.textTheme.bodyMedium?.copyWith(
+                              color: theme.colorScheme.onPrimary,
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          width: 16,
+                          height: 16,
+                          child: SvgPicture.asset(
+                            'assets/icons/upload.svg',
+                            colorFilter: ColorFilter.mode(
+                              theme.colorScheme.onPrimary,
+                              BlendMode.srcIn,
+                            ),
+                          ),
+                        ),
+                        const SizedBox(width: 4),
+                        Text(
+                          '3.4т',
+                          style: theme.textTheme.labelMedium?.copyWith(
+                            color: theme.colorScheme.onPrimary,
+                          ),
+                        ),
+                      ],
                     ),
-                  ),
-                ],
+                    const SizedBox(height: 4),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Корм',
+                          style: theme.textTheme.bodyMedium,
+                        ),
+                        const SizedBox(height: 4),
+                        Text(
+                          'Старт',
+                          style: theme.textTheme.bodyMedium?.copyWith(
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
-              const SizedBox(height: 4),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Корм',
-                    style: theme.textTheme.bodyMedium,
-                  ),
-                  const SizedBox(height: 4),
-                  Text(
-                    'Старт',
-                    style: theme.textTheme.bodyMedium?.copyWith(
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ],
+              const SizedBox(height: 24),
+              Text(
+                'ОБЕРІТЬ БУНКЕР',
+                style: theme.textTheme.headlineSmall?.copyWith(
+                  color: theme.dividerColor,
+                  fontSize: 14,
+                ),
+              ),
+              const SizedBox(height: 8),
+              _buildBunkerOption(
+                theme: theme,
+                bunkerName: 'Бункер 3',
+                weight: '4.0т',
+                value: 'bunker_3',
+                isSelected: selectedBunker == 'bunker_3',
+              ),
+              const SizedBox(height: 8),
+              _buildBunkerOption(
+                theme: theme,
+                bunkerName: 'Бункер 5',
+                weight: '3.5т',
+                value: 'bunker_5',
+                isSelected: selectedBunker == 'bunker_5',
               ),
             ],
           ),
         ),
-        const SizedBox(height: 24),
-        Text(
-          'ОБЕРІТЬ БУНКЕР',
-          style: theme.textTheme.headlineSmall?.copyWith(
-            color: theme.dividerColor,
-            fontSize: 14,
-          ),
-        ),
-        const SizedBox(height: 8),
-        _buildBunkerOption(
-          theme: theme,
-          bunkerName: 'Бункер 3',
-          weight: '4.0т',
-          value: 'bunker_3',
-          isSelected: selectedBunker == 'bunker_3',
-        ),
-        const SizedBox(height: 8),
-        _buildBunkerOption(
-          theme: theme,
-          bunkerName: 'Бункер 5',
-          weight: '3.5т',
-          value: 'bunker_5',
-          isSelected: selectedBunker == 'bunker_5',
-        ),
-        const Spacer(),
         CustomButton(
           onPressed: selectedBunker != null
               ? () {
@@ -163,7 +193,6 @@ class DetailTaskPageState extends State<DetailTaskPage> {
   ) {
     return Column(
       children: [
-        const SizedBox(height: 16),
         Expanded(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -200,6 +229,14 @@ class DetailTaskPageState extends State<DetailTaskPage> {
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 children: [
+                                  SizedBox(
+                                    width: 16,
+                                    height: 16,
+                                    child: SvgPicture.asset(
+                                      'assets/icons/bunker.svg',
+                                    ),
+                                  ),
+                                  const SizedBox(width: 16),
                                   Text(
                                     'Бункер ',
                                     style:
@@ -223,6 +260,18 @@ class DetailTaskPageState extends State<DetailTaskPage> {
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 children: [
+                                  SizedBox(
+                                    width: 16,
+                                    height: 16,
+                                    child: SvgPicture.asset(
+                                      'assets/icons/house.svg',
+                                      colorFilter: ColorFilter.mode(
+                                        theme.focusColor,
+                                        BlendMode.srcIn,
+                                      ),
+                                    ),
+                                  ),
+                                  const SizedBox(width: 16),
                                   Text(
                                     'Пташник ',
                                     style:
@@ -245,10 +294,18 @@ class DetailTaskPageState extends State<DetailTaskPage> {
                           ),
                           Row(
                             children: [
-                              Icon(
-                                Icons.keyboard_arrow_down,
-                                color: theme.focusColor,
+                              SizedBox(
+                                width: 16,
+                                height: 16,
+                                child: SvgPicture.asset(
+                                  'assets/icons/arrow-down.svg',
+                                  colorFilter: ColorFilter.mode(
+                                    theme.focusColor,
+                                    BlendMode.srcIn,
+                                  ),
+                                ),
                               ),
+                              const SizedBox(width: 8),
                               Column(
                                 children: [
                                   Text(
@@ -261,10 +318,8 @@ class DetailTaskPageState extends State<DetailTaskPage> {
                                   ),
                                   Text(
                                     '3.4т',
-                                    style:
-                                        theme.textTheme.labelMedium?.copyWith(
+                                    style: theme.textTheme.labelLarge?.copyWith(
                                       color: theme.focusColor,
-                                      fontSize: 20,
                                     ),
                                   ),
                                 ],
@@ -321,11 +376,11 @@ class DetailTaskPageState extends State<DetailTaskPage> {
         decoration: BoxDecoration(
           color: isSelected ? theme.colorScheme.onSurface : Colors.transparent,
           borderRadius: BorderRadius.circular(8),
-          border: Border.all(
-            color:
-                isSelected ? theme.colorScheme.onSurface : theme.dividerColor,
-            width: 1,
-          ),
+          // border: Border.all(
+          //   color:
+          //       isSelected ? theme.colorScheme.onSurface : theme.dividerColor,
+          //   width: 1,
+          // ),
         ),
         padding: const EdgeInsets.all(8),
         child: Row(
@@ -355,6 +410,14 @@ class DetailTaskPageState extends State<DetailTaskPage> {
                 ),
               ),
             ),
+            SizedBox(
+              width: 16,
+              height: 16,
+              child: SvgPicture.asset(
+                'assets/icons/bunker.svg',
+              ),
+            ),
+            const SizedBox(width: 4),
             Text(
               weight,
               style: theme.textTheme.labelMedium?.copyWith(

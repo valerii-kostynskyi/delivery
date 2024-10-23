@@ -1,6 +1,6 @@
 <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path fill-rule="evenodd" clip-rule="evenodd"
         d="M16 3.27271H0V14.7273C0 14.7273 0 14.7273 0 14.7273C0 16.5347 3.58172 18 8 18C12.4183 18 16 16.5347 16 14.7273C16 14.7273 16 14.7273 16 14.7273V3.27271Z"
-        fill="#000000" />
-    <ellipse cx="8" cy="3.27273" rx="8" ry="3.27273" fill="#000000" />
+        fill="#53D5B2" />
+    <ellipse cx="8" cy="3.27273" rx="8" ry="3.27273" fill="#A9EAD8" />
 </svg>

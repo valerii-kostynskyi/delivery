@@ -1,5 +1,6 @@
 import 'package:dostavka/presentation/pages/task_page/task_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class TaskModelItem extends StatelessWidget {
   final TaskModel itemModel;
@@ -17,31 +18,23 @@ class TaskModelItem extends StatelessWidget {
 
     Color backgroundColor;
     Color textColor;
+    String iconName;
     switch (itemModel.status) {
       case Status.full:
         backgroundColor = theme.colorScheme.onSurface;
         textColor = theme.focusColor;
+        iconName = 'check';
+
         break;
       case Status.empty:
         backgroundColor = theme.colorScheme.background;
         textColor = theme.unselectedWidgetColor;
+        iconName = 'upload';
         break;
       case Status.inProcess:
         backgroundColor = theme.secondaryHeaderColor;
         textColor = theme.colorScheme.onSecondary;
-        break;
-    }
-
-    IconData statusIcon;
-    switch (itemModel.status) {
-      case Status.full:
-        statusIcon = Icons.check_circle;
-        break;
-      case Status.empty:
-        statusIcon = Icons.remove_circle_outline;
-        break;
-      case Status.inProcess:
-        statusIcon = Icons.autorenew;
+        iconName = 'upload';
         break;
     }
 
@@ -96,9 +89,16 @@ class TaskModelItem extends StatelessWidget {
             const Spacer(),
             Row(
               children: [
-                Icon(
-                  statusIcon,
-                  color: textColor,
+                SizedBox(
+                  width: 16,
+                  height: 16,
+                  child: SvgPicture.asset(
+                    'assets/icons/$iconName.svg',
+                    colorFilter: ColorFilter.mode(
+                      textColor,
+                      BlendMode.srcIn,
+                    ),
+                  ),
                 ),
                 const SizedBox(width: 4.0),
                 Text(
