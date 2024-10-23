@@ -63,12 +63,10 @@ class TaskListPage extends StatelessWidget {
                       onTap: () => context.push('/task-page/2'),
                     ),
                   ),
-                  const SizedBox(height: 32),
                 ],
               ),
             ),
           ),
-          const Spacer(),
           SectorProgressComponent(
             totalCapacity: 300,
             items: [

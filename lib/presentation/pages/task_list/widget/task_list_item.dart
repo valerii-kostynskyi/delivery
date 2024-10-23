@@ -23,8 +23,8 @@ class TaskListItem extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        margin: const EdgeInsets.symmetric(vertical: 8.0),
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        height: 96,
         decoration: BoxDecoration(
           color: isCompleted
               ? theme.colorScheme.onSurface
@@ -65,8 +65,10 @@ class TaskListItem extends StatelessWidget {
                   ),
                   const SizedBox(width: 8.0),
                 ],
-                Icon(isCompleted ? Icons.check : Icons.arrow_forward_ios,
-                    color: isCompleted ? theme.focusColor : theme.dividerColor)
+                Icon(
+                  isCompleted ? Icons.check : Icons.arrow_forward_ios,
+                  color: isCompleted ? theme.focusColor : theme.dividerColor,
+                )
               ],
             ),
           ],

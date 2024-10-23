@@ -48,20 +48,21 @@ class TaskModelItem extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        margin: const EdgeInsets.symmetric(vertical: 8.0),
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        margin: const EdgeInsets.only(bottom: 8),
+        height: 96,
         decoration: BoxDecoration(
           color: backgroundColor,
           borderRadius: BorderRadius.circular(12.0),
-          boxShadow: [
-            BoxShadow(
-              color: theme.primaryColor.withOpacity(0.15),
-              offset: itemModel.status == Status.full
-                  ? const Offset(0, 0)
-                  : const Offset(2, 2),
-              blurRadius: itemModel.status == Status.full ? 0 : 2,
-            ),
-          ],
+          // boxShadow: [
+          //   BoxShadow(
+          //     color: theme.primaryColor.withOpacity(0.15),
+          //     offset: itemModel.status == Status.full
+          //         ? const Offset(0, 0)
+          //         : const Offset(2, 2),
+          //     blurRadius: itemModel.status == Status.full ? 0 : 2,
+          //   ),
+          // ],
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -78,6 +79,7 @@ class TaskModelItem extends StatelessWidget {
             const SizedBox(width: 16.0),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
                   itemModel.title,

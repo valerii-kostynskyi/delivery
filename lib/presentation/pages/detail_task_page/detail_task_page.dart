@@ -323,7 +323,7 @@ class DetailTaskPageState extends State<DetailTaskPage> {
           borderRadius: BorderRadius.circular(8),
           border: Border.all(
             color:
-                isSelected ? theme.colorScheme.onSurface : Colors.transparent,
+                isSelected ? theme.colorScheme.onSurface : theme.dividerColor,
             width: 1,
           ),
         ),
