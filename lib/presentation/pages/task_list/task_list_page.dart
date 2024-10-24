@@ -1,93 +1,152 @@
-import 'package:dostavka/presentation/custom_widget/license_palet.dart';
-import 'package:dostavka/presentation/custom_widget/progress_widget.dart';
+import 'package:dostavka/presentation/custom_widget/back_button_widget.dart';
 import 'package:dostavka/presentation/pages/task_list/widget/task_list_item.dart';
 import 'package:dostavka/presentation/utility/extension/change_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class TaskListPage extends StatelessWidget {
-  const TaskListPage({super.key});
+class TaskListPage extends StatefulWidget {
+  final int taskNumber;
+  const TaskListPage({
+    super.key,
+    required this.taskNumber,
+  });
+
+  @override
+  State<TaskListPage> createState() => _TaskListPageState();
+}
+
+class _TaskListPageState extends State<TaskListPage> {
+  final ScrollController _scrollController = ScrollController();
+  bool _isAppBarCollapsed = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _scrollController.addListener(() {
+      if (_scrollController.hasClients) {
+        if (_scrollController.offset > 100 && !_isAppBarCollapsed) {
+          setState(() {
+            _isAppBarCollapsed = true;
+          });
+        } else if (_scrollController.offset <= 100 && _isAppBarCollapsed) {
+          setState(() {
+            _isAppBarCollapsed = false;
+          });
+        }
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              const SizedBox(height: 48),
-              Text(
-                context.localizations.sectorNumber(1),
-                style: Theme.of(context).textTheme.bodyLarge,
-              ),
-              const SizedBox(height: 8),
-              const LicensePlate(adminNumber: 'AA 1234 AA'),
-              const SizedBox(height: 8),
-              Text(
-                context.localizations.selectTask,
-                style: Theme.of(context).textTheme.labelMedium?.copyWith(
-                      color: Colors.grey,
-                      fontSize: 20,
-                    ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 16),
-          Expanded(
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 16),
-                    child: TaskListItem(
-                      taskItemModel: TaskItemModel(
-                        index: 1,
-                        completedUnits: 12,
-                        totalUnits: 12,
-                      ),
-                      isTaskItem: true,
-                      onTap: () => context.push('/task-page/1'),
+      body: CustomScrollView(
+        controller: _scrollController,
+        slivers: [
+          SliverAppBar(
+            backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+            pinned: true,
+            centerTitle: false,
+            expandedHeight: 120.0,
+            leading: const SizedBox(),
+            flexibleSpace: LayoutBuilder(
+              builder: (BuildContext context, BoxConstraints constraints) {
+                final double top = constraints.biggest.height;
+                final bool isCollapsed = top <= kToolbarHeight + 80;
+
+                return FlexibleSpaceBar(
+                  centerTitle: true,
+                  titlePadding:
+                      const EdgeInsets.symmetric(horizontal: 0, vertical: 16),
+                  title: isCollapsed
+                      ? SizedBox(
+                          height: 30,
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              BackButtonWidget(
+                                onTap: () => context.pop(),
+                              ),
+                              const SizedBox(width: 10),
+                              Text(
+                                context.localizations.selectShipment,
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .headlineSmall
+                                    ?.copyWith(fontWeight: FontWeight.bold),
+                              ),
+                            ],
+                          ),
+                        )
+                      : const SizedBox(height: 0),
+                  background: Padding(
+                    padding: const EdgeInsets.only(top: 60.0),
+                    child: Stack(
+                      alignment: AlignmentDirectional.topCenter,
+                      children: [
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Text(
+                              context.localizations
+                                  .taskNumber(widget.taskNumber),
+                              style: Theme.of(context).textTheme.bodyLarge,
+                            ),
+                            const SizedBox(height: 8),
+                            Text(
+                              context.localizations.selectShipment,
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .labelMedium
+                                  ?.copyWith(
+                                    color: Colors.grey,
+                                    fontSize: 20,
+                                  ),
+                            ),
+                          ],
+                        ),
+                        Positioned(
+                          left: 0,
+                          top: 0,
+                          child: BackButtonWidget(
+                            onTap: () => context.pop(),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
-                  const SizedBox(height: 16),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 16),
-                    child: TaskListItem(
-                      taskItemModel: TaskItemModel(
-                        index: 2,
-                        completedUnits: 8,
-                        totalUnits: 12,
-                      ),
-                      isTaskItem: true,
-                      onTap: () => context.push('/task-page/2'),
-                    ),
-                  ),
-                  const SizedBox(height: 32),
-                ],
-              ),
+                );
+              },
             ),
           ),
-          const Spacer(),
-          SectorProgressComponent(
-            totalCapacity: 300,
-            items: [
-              ProgressListItem(
-                name: 'AA 1234 AA',
-                currentUnits: 42,
-                baseColor: const Color(0xFF3697FF),
-              ),
-              ProgressListItem(
-                name: 'BB 1234 BB',
-                currentUnits: 150,
-                baseColor: const Color(0xFFF57851),
-              ),
-              ProgressListItem(
-                name: 'BB 1234 BB',
-                currentUnits: 24,
-                baseColor: const Color.fromARGB(255, 7, 168, 7),
-              ),
-            ],
+          SliverPadding(
+            padding: const EdgeInsets.only(
+              top: 16,
+              right: 16,
+              left: 16,
+              bottom: 75,
+            ),
+            sliver: SliverList(
+              delegate: SliverChildBuilderDelegate((context, index) {
+                final taskItemModel = TaskListItemModel(
+                  index: index + 1,
+                  title: context.localizations.poultryHouseNumber(index + 1),
+                  tons: 5,
+                  status: index % 2 == 0
+                      ? Status.full
+                      : index % 3 == 0
+                          ? Status.empty
+                          : Status.inProcess,
+                );
+
+                return TaskListItem(
+                  itemModel: taskItemModel,
+                  onTap: () => context.push(
+                    '/detail-task-page/${taskItemModel.index}',
+                  ),
+                );
+              }),
+            ),
           ),
         ],
       ),
@@ -95,14 +154,18 @@ class TaskListPage extends StatelessWidget {
   }
 }
 
-class TaskItemModel {
+class TaskListItemModel {
   final int index;
-  final int completedUnits;
-  final int totalUnits;
+  final String title;
+  final double tons;
+  final Status status;
 
-  TaskItemModel({
+  TaskListItemModel({
     required this.index,
-    required this.completedUnits,
-    required this.totalUnits,
+    required this.title,
+    required this.tons,
+    required this.status,
   });
 }
+
+enum Status { empty, full, inProcess }

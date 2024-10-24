@@ -8,14 +8,14 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
-class AuthPage extends StatefulWidget {
-  const AuthPage({super.key});
+class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
 
   @override
-  State<AuthPage> createState() => _AuthPageState();
+  State<LoginPage> createState() => _LoginPageState();
 }
 
-class _AuthPageState extends State<AuthPage> {
+class _LoginPageState extends State<LoginPage> {
   final TextEditingController passwordController = TextEditingController();
   final TextEditingController carNumberController = TextEditingController();
 
@@ -54,7 +54,7 @@ class _AuthPageState extends State<AuthPage> {
 
   Future<void> _onSubmit_2() async {
     if (!mounted) return;
-    context.go('/task-list-page');
+    context.go('/sector-info-page');
   }
 
   @override

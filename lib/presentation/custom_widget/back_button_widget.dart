@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class BackButtonWidget extends StatelessWidget {
   final void Function() onTap;
@@ -22,9 +23,15 @@ class BackButtonWidget extends StatelessWidget {
             ),
           ),
           alignment: Alignment.center,
-          child: Icon(
-            Icons.arrow_back,
-            color: Theme.of(context).primaryColor,
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: SvgPicture.asset(
+              'assets/icons/arrow-left.svg',
+              colorFilter: ColorFilter.mode(
+                Theme.of(context).iconTheme.color!,
+                BlendMode.srcIn,
+              ),
+            ),
           ),
         ),
       ),
