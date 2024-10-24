@@ -27,6 +27,7 @@ dependencies:
   flutter_multi_formatter: ^2.13.0
   intl_utils: ^2.8.7
   mask_text_input_formatter: ^2.9.0
+  flutter_barcode_scanner: ^2.0.0
 
   # flutter_localization: ^0.2.1
 
