@@ -1,39 +1,34 @@
-import 'package:dostavka/presentation/pages/auth_page/auth_page.dart';
+import 'package:dostavka/presentation/pages/login/login_page.dart';
 import 'package:dostavka/presentation/pages/detail_bunker_page/detail_bunker_page.dart';
 import 'package:dostavka/presentation/pages/detail_task_page/detail_task_page.dart';
-import 'package:dostavka/presentation/pages/main_page/main_page.dart';
-import 'package:dostavka/presentation/pages/scaning_page/scaning_page.dart';
-import 'package:dostavka/presentation/pages/sector_list/sector_list_page.dart';
+import 'package:dostavka/presentation/pages/list_bunker/list_bunker_page.dart';
+import 'package:dostavka/presentation/pages/scaner/scaning_page.dart';
 import 'package:dostavka/presentation/pages/splash/splash_page.dart';
+import 'package:dostavka/presentation/pages/sector_info/sector_info_page.dart';
 import 'package:dostavka/presentation/pages/task_list/task_list_page.dart';
-import 'package:dostavka/presentation/pages/task_page/task_page.dart';
 import 'package:go_router/go_router.dart';
 
 final GoRouter router = GoRouter(
-  initialLocation: '/auth',
+  initialLocation: '/login',
   routes: [
     GoRoute(
-      path: '/auth',
-      builder: (context, state) => const AuthPage(),
+      path: '/login',
+      builder: (context, state) => const LoginPage(),
     ),
     GoRoute(
-      path: '/main-page',
-      builder: (context, state) => const MainPage(),
+      path: '/list-bunker-page',
+      builder: (context, state) => const ListBunkerPage(),
     ),
     GoRoute(
-      path: '/task-list-page',
-      builder: (context, state) => const TaskListPage(),
+      path: '/sector-info-page',
+      builder: (context, state) => const SectorInfoPage(),
     ),
     GoRoute(
-      path: '/task-page/:index',
+      path: '/task-list-page/:index',
       builder: (context, state) {
         final index = state.pathParameters['index'];
-        return TaskPage(taskNumber: int.parse(index!));
+        return TaskListPage(taskNumber: int.parse(index!));
       },
-    ),
-    GoRoute(
-      path: '/sector-list-page',
-      builder: (context, state) => const SectorListPage(),
     ),
     GoRoute(
       path: '/splash-page',

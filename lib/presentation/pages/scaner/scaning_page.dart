@@ -43,8 +43,8 @@ class ScaningPage extends StatelessWidget {
               ),
               const SizedBox(height: 32),
               CustomButton(
-                label: 'перший водій',
-                onPressed: () => context.go('/main-page'),
+                label: context.localizations.scanTtnButton,
+                onPressed: () => context.go('/list-bunker-page'),
                 height: 120,
                 iconName: 'scan',
               ),

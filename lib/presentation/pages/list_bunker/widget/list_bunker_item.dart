@@ -1,13 +1,13 @@
-import 'package:dostavka/presentation/pages/main_page/main_page.dart';
+import 'package:dostavka/presentation/pages/list_bunker/list_bunker_page.dart';
 import 'package:dostavka/presentation/utility/extension/change_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class CardItem extends StatelessWidget {
-  final CardItemModel cardItemModel;
+class ListBunkerItem extends StatelessWidget {
+  final ListBunkerItemModel cardItemModel;
   final void Function()? onTap;
 
-  const CardItem({
+  const ListBunkerItem({
     super.key,
     required this.cardItemModel,
     required this.onTap,

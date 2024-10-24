@@ -1,16 +1,16 @@
-import 'package:dostavka/presentation/custom_widget/card_item.dart';
+import 'package:dostavka/presentation/pages/list_bunker/widget/list_bunker_item.dart';
 import 'package:dostavka/presentation/utility/extension/change_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class MainPage extends StatefulWidget {
-  const MainPage({super.key});
+class ListBunkerPage extends StatefulWidget {
+  const ListBunkerPage({super.key});
 
   @override
-  State<MainPage> createState() => _MainPageState();
+  State<ListBunkerPage> createState() => _ListBunkerPageState();
 }
 
-class _MainPageState extends State<MainPage> {
+class _ListBunkerPageState extends State<ListBunkerPage> {
   final ScrollController _scrollController = ScrollController();
   bool _isAppBarCollapsed = false;
 
@@ -99,12 +99,12 @@ class _MainPageState extends State<MainPage> {
             sliver: SliverGrid(
               delegate: SliverChildBuilderDelegate(
                 (context, index) {
-                  final cardItemModel = CardItemModel(
+                  final cardItemModel = ListBunkerItemModel(
                     index: index + 1,
                     isEmpty: index % 3 != 0,
                   );
 
-                  return CardItem(
+                  return ListBunkerItem(
                     cardItemModel: cardItemModel,
                     onTap: () => context
                         .push('/detail-bunker-page/${cardItemModel.index}'),
@@ -126,11 +126,11 @@ class _MainPageState extends State<MainPage> {
   }
 }
 
-class CardItemModel {
+class ListBunkerItemModel {
   final int index;
   final bool isEmpty;
 
-  CardItemModel({
+  ListBunkerItemModel({
     required this.index,
     required this.isEmpty,
   });

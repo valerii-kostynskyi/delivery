@@ -1,86 +1,114 @@
 import 'package:dostavka/presentation/pages/task_list/task_list_page.dart';
-import 'package:dostavka/presentation/utility/extension/change_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class TaskListItem extends StatelessWidget {
-  final TaskItemModel taskItemModel;
-  final bool isTaskItem;
+  final TaskListItemModel itemModel;
   final void Function()? onTap;
+
   const TaskListItem({
     super.key,
-    required this.taskItemModel,
-    this.isTaskItem = false,
-    required this.onTap,
+    required this.itemModel,
+    this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
-    bool isCompleted = taskItemModel.totalUnits == taskItemModel.completedUnits;
     final theme = Theme.of(context);
-    String title = isTaskItem
-        ? context.localizations.taskNumber(taskItemModel.index)
-        : context.localizations.sectorNumber(taskItemModel.index);
-    String iconName = isCompleted ? 'check' : 'arrow-right';
+
+    Color backgroundColor;
+    Color textColor;
+    String iconName;
+    switch (itemModel.status) {
+      case Status.full:
+        backgroundColor = theme.colorScheme.onSurface;
+        textColor = theme.focusColor;
+        iconName = 'check';
+
+        break;
+      case Status.empty:
+        backgroundColor = theme.colorScheme.background;
+        textColor = theme.unselectedWidgetColor;
+        iconName = 'upload';
+        break;
+      case Status.inProcess:
+        backgroundColor = theme.secondaryHeaderColor;
+        textColor = theme.colorScheme.onSecondary;
+        iconName = 'upload';
+        break;
+    }
+
     return GestureDetector(
       onTap: onTap,
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 16),
+        margin: const EdgeInsets.only(bottom: 8),
         height: 96,
         decoration: BoxDecoration(
-          color: isCompleted
-              ? theme.colorScheme.onSurface
-              : theme.scaffoldBackgroundColor,
+          color: backgroundColor,
           borderRadius: BorderRadius.circular(12.0),
-          boxShadow: [
-            BoxShadow(
-              color: theme.primaryColor.withOpacity(0.15),
-              offset: isCompleted ? const Offset(0, 0) : const Offset(2, 2),
-              blurRadius: isCompleted ? 0 : 2,
-            ),
-          ],
+          // boxShadow: [
+          //   BoxShadow(
+          //     color: theme.primaryColor.withOpacity(0.15),
+          //     offset: itemModel.status == Status.full
+          //         ? const Offset(0, 0)
+          //         : const Offset(2, 2),
+          //     blurRadius: itemModel.status == Status.full ? 0 : 2,
+          //   ),
+          // ],
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Expanded(
+            Hero(
+              tag: 'task-${itemModel.index}',
               child: Text(
-                title,
-                style: theme.textTheme.labelMedium!.copyWith(fontSize: 20),
+                '${itemModel.index}',
+                style: theme.textTheme.labelLarge!.copyWith(
+                  color: textColor,
+                ),
               ),
             ),
-            Row(
+            const SizedBox(width: 16.0),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.baseline,
-              textBaseline: TextBaseline.alphabetic,
               children: [
-                if (isTaskItem) ...[
-                  Text(
-                    '${taskItemModel.completedUnits}',
-                    style: theme.textTheme.labelMedium!.copyWith(
-                        fontSize: 20,
-                        color: isCompleted
-                            ? theme.focusColor
-                            : theme.primaryColor),
+                Text(
+                  itemModel.title,
+                  style: theme.textTheme.bodyLarge,
+                ),
+                Text(
+                  'status',
+                  style: theme.textTheme.labelSmall!.copyWith(
+                    color: theme.primaryColor,
                   ),
-                  Text(
-                    ' /${taskItemModel.totalUnits}',
-                    style: theme.textTheme.bodyMedium!.copyWith(
-                        color: isCompleted
-                            ? theme.focusColor
-                            : theme.primaryColor),
-                  ),
-                  const SizedBox(width: 8.0),
-                ],
+                ),
               ],
             ),
-            SvgPicture.asset(
-              'assets/icons/$iconName.svg',
-              colorFilter: ColorFilter.mode(
-                isCompleted ? theme.focusColor : theme.dividerColor,
-                BlendMode.srcIn,
-              ),
+            const Spacer(),
+            Row(
+              children: [
+                SizedBox(
+                  width: 16,
+                  height: 16,
+                  child: SvgPicture.asset(
+                    'assets/icons/$iconName.svg',
+                    colorFilter: ColorFilter.mode(
+                      textColor,
+                      BlendMode.srcIn,
+                    ),
+                  ),
+                ),
+                const SizedBox(width: 4.0),
+                Text(
+                  '${itemModel.tons}т',
+                  style: theme.textTheme.bodyLarge!.copyWith(
+                    color: textColor,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
             ),
           ],
         ),
