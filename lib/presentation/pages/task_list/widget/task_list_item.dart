@@ -1,4 +1,4 @@
-import 'package:dostavka/presentation/pages/task_list/task_list_page.dart';
+import 'package:feed_delivery/presentation/pages/task_list/task_list_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -47,26 +47,14 @@ class TaskListItem extends StatelessWidget {
         decoration: BoxDecoration(
           color: backgroundColor,
           borderRadius: BorderRadius.circular(12.0),
-          // boxShadow: [
-          //   BoxShadow(
-          //     color: theme.primaryColor.withOpacity(0.15),
-          //     offset: itemModel.status == Status.full
-          //         ? const Offset(0, 0)
-          //         : const Offset(2, 2),
-          //     blurRadius: itemModel.status == Status.full ? 0 : 2,
-          //   ),
-          // ],
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Hero(
-              tag: 'task-${itemModel.index}',
-              child: Text(
-                '${itemModel.index}',
-                style: theme.textTheme.labelLarge!.copyWith(
-                  color: textColor,
-                ),
+            Text(
+              '${itemModel.index}',
+              style: theme.textTheme.labelLarge!.copyWith(
+                color: textColor,
               ),
             ),
             const SizedBox(width: 16.0),

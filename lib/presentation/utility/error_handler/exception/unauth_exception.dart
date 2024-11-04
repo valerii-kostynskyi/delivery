@@ -1,5 +1,5 @@
-import 'package:dostavka/presentation/utility/error_handler/exception/base_exception.dart';
-import 'package:dostavka/presentation/utility/error_handler/exception/exception_type.dart';
+import 'package:feed_delivery/presentation/utility/error_handler/exception/base_exception.dart';
+import 'package:feed_delivery/presentation/utility/error_handler/exception/exception_type.dart';
 
 class UnAuthException extends BaseException {
   final String message;

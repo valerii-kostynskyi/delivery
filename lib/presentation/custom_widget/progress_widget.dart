@@ -1,5 +1,5 @@
-import 'package:dostavka/presentation/custom_widget/dotted_separator.dart';
-import 'package:dostavka/presentation/utility/extension/change_localization.dart';
+import 'package:feed_delivery/presentation/custom_widget/dotted_separator.dart';
+import 'package:feed_delivery/presentation/utility/extension/change_localization.dart';
 import 'package:flutter/material.dart';
 
 class ProgressListItem {
@@ -32,7 +32,7 @@ class SectorProgressComponent extends StatelessWidget {
     final theme = Theme.of(context);
     return Container(
       decoration: BoxDecoration(
-        color: theme.disabledColor.withOpacity(0.2),
+        color: theme.disabledColor.withOpacity(0.48),
         borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(16),
           topRight: Radius.circular(16),

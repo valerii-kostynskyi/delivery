@@ -1,5 +1,5 @@
-import 'package:dostavka/presentation/pages/list_bunker/list_bunker_page.dart';
-import 'package:dostavka/presentation/utility/extension/change_localization.dart';
+import 'package:feed_delivery/presentation/pages/list_bunker/list_bunker_page.dart';
+import 'package:feed_delivery/presentation/utility/extension/change_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -33,22 +33,16 @@ class ListBunkerItem extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Hero(
-                      tag: 'cardItem-${cardItemModel.index}',
-                      child: SizedBox(
-                        height: 72,
-                        child: Text(
-                          '${cardItemModel.index}',
-                          style: Theme.of(context)
-                              .textTheme
-                              .labelLarge!
-                              .copyWith(
-                                fontSize: 60,
-                                color: cardItemModel.isEmpty
-                                    ? Theme.of(context).colorScheme.onPrimary
-                                    : Theme.of(context).focusColor,
-                              ),
-                        ),
+                    SizedBox(
+                      height: 72,
+                      child: Text(
+                        '${cardItemModel.index}',
+                        style: Theme.of(context).textTheme.labelLarge!.copyWith(
+                              fontSize: 60,
+                              color: cardItemModel.isEmpty
+                                  ? Theme.of(context).colorScheme.onPrimary
+                                  : Theme.of(context).focusColor,
+                            ),
                       ),
                     ),
                     if (cardItemModel.isEmpty)

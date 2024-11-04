@@ -1,10 +1,11 @@
 import 'package:dio/dio.dart';
-import 'package:dostavka/data/data_source/api_data_source.dart';
-import 'package:dostavka/data/data_source/auth_data_source.dart';
-import 'package:dostavka/data/data_source/ds_impl/api_data_source_impl.dart';
-import 'package:dostavka/data/data_source/ds_impl/auth_data_source_impl.dart';
-import 'package:dostavka/presentation/utility/error_handler/error_handler.dart';
-import 'package:dostavka/presentation/utility/error_handler/error_handler_impl.dart';
+import 'package:feed_delivery/data/data_source/api_data_source.dart';
+import 'package:feed_delivery/data/data_source/auth_data_source.dart';
+import 'package:feed_delivery/data/data_source/ds_impl/api_data_source_impl.dart';
+import 'package:feed_delivery/data/data_source/ds_impl/auth_data_source_impl.dart';
+import 'package:feed_delivery/presentation/utility/error_handler/error_handler.dart';
+import 'package:feed_delivery/presentation/utility/error_handler/error_handler_impl.dart';
+
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:get_it/get_it.dart';
 

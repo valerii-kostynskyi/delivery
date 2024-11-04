@@ -1,7 +1,8 @@
-import 'package:dostavka/presentation/custom_widget/back_button_widget.dart';
-import 'package:dostavka/presentation/pages/task_list/widget/task_list_item.dart';
-import 'package:dostavka/presentation/utility/extension/change_localization.dart';
+import 'package:feed_delivery/presentation/custom_widget/back_button_widget.dart';
+import 'package:feed_delivery/presentation/pages/task_list/widget/task_list_item.dart';
+import 'package:feed_delivery/presentation/utility/extension/change_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 
 class TaskListPage extends StatefulWidget {
@@ -39,12 +40,13 @@ class _TaskListPageState extends State<TaskListPage> {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return Scaffold(
       body: CustomScrollView(
         controller: _scrollController,
         slivers: [
           SliverAppBar(
-            backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+            backgroundColor: theme.scaffoldBackgroundColor,
             pinned: true,
             centerTitle: false,
             expandedHeight: 120.0,
@@ -57,7 +59,7 @@ class _TaskListPageState extends State<TaskListPage> {
                 return FlexibleSpaceBar(
                   centerTitle: true,
                   titlePadding:
-                      const EdgeInsets.symmetric(horizontal: 0, vertical: 16),
+                      const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
                   title: isCollapsed
                       ? SizedBox(
                           height: 30,
@@ -80,37 +82,44 @@ class _TaskListPageState extends State<TaskListPage> {
                         )
                       : const SizedBox(height: 0),
                   background: Padding(
-                    padding: const EdgeInsets.only(top: 60.0),
-                    child: Stack(
-                      alignment: AlignmentDirectional.topCenter,
+                    padding: const EdgeInsets.only(
+                      top: 60.0,
+                      left: 16,
+                      right: 16,
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+                        SizedBox(
+                          width: 48,
+                          height: 48,
+                          child: BackButtonWidget(
+                            onTap: () => context.pop(),
+                          ),
+                        ),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Text(
                               context.localizations
                                   .taskNumber(widget.taskNumber),
-                              style: Theme.of(context).textTheme.bodyLarge,
+                              style: theme.textTheme.labelSmall!
+                                  .copyWith(fontSize: 20),
                             ),
                             const SizedBox(height: 8),
                             Text(
                               context.localizations.selectShipment,
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .labelMedium
-                                  ?.copyWith(
-                                    color: Colors.grey,
-                                    fontSize: 20,
-                                  ),
+                              style: theme.textTheme.titleMedium?.copyWith(
+                                color: theme.dividerColor,
+                              ),
                             ),
                           ],
                         ),
-                        Positioned(
-                          left: 0,
-                          top: 0,
-                          child: BackButtonWidget(
-                            onTap: () => context.pop(),
-                          ),
+                        SizedBox(
+                          width: 48,
+                          height: 48,
+                          child: refreshButton(),
                         ),
                       ],
                     ),
@@ -149,6 +158,32 @@ class _TaskListPageState extends State<TaskListPage> {
             ),
           ),
         ],
+      ),
+    );
+  }
+
+  Widget refreshButton() {
+    return GestureDetector(
+      onTap: () {},
+      child: Container(
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          border: Border.all(
+            color: Theme.of(context).hintColor,
+            width: 1.0,
+          ),
+        ),
+        alignment: Alignment.center,
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: SvgPicture.asset(
+            'assets/icons/refresh.svg',
+            colorFilter: ColorFilter.mode(
+              Theme.of(context).iconTheme.color!,
+              BlendMode.srcIn,
+            ),
+          ),
+        ),
       ),
     );
   }

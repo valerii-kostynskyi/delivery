@@ -1,7 +1,7 @@
-import 'package:dostavka/presentation/custom_widget/license_palet.dart';
-import 'package:dostavka/presentation/custom_widget/progress_widget.dart';
-import 'package:dostavka/presentation/pages/sector_info/widget/sector_info_task_item.dart';
-import 'package:dostavka/presentation/utility/extension/change_localization.dart';
+import 'package:feed_delivery/presentation/custom_widget/license_palet.dart';
+import 'package:feed_delivery/presentation/custom_widget/progress_widget.dart';
+import 'package:feed_delivery/presentation/pages/sector_info/widget/sector_info_task_item.dart';
+import 'package:feed_delivery/presentation/utility/extension/change_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 

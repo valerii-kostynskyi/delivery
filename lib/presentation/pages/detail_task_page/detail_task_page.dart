@@ -1,8 +1,8 @@
-import 'package:dostavka/presentation/custom_widget/back_button_widget.dart';
-import 'package:dostavka/presentation/custom_widget/custom_button.dart';
-import 'package:dostavka/presentation/custom_widget/error_icon.dart';
+import 'package:feed_delivery/presentation/custom_widget/back_button_widget.dart';
+import 'package:feed_delivery/presentation/custom_widget/custom_button.dart';
+import 'package:feed_delivery/presentation/custom_widget/error_icon.dart';
 
-import 'package:dostavka/presentation/utility/extension/change_localization.dart';
+import 'package:feed_delivery/presentation/utility/extension/change_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
@@ -30,12 +30,9 @@ class DetailTaskPageState extends State<DetailTaskPage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: theme.scaffoldBackgroundColor,
-        title: Hero(
-          tag: 'task-${widget.index}',
-          child: Text(
-            context.localizations.shipmentNumber(widget.index),
-            style: theme.textTheme.titleMedium,
-          ),
+        title: Text(
+          context.localizations.shipmentNumber(widget.index),
+          style: theme.textTheme.titleMedium,
         ),
         leadingWidth: 48,
         leading: BackButtonWidget(

@@ -1,7 +1,7 @@
-import 'package:dostavka/presentation/custom_widget/custom_button.dart';
-import 'package:dostavka/presentation/custom_widget/error_icon.dart';
-import 'package:dostavka/presentation/custom_widget/license_palet.dart';
-import 'package:dostavka/presentation/utility/extension/change_localization.dart';
+import 'package:feed_delivery/presentation/custom_widget/custom_button.dart';
+import 'package:feed_delivery/presentation/custom_widget/error_icon.dart';
+import 'package:feed_delivery/presentation/custom_widget/license_palet.dart';
+import 'package:feed_delivery/presentation/utility/extension/change_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';

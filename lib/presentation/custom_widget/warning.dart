@@ -1,4 +1,4 @@
-import 'package:dostavka/presentation/utility/extension/change_localization.dart';
+import 'package:feed_delivery/presentation/utility/extension/change_localization.dart';
 import 'package:flutter/material.dart';
 
 class WarningWidget extends StatelessWidget {
