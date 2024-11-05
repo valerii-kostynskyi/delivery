@@ -50,8 +50,8 @@ final GoRouter router = GoRouter(
     GoRoute(
       path: '/detail-task-page/:index',
       builder: (context, state) {
-        final index = state.pathParameters['index'];
-        return DetailTaskPage(index: int.parse(index!));
+        final TaskListItemModel item = state.extra as TaskListItemModel;
+        return DetailTaskPage(item: item);
       },
     ),
   ],

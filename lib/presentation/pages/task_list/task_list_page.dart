@@ -152,6 +152,7 @@ class _TaskListPageState extends State<TaskListPage> {
                   itemModel: taskItemModel,
                   onTap: () => context.push(
                     '/detail-task-page/${taskItemModel.index}',
+                    extra: taskItemModel,
                   ),
                 );
               }),

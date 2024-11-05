@@ -28,7 +28,7 @@ final lightTheme = ThemeData(
     background: AppColors.lightGray,
     surface: AppColors.lightBlue,
     onSurface: AppColors.lightGreen,
-    error: AppColors.error,
+    error: AppColors.alert,
     onPrimary: AppColors.orange,
     onSecondary: AppColors.brown,
     onBackground: AppColors.lightBrown,

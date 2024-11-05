@@ -4,6 +4,7 @@ class AppColors {
   static const Color white = Color(0xFFFFFFFF);
   static const Color error = Color(0xFFF35625);
   static const Color lightRed = Color(0xFFFDDDD3);
+  static const Color alert = Color(0xFFC2451E);
 
   static const Color black = Color(0xFF353B41);
   static const Color hint = Color(0xFF8593A3);

@@ -1,4 +1,5 @@
 import 'package:feed_delivery/presentation/pages/task_list/task_list_page.dart';
+import 'package:feed_delivery/presentation/utility/extension/change_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -33,7 +34,7 @@ class TaskListItem extends StatelessWidget {
         break;
       case Status.inProcess:
         backgroundColor = theme.secondaryHeaderColor;
-        textColor = theme.colorScheme.onSecondary;
+        textColor = theme.colorScheme.onPrimary;
         iconName = 'upload';
         break;
     }
@@ -64,38 +65,73 @@ class TaskListItem extends StatelessWidget {
               children: [
                 Text(
                   itemModel.title,
-                  style: theme.textTheme.bodyLarge,
+                  style: theme.textTheme.bodyLarge!.copyWith(
+                    color: itemModel.status == Status.empty
+                        ? textColor
+                        : theme.primaryColor,
+                  ),
                 ),
                 Text(
                   'status',
                   style: theme.textTheme.labelSmall!.copyWith(
-                    color: theme.primaryColor,
+                    fontSize: 16,
+                    color: itemModel.status == Status.empty
+                        ? textColor
+                        : theme.primaryColor,
                   ),
                 ),
               ],
             ),
             const Spacer(),
-            Row(
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SizedBox(
-                  width: 16,
-                  height: 16,
-                  child: SvgPicture.asset(
-                    'assets/icons/$iconName.svg',
-                    colorFilter: ColorFilter.mode(
-                      textColor,
-                      BlendMode.srcIn,
+                Row(
+                  children: [
+                    SizedBox(
+                      width: 16,
+                      height: 16,
+                      child: SvgPicture.asset(
+                        'assets/icons/$iconName.svg',
+                        colorFilter: ColorFilter.mode(
+                          textColor,
+                          BlendMode.srcIn,
+                        ),
+                      ),
                     ),
-                  ),
+                    const SizedBox(width: 4.0),
+                    Text(
+                      '${itemModel.tons}т',
+                      style: theme.textTheme.bodyLarge!.copyWith(
+                        color: textColor,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
                 ),
-                const SizedBox(width: 4.0),
-                Text(
-                  '${itemModel.tons}т',
-                  style: theme.textTheme.bodyLarge!.copyWith(
-                    color: textColor,
-                    fontWeight: FontWeight.bold,
+                if (itemModel.status == Status.empty)
+                  Row(
+                    children: [
+                      SizedBox(
+                        width: 12,
+                        height: 12,
+                        child: SvgPicture.asset(
+                          'assets/icons/alert-triangle.svg',
+                          colorFilter: ColorFilter.mode(
+                            theme.colorScheme.error,
+                            BlendMode.srcIn,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(width: 4.0),
+                      Text(
+                        context.localizations.noFeed,
+                        style: theme.textTheme.headlineSmall!.copyWith(
+                            fontSize: 12, color: theme.colorScheme.error),
+                      ),
+                    ],
                   ),
-                ),
               ],
             ),
           ],
