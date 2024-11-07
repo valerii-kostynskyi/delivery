@@ -1,7 +1,7 @@
-import 'package:dostavka/presentation/custom_widget/custom_button.dart';
-import 'package:dostavka/presentation/custom_widget/custom_text_field.dart';
-import 'package:dostavka/presentation/custom_widget/phone_text_input.dart';
-import 'package:dostavka/presentation/utility/extension/change_localization.dart';
+import 'package:feed_delivery/presentation/custom_widget/custom_button.dart';
+import 'package:feed_delivery/presentation/custom_widget/custom_text_field.dart';
+import 'package:feed_delivery/presentation/custom_widget/phone_text_input.dart';
+import 'package:feed_delivery/presentation/utility/extension/change_localization.dart';
 import 'package:flutter/material.dart';
 
 class SplashPage extends StatelessWidget {

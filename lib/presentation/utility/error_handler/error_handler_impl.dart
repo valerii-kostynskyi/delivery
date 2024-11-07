@@ -1,7 +1,7 @@
-import 'package:dostavka/presentation/utility/error_handler/error_handler.dart';
-import 'package:dostavka/presentation/utility/error_handler/exception/base_exception.dart';
-import 'package:dostavka/presentation/utility/error_handler/exception/exception_type.dart';
-import 'package:dostavka/presentation/utility/error_handler/exception/validation_exception.dart';
+import 'package:feed_delivery/presentation/utility/error_handler/error_handler.dart';
+import 'package:feed_delivery/presentation/utility/error_handler/exception/base_exception.dart';
+import 'package:feed_delivery/presentation/utility/error_handler/exception/exception_type.dart';
+import 'package:feed_delivery/presentation/utility/error_handler/exception/validation_exception.dart';
 import 'package:flutter/foundation.dart';
 
 class ErrorHandlerImpl implements ErrorHandler {

@@ -1,8 +1,8 @@
-import 'package:dostavka/presentation/custom_widget/custom_button.dart';
-import 'package:dostavka/presentation/custom_widget/custom_text_field.dart';
-import 'package:dostavka/presentation/custom_widget/warning.dart';
-import 'package:dostavka/presentation/utility/extension/change_localization.dart';
-import 'package:dostavka/presentation/utility/extension/uppercase_text_formater.dart';
+import 'package:feed_delivery/presentation/custom_widget/custom_button.dart';
+import 'package:feed_delivery/presentation/custom_widget/custom_text_field.dart';
+import 'package:feed_delivery/presentation/custom_widget/warning.dart';
+import 'package:feed_delivery/presentation/utility/extension/change_localization.dart';
+import 'package:feed_delivery/presentation/utility/extension/uppercase_text_formater.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
@@ -60,66 +60,72 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            SvgPicture.asset(
-              'assets/icons/key.svg',
-              width: 40,
-              height: 40,
-            ),
-            const SizedBox(height: 16),
-            Text(
-              context.localizations.entrance,
-              style: Theme.of(context).textTheme.labelLarge,
-            ),
-            const SizedBox(height: 40),
-            CustomTextField(
-              inputFormatters: [
-                MaskTextInputFormatter(
-                  mask: '## 0000 ##',
-                  filter: {
-                    "#": RegExp(r'[а-яА-ЯіІїЇєЄґҐ]'),
-                    "0": RegExp(r'[0-9]')
-                  },
-                  type: MaskAutoCompletionType.lazy,
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                const SizedBox(height: 120),
+                SvgPicture.asset(
+                  'assets/icons/key.svg',
+                  width: 40,
+                  height: 40,
                 ),
-                UpperCaseTextFormatter(),
+                const SizedBox(height: 16),
+                Text(
+                  context.localizations.entrance,
+                  style: Theme.of(context).textTheme.labelLarge,
+                ),
+                const SizedBox(height: 40),
+                CustomTextField(
+                  inputFormatters: [
+                    MaskTextInputFormatter(
+                      mask: '## 0000 ##',
+                      filter: {
+                        "#": RegExp(r'[а-яА-ЯіІїЇєЄґҐ]'),
+                        "0": RegExp(r'[0-9]')
+                      },
+                      type: MaskAutoCompletionType.lazy,
+                    ),
+                    UpperCaseTextFormatter(),
+                  ],
+                  controller: carNumberController,
+                  labelText: context.localizations.carLicensePlate,
+                  hintText: '-- ---- --',
+                ),
+                const SizedBox(height: 16),
+                CustomTextField(
+                  isObscureText: _obscurePassword,
+                  controller: passwordController,
+                  labelText: context.localizations.password,
+                  hintText: context.localizations.enterPassword,
+                  suffixIcon: _obscurePassword
+                      ? Icons.visibility_off
+                      : Icons.visibility,
+                  onSuffixIconTap: _togglePasswordVisibility,
+                ),
+                const SizedBox(height: 32),
+                CustomButton(
+                  label: context.localizations.enter,
+                  isLoading: _isLoading,
+                  onPressed: _onSubmit,
+                ),
+                const SizedBox(height: 32),
+                CustomButton(
+                  label: context.localizations.enter + '2 водій',
+                  isLoading: _isLoading,
+                  onPressed: _onSubmit_2,
+                ),
+                if (_showWarning) ...[
+                  const SizedBox(height: 32),
+                  const WarningWidget(),
+                ],
               ],
-              controller: carNumberController,
-              labelText: context.localizations.carLicensePlate,
-              hintText: '-- ---- --',
             ),
-            const SizedBox(height: 16),
-            CustomTextField(
-              isObscureText: _obscurePassword,
-              controller: passwordController,
-              labelText: context.localizations.password,
-              hintText: context.localizations.enterPassword,
-              suffixIcon:
-                  _obscurePassword ? Icons.visibility_off : Icons.visibility,
-              onSuffixIconTap: _togglePasswordVisibility,
-            ),
-            const SizedBox(height: 32),
-            CustomButton(
-              label: context.localizations.enter,
-              isLoading: _isLoading,
-              onPressed: _onSubmit,
-            ),
-            const SizedBox(height: 32),
-            CustomButton(
-              label: context.localizations.enter + '2 водій',
-              isLoading: _isLoading,
-              onPressed: _onSubmit_2,
-            ),
-            if (_showWarning) ...[
-              const SizedBox(height: 32),
-              const WarningWidget(),
-            ],
-          ],
+          ),
         ),
       ),
     );

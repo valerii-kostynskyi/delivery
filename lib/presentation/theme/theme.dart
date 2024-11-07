@@ -1,4 +1,4 @@
-import 'package:dostavka/presentation/theme/app_colors.dart';
+import 'package:feed_delivery/presentation/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 
 final lightTheme = ThemeData(
@@ -19,7 +19,7 @@ final lightTheme = ThemeData(
   splashColor: AppColors.lightGreen,
   shadowColor: AppColors.black.withOpacity(0.08),
   dialogBackgroundColor: AppColors.white,
-  disabledColor: AppColors.gray,
+  disabledColor: AppColors.progressGray,
   secondaryHeaderColor: AppColors.yellowLight,
   unselectedWidgetColor: AppColors.hint,
   colorScheme: const ColorScheme(
@@ -28,7 +28,7 @@ final lightTheme = ThemeData(
     background: AppColors.lightGray,
     surface: AppColors.lightBlue,
     onSurface: AppColors.lightGreen,
-    error: AppColors.error,
+    error: AppColors.alert,
     onPrimary: AppColors.orange,
     onSecondary: AppColors.brown,
     onBackground: AppColors.lightBrown,

@@ -1,11 +1,11 @@
-import 'package:dostavka/presentation/pages/login/login_page.dart';
-import 'package:dostavka/presentation/pages/detail_bunker_page/detail_bunker_page.dart';
-import 'package:dostavka/presentation/pages/detail_task_page/detail_task_page.dart';
-import 'package:dostavka/presentation/pages/list_bunker/list_bunker_page.dart';
-import 'package:dostavka/presentation/pages/scaner/scaning_page.dart';
-import 'package:dostavka/presentation/pages/splash/splash_page.dart';
-import 'package:dostavka/presentation/pages/sector_info/sector_info_page.dart';
-import 'package:dostavka/presentation/pages/task_list/task_list_page.dart';
+import 'package:feed_delivery/presentation/pages/login/login_page.dart';
+import 'package:feed_delivery/presentation/pages/detail_bunker_page/detail_bunker_page.dart';
+import 'package:feed_delivery/presentation/pages/detail_task_page/detail_task_page.dart';
+import 'package:feed_delivery/presentation/pages/list_bunker/list_bunker_page.dart';
+import 'package:feed_delivery/presentation/pages/scaner/scaning_page.dart';
+import 'package:feed_delivery/presentation/pages/splash/splash_page.dart';
+import 'package:feed_delivery/presentation/pages/sector_info/sector_info_page.dart';
+import 'package:feed_delivery/presentation/pages/task_list/task_list_page.dart';
 import 'package:go_router/go_router.dart';
 
 final GoRouter router = GoRouter(
@@ -41,15 +41,17 @@ final GoRouter router = GoRouter(
     GoRoute(
       path: '/detail-bunker-page/:index',
       builder: (context, state) {
-        final index = state.pathParameters['index'];
-        return DetailBunkerPage(index: int.parse(index!));
+        final item = state.extra;
+        return DetailBunkerPage(
+          item: item as ListBunkerItemModel,
+        );
       },
     ),
     GoRoute(
       path: '/detail-task-page/:index',
       builder: (context, state) {
-        final index = state.pathParameters['index'];
-        return DetailTaskPage(index: int.parse(index!));
+        final TaskListItemModel item = state.extra as TaskListItemModel;
+        return DetailTaskPage(item: item);
       },
     ),
   ],

@@ -1,5 +1,5 @@
-import 'package:dostavka/presentation/pages/sector_info/sector_info_page.dart';
-import 'package:dostavka/presentation/utility/extension/change_localization.dart';
+import 'package:feed_delivery/presentation/pages/sector_info/sector_info_page.dart';
+import 'package:feed_delivery/presentation/utility/extension/change_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 

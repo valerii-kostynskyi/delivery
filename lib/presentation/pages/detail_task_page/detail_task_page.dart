@@ -1,18 +1,19 @@
-import 'package:dostavka/presentation/custom_widget/back_button_widget.dart';
-import 'package:dostavka/presentation/custom_widget/custom_button.dart';
-import 'package:dostavka/presentation/custom_widget/error_icon.dart';
+import 'package:feed_delivery/presentation/custom_widget/back_button_widget.dart';
+import 'package:feed_delivery/presentation/custom_widget/custom_button.dart';
+import 'package:feed_delivery/presentation/custom_widget/error_icon.dart';
+import 'package:feed_delivery/presentation/pages/task_list/task_list_page.dart';
 
-import 'package:dostavka/presentation/utility/extension/change_localization.dart';
+import 'package:feed_delivery/presentation/utility/extension/change_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 
 class DetailTaskPage extends StatefulWidget {
-  final int index;
+  final TaskListItemModel item;
 
   const DetailTaskPage({
     super.key,
-    required this.index,
+    required this.item,
   });
 
   @override
@@ -20,7 +21,7 @@ class DetailTaskPage extends StatefulWidget {
 }
 
 class DetailTaskPageState extends State<DetailTaskPage> {
-  String? selectedBunker;
+  String selectedBunker = 'bunker_3';
   bool isAcceptWidget = false;
 
   @override
@@ -30,24 +31,202 @@ class DetailTaskPageState extends State<DetailTaskPage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: theme.scaffoldBackgroundColor,
-        title: Hero(
-          tag: 'task-${widget.index}',
-          child: Text(
-            context.localizations.shipmentNumber(widget.index),
-            style: theme.textTheme.titleMedium,
-          ),
+        title: Text(
+          context.localizations.back,
+          style: theme.textTheme.titleMedium,
         ),
         leadingWidth: 48,
-        leading: BackButtonWidget(
-          onTap: () => context.pop(),
+        leading: Padding(
+          padding: const EdgeInsets.only(left: 16),
+          child: BackButtonWidget(
+            onTap: () => context.pop(),
+          ),
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16),
-        child: isAcceptWidget
-            ? _acceptWidget(theme, context)
-            : _choseBunker(theme, context),
+        padding: const EdgeInsets.all(16.0),
+        child: Container(
+          decoration: BoxDecoration(
+            color: theme.canvasColor,
+            borderRadius: BorderRadius.circular(16.0),
+          ),
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          child: widget.item.status == Status.full
+              ? _fullWidget(theme, context)
+              : isAcceptWidget
+                  ? _acceptWidget(theme, context)
+                  : _choseBunker(theme, context),
+        ),
       ),
+    );
+  }
+
+  Widget _fullWidget(
+    ThemeData theme,
+    BuildContext context,
+  ) {
+    return Column(
+      children: [
+        Expanded(
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              const SizedBox(height: 24),
+              Center(
+                child: Column(
+                  children: [
+                    const SizedBox(height: 24),
+                    Text(
+                      context.localizations.shipmentNumber(widget.item.index),
+                      style: theme.textTheme.labelLarge,
+                    ),
+                    const SizedBox(height: 24),
+                    Container(
+                      padding: const EdgeInsets.all(16),
+                      decoration: BoxDecoration(
+                        color: theme.colorScheme.onSurface,
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      child: Column(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      SizedBox(
+                                        width: 16,
+                                        height: 16,
+                                        child: SvgPicture.asset(
+                                          'assets/icons/bunker.svg',
+                                        ),
+                                      ),
+                                      const SizedBox(width: 16),
+                                      Text(
+                                        'Бункер ',
+                                        style: theme.textTheme.labelMedium
+                                            ?.copyWith(
+                                          color: theme.primaryColor,
+                                          fontSize: 20,
+                                        ),
+                                      ),
+                                      Text(
+                                        '3',
+                                        style: theme.textTheme.labelMedium
+                                            ?.copyWith(
+                                          color: theme.primaryColor,
+                                          fontSize: 20,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  const SizedBox(height: 16),
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      SizedBox(
+                                        width: 16,
+                                        height: 16,
+                                        child: SvgPicture.asset(
+                                          'assets/icons/house.svg',
+                                          colorFilter: ColorFilter.mode(
+                                            theme.focusColor,
+                                            BlendMode.srcIn,
+                                          ),
+                                        ),
+                                      ),
+                                      const SizedBox(width: 16),
+                                      Text(
+                                        'Пташник ',
+                                        style: theme.textTheme.labelMedium
+                                            ?.copyWith(
+                                          color: theme.primaryColor,
+                                          fontSize: 20,
+                                        ),
+                                      ),
+                                      Text(
+                                        '3',
+                                        style: theme.textTheme.labelMedium
+                                            ?.copyWith(
+                                          color: theme.primaryColor,
+                                          fontSize: 20,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  SizedBox(
+                                    width: 16,
+                                    height: 16,
+                                    child: SvgPicture.asset(
+                                      'assets/icons/arrow-down.svg',
+                                      colorFilter: ColorFilter.mode(
+                                        theme.focusColor,
+                                        BlendMode.srcIn,
+                                      ),
+                                    ),
+                                  ),
+                                  const SizedBox(width: 8),
+                                  Column(
+                                    children: [
+                                      Text(
+                                        'старт',
+                                        style: theme.textTheme.labelMedium
+                                            ?.copyWith(
+                                          color: theme.focusColor,
+                                          fontSize: 20,
+                                        ),
+                                      ),
+                                      Text(
+                                        '3.4т',
+                                        style: theme.textTheme.labelLarge
+                                            ?.copyWith(
+                                          color: theme.focusColor,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              )
+                            ],
+                          ),
+                          Divider(color: theme.focusColor),
+                          const Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text('Поповнено:'),
+                              Text('9:15 15.07.204'),
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+        TextButton(
+          onPressed: () {
+            context.pop();
+          },
+          child: Text(
+            context.localizations.back,
+            style: theme.textTheme.bodyLarge,
+          ),
+        ),
+        const SizedBox(height: 24),
+      ],
     );
   }
 
@@ -59,12 +238,11 @@ class DetailTaskPageState extends State<DetailTaskPage> {
       children: [
         Expanded(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisSize: MainAxisSize.max,
             children: [
+              const SizedBox(height: 24),
               Text(
-                context.localizations.shipmentNumber(widget.index),
+                context.localizations.shipmentNumber(widget.item.index),
                 style: theme.textTheme.labelLarge,
               ),
               const SizedBox(height: 16),
@@ -173,16 +351,21 @@ class DetailTaskPageState extends State<DetailTaskPage> {
           ),
         ),
         CustomButton(
-          onPressed: selectedBunker != null
-              ? () {
-                  setState(() {
-                    isAcceptWidget = true;
-                  });
-                }
-              : null,
+          onPressed: () {
+            setState(() {
+              isAcceptWidget = true;
+            });
+          },
           label: context.localizations.next,
         ),
-        const SizedBox(height: 16),
+        TextButton(
+          onPressed: () => context.pop(),
+          child: Text(
+            context.localizations.back,
+            style: theme.textTheme.titleMedium!.copyWith(fontSize: 16),
+          ),
+        ),
+        const SizedBox(height: 24),
       ],
     );
   }
@@ -195,10 +378,9 @@ class DetailTaskPageState extends State<DetailTaskPage> {
       children: [
         Expanded(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisSize: MainAxisSize.max,
             children: [
+              const SizedBox(height: 24),
               Center(
                 child: Column(
                   children: [
@@ -209,10 +391,10 @@ class DetailTaskPageState extends State<DetailTaskPage> {
                     ),
                     const SizedBox(height: 24),
                     Text(
-                      context.localizations.shipmentNumber(widget.index),
+                      context.localizations.shipmentNumber(widget.item.index),
                       style: theme.textTheme.labelLarge,
                     ),
-                    const SizedBox(height: 16),
+                    const SizedBox(height: 24),
                     Container(
                       padding: const EdgeInsets.all(16),
                       decoration: BoxDecoration(
@@ -336,11 +518,9 @@ class DetailTaskPageState extends State<DetailTaskPage> {
           ),
         ),
         CustomButton(
-          onPressed: selectedBunker != null
-              ? () {
-                  context.pop();
-                }
-              : null,
+          onPressed: () {
+            context.pop();
+          },
           label: context.localizations.confirmExecution,
         ),
         const SizedBox(height: 12),
@@ -355,6 +535,7 @@ class DetailTaskPageState extends State<DetailTaskPage> {
             style: theme.textTheme.bodyLarge,
           ),
         ),
+        const SizedBox(height: 24),
       ],
     );
   }
@@ -376,11 +557,6 @@ class DetailTaskPageState extends State<DetailTaskPage> {
         decoration: BoxDecoration(
           color: isSelected ? theme.colorScheme.onSurface : Colors.transparent,
           borderRadius: BorderRadius.circular(8),
-          // border: Border.all(
-          //   color:
-          //       isSelected ? theme.colorScheme.onSurface : theme.dividerColor,
-          //   width: 1,
-          // ),
         ),
         padding: const EdgeInsets.all(8),
         child: Row(
@@ -397,7 +573,7 @@ class DetailTaskPageState extends State<DetailTaskPage> {
               }),
               onChanged: (String? newValue) {
                 setState(() {
-                  selectedBunker = newValue;
+                  selectedBunker = newValue!;
                 });
               },
             ),

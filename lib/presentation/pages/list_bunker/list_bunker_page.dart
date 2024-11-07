@@ -1,5 +1,5 @@
-import 'package:dostavka/presentation/pages/list_bunker/widget/list_bunker_item.dart';
-import 'package:dostavka/presentation/utility/extension/change_localization.dart';
+import 'package:feed_delivery/presentation/pages/list_bunker/widget/list_bunker_item.dart';
+import 'package:feed_delivery/presentation/utility/extension/change_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -106,8 +106,9 @@ class _ListBunkerPageState extends State<ListBunkerPage> {
 
                   return ListBunkerItem(
                     cardItemModel: cardItemModel,
-                    onTap: () => context
-                        .push('/detail-bunker-page/${cardItemModel.index}'),
+                    onTap: () => context.push(
+                        '/detail-bunker-page/${cardItemModel.index}',
+                        extra: cardItemModel),
                   );
                 },
                 childCount: 17,
