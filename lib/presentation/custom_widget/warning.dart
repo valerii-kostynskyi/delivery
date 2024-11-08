@@ -1,14 +1,17 @@
-import 'package:feed_delivery/presentation/utility/extension/change_localization.dart';
 import 'package:flutter/material.dart';
 
 class WarningWidget extends StatelessWidget {
-  const WarningWidget({super.key});
+  final String message;
+  const WarningWidget({
+    super.key,
+    required this.message,
+  });
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return Container(
-      decoration:
-          BoxDecoration(color: Theme.of(context).colorScheme.onBackground),
+      decoration: BoxDecoration(color: theme.colorScheme.onBackground),
       child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Row(
@@ -26,7 +29,7 @@ class WarningWidget extends StatelessWidget {
             const SizedBox(width: 16),
             Expanded(
               child: Text(
-                context.localizations.carNumberNotRegistered,
+                message,
                 style:
                     TextStyle(color: Theme.of(context).colorScheme.onSecondary),
               ),

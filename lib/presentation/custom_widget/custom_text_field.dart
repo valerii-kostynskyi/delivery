@@ -16,6 +16,7 @@ class CustomTextField extends StatelessWidget {
   final FocusNode? focusNode;
   final TextInputAction? textInputAction;
   final ScrollController? scrollController;
+  final bool hasError;
 
   const CustomTextField({
     super.key,
@@ -33,6 +34,7 @@ class CustomTextField extends StatelessWidget {
     this.keyboardType = TextInputType.text,
     this.suffixIcon,
     required this.controller,
+    this.hasError = false,
   });
 
   @override
@@ -55,7 +57,7 @@ class CustomTextField extends StatelessWidget {
             color: theme.canvasColor,
             boxShadow: [
               BoxShadow(
-                color: Theme.of(context).primaryColor.withOpacity(0.08),
+                color: theme.primaryColor.withOpacity(0.08),
                 offset: const Offset(0, 1),
                 blurRadius: 2,
               ),
@@ -83,6 +85,21 @@ class CustomTextField extends StatelessWidget {
                       child: Icon(suffixIcon),
                     )
                   : null,
+              border: theme.inputDecorationTheme.border,
+              enabledBorder: hasError
+                  ? OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(6),
+                      borderSide:
+                          BorderSide(color: theme.colorScheme.onPrimary),
+                    )
+                  : theme.inputDecorationTheme.enabledBorder,
+              focusedBorder: hasError
+                  ? OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(6),
+                      borderSide:
+                          BorderSide(color: theme.colorScheme.onPrimary),
+                    )
+                  : theme.inputDecorationTheme.focusedBorder,
             ),
           ),
         ),

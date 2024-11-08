@@ -15,8 +15,8 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
 
     await Future.delayed(const Duration(seconds: 1));
 
-    if (event.carNumber.length > 8) {
-      emit(const LoginState.error("Номер автомобіля занадто довгий"));
+    if (event.carNumber.length < 8) {
+      emit(const LoginState.error());
     } else {
       emit(const LoginState.success());
     }
