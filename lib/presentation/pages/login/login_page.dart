@@ -1,4 +1,4 @@
-import 'package:feed_delivery/presentation/blocks/bloc/login_bloc.dart';
+import 'package:feed_delivery/presentation/blocks/login/login_bloc.dart';
 import 'package:feed_delivery/presentation/custom_widget/custom_button.dart';
 import 'package:feed_delivery/presentation/custom_widget/custom_text_field.dart';
 import 'package:feed_delivery/presentation/custom_widget/warning.dart';
