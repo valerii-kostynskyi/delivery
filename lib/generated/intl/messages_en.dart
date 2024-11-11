@@ -20,9 +20,9 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
-  static String m0(number) => "Poultry № ${number}";
+  static String m0(number) => "Sector № ${number}";
 
-  static String m1(number) => "Sector № ${number}";
+  static String m1(number) => "Poultry № ${number}";
 
   static String m2(number) => "Shipment № ${number}";
 
@@ -52,6 +52,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "enter": MessageLookupByLibrary.simpleMessage("Enter"),
         "enterPassword": MessageLookupByLibrary.simpleMessage("Enter password"),
         "entrance": MessageLookupByLibrary.simpleMessage("Entrance"),
+        "farm": MessageLookupByLibrary.simpleMessage("Sector"),
+        "farmNumber": m0,
         "finish": MessageLookupByLibrary.simpleMessage("Finish"),
         "full": MessageLookupByLibrary.simpleMessage("Full"),
         "growth": MessageLookupByLibrary.simpleMessage("Growth"),
@@ -70,17 +72,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "pointCameraToBarcode": MessageLookupByLibrary.simpleMessage(
             "Point the camera at the invoice barcode"),
         "poultryHouse": MessageLookupByLibrary.simpleMessage("Poultry house"),
-        "poultryHouseNumber": m0,
+        "poultryHouseNumber": m1,
         "pressButtonToScanTtn": MessageLookupByLibrary.simpleMessage(
             "Press the button to start scanning TTN"),
         "required": MessageLookupByLibrary.simpleMessage("Required"),
         "scanTtn": MessageLookupByLibrary.simpleMessage("Scan TTN"),
         "scanTtnButton": MessageLookupByLibrary.simpleMessage("Scan TTN"),
-        "sector": MessageLookupByLibrary.simpleMessage("Sector"),
-        "sectorNumber": m1,
         "selectPoultryHouse":
             MessageLookupByLibrary.simpleMessage("Select poultry house"),
-        "selectSector": MessageLookupByLibrary.simpleMessage("Select sector"),
         "selectShipment":
             MessageLookupByLibrary.simpleMessage("Select Shipment"),
         "selectSilo": MessageLookupByLibrary.simpleMessage("Select silo"),

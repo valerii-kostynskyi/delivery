@@ -67,7 +67,7 @@ class _ListSiloPageState extends State<ListSiloPage> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Text(
-                          context.localizations.sectorNumber('1'),
+                          context.localizations.farmNumber('1'),
                           style: Theme.of(context).textTheme.bodyLarge,
                         ),
                         const SizedBox(height: 8),

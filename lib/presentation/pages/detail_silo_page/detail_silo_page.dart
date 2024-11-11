@@ -68,7 +68,7 @@ class DetailSiloPage extends StatelessWidget {
                     ),
                     const SizedBox(height: 12),
                     Text(
-                      context.localizations.sectorNumber(1),
+                      context.localizations.farmNumber(1),
                       style: theme.textTheme.titleMedium!
                           .copyWith(color: theme.dividerColor),
                     ),

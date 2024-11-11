@@ -4,7 +4,7 @@ import 'package:feed_delivery/presentation/pages/detail_task_page/detail_task_pa
 import 'package:feed_delivery/presentation/pages/list_silo/list_silo_page.dart';
 import 'package:feed_delivery/presentation/pages/scaner/scaning_page.dart';
 import 'package:feed_delivery/presentation/pages/splash/splash_page.dart';
-import 'package:feed_delivery/presentation/pages/sector_info/sector_info_page.dart';
+import 'package:feed_delivery/presentation/pages/farm_info/farm_info_page.dart';
 import 'package:feed_delivery/presentation/pages/task_list/task_list_page.dart';
 import 'package:go_router/go_router.dart';
 
@@ -20,8 +20,8 @@ final GoRouter router = GoRouter(
       builder: (context, state) => const ListSiloPage(),
     ),
     GoRoute(
-      path: '/sector-info-page',
-      builder: (context, state) => const SectorInfoPage(),
+      path: '/farm-info-page',
+      builder: (context, state) => const FarmInfoPage(),
     ),
     GoRoute(
       path: '/task-list-page/:index',

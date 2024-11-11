@@ -114,7 +114,7 @@ class _LoginPageState extends State<LoginPage> {
                       label: '${context.localizations.enter} 2 водій',
                       isLoading: isLoading,
                       onPressed: () {
-                        context.go('/sector-info-page');
+                        context.go('/farm-info-page');
                       },
                     ),
                     if (showWarning) ...[

@@ -151,10 +151,10 @@ class S {
   }
 
   /// `Sector № {number}`
-  String sectorNumber(Object number) {
+  String farmNumber(Object number) {
     return Intl.message(
       'Sector № $number',
-      name: 'sectorNumber',
+      name: 'farmNumber',
       desc: '',
       args: [number],
     );
@@ -321,10 +321,10 @@ class S {
   }
 
   /// `Sector`
-  String get sector {
+  String get farm {
     return Intl.message(
       'Sector',
-      name: 'sector',
+      name: 'farm',
       desc: '',
       args: [],
     );
@@ -345,16 +345,6 @@ class S {
     return Intl.message(
       'Select task',
       name: 'selectTask',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Select sector`
-  String get selectSector {
-    return Intl.message(
-      'Select sector',
-      name: 'selectSector',
       desc: '',
       args: [],
     );
