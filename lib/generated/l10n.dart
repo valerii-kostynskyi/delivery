@@ -140,11 +140,11 @@ class S {
     );
   }
 
-  /// `Select bunker`
-  String get selectBunker {
+  /// `Select silo`
+  String get selectSilo {
     return Intl.message(
-      'Select bunker',
-      name: 'selectBunker',
+      'Select silo',
+      name: 'selectSilo',
       desc: '',
       args: [],
     );
@@ -310,11 +310,11 @@ class S {
     );
   }
 
-  /// `Bunker`
-  String get bunker {
+  /// `silo`
+  String get silo {
     return Intl.message(
-      'Bunker',
-      name: 'bunker',
+      'silo',
+      name: 'silo',
       desc: '',
       args: [],
     );
@@ -470,11 +470,11 @@ class S {
     );
   }
 
-  /// `Bunker № {number}`
-  String bunkerNumber(Object number) {
+  /// `silo № {number}`
+  String siloNumber(Object number) {
     return Intl.message(
-      'Bunker № $number',
-      name: 'bunkerNumber',
+      'silo № $number',
+      name: 'siloNumber',
       desc: '',
       args: [number],
     );
@@ -500,11 +500,11 @@ class S {
     );
   }
 
-  /// `Bunker № {number} is empty`
-  String bunkerEmpty(Object number) {
+  /// `silo № {number} is empty`
+  String siloEmpty(Object number) {
     return Intl.message(
-      'Bunker № $number is empty',
-      name: 'bunkerEmpty',
+      'silo № $number is empty',
+      name: 'siloEmpty',
       desc: '',
       args: [number],
     );

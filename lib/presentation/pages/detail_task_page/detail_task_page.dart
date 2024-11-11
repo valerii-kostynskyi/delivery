@@ -21,7 +21,7 @@ class DetailTaskPage extends StatefulWidget {
 }
 
 class DetailTaskPageState extends State<DetailTaskPage> {
-  String selectedBunker = 'bunker_3';
+  String selectedSilo = 'silo_3';
   bool isAcceptWidget = false;
 
   @override
@@ -55,7 +55,7 @@ class DetailTaskPageState extends State<DetailTaskPage> {
               ? _fullWidget(theme, context)
               : isAcceptWidget
                   ? _acceptWidget(theme, context)
-                  : _choseBunker(theme, context),
+                  : _choseSilo(theme, context),
         ),
       ),
     );
@@ -103,7 +103,7 @@ class DetailTaskPageState extends State<DetailTaskPage> {
                                         width: 16,
                                         height: 16,
                                         child: SvgPicture.asset(
-                                          'assets/icons/bunker.svg',
+                                          'assets/icons/silo.svg',
                                         ),
                                       ),
                                       const SizedBox(width: 16),
@@ -230,7 +230,7 @@ class DetailTaskPageState extends State<DetailTaskPage> {
     );
   }
 
-  Widget _choseBunker(
+  Widget _choseSilo(
     ThemeData theme,
     BuildContext context,
   ) {
@@ -332,20 +332,20 @@ class DetailTaskPageState extends State<DetailTaskPage> {
                 ),
               ),
               const SizedBox(height: 8),
-              _buildBunkerOption(
+              _buildSiloOption(
                 theme: theme,
-                bunkerName: 'Бункер 3',
+                siloName: 'Бункер 3',
                 weight: '4.0т',
-                value: 'bunker_3',
-                isSelected: selectedBunker == 'bunker_3',
+                value: 'silo_3',
+                isSelected: selectedSilo == 'silo_3',
               ),
               const SizedBox(height: 8),
-              _buildBunkerOption(
+              _buildSiloOption(
                 theme: theme,
-                bunkerName: 'Бункер 5',
+                siloName: 'Бункер 5',
                 weight: '3.5т',
-                value: 'bunker_5',
-                isSelected: selectedBunker == 'bunker_5',
+                value: 'silo_5',
+                isSelected: selectedSilo == 'silo_5',
               ),
             ],
           ),
@@ -415,7 +415,7 @@ class DetailTaskPageState extends State<DetailTaskPage> {
                                     width: 16,
                                     height: 16,
                                     child: SvgPicture.asset(
-                                      'assets/icons/bunker.svg',
+                                      'assets/icons/silo.svg',
                                     ),
                                   ),
                                   const SizedBox(width: 16),
@@ -540,9 +540,9 @@ class DetailTaskPageState extends State<DetailTaskPage> {
     );
   }
 
-  Widget _buildBunkerOption({
+  Widget _buildSiloOption({
     required ThemeData theme,
-    required String bunkerName,
+    required String siloName,
     required String weight,
     required String value,
     bool isSelected = false,
@@ -550,7 +550,7 @@ class DetailTaskPageState extends State<DetailTaskPage> {
     return GestureDetector(
       onTap: () {
         setState(() {
-          selectedBunker = value;
+          selectedSilo = value;
         });
       },
       child: Container(
@@ -563,23 +563,23 @@ class DetailTaskPageState extends State<DetailTaskPage> {
           children: [
             Radio<String>(
               value: value,
-              groupValue: selectedBunker,
+              groupValue: selectedSilo,
               activeColor: theme.focusColor,
-              fillColor: MaterialStateProperty.resolveWith<Color>((states) {
-                if (states.contains(MaterialState.selected)) {
+              fillColor: WidgetStateProperty.resolveWith<Color>((states) {
+                if (states.contains(WidgetState.selected)) {
                   return theme.focusColor;
                 }
                 return theme.primaryColor;
               }),
               onChanged: (String? newValue) {
                 setState(() {
-                  selectedBunker = newValue!;
+                  selectedSilo = newValue!;
                 });
               },
             ),
             Expanded(
               child: Text(
-                bunkerName,
+                siloName,
                 style: theme.textTheme.labelMedium?.copyWith(
                   color: theme.primaryColor,
                   fontSize: 20,
@@ -590,7 +590,7 @@ class DetailTaskPageState extends State<DetailTaskPage> {
               width: 16,
               height: 16,
               child: SvgPicture.asset(
-                'assets/icons/bunker.svg',
+                'assets/icons/silo.svg',
               ),
             ),
             const SizedBox(width: 4),

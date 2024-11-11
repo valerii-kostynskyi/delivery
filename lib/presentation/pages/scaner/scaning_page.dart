@@ -14,6 +14,7 @@ class ScaningPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return BlocProvider(
       create: (_) => ScanBloc(),
       child: Scaffold(
@@ -22,7 +23,7 @@ class ScaningPage extends StatelessWidget {
           child: BlocConsumer<ScanBloc, ScanState>(
             listener: (context, state) {
               if (state is Success) {
-                context.go('/list-bunker-page');
+                context.go('/list-silo-page');
               }
             },
             builder: (context, state) {
@@ -42,18 +43,18 @@ class ScaningPage extends StatelessWidget {
                   const SizedBox(height: 36),
                   Text(
                     context.localizations.kkzDelivery,
-                    style: Theme.of(context).textTheme.titleMedium,
+                    style: theme.textTheme.titleMedium,
                   ),
                   const SizedBox(height: 36),
                   BigIconWidget(
                     iconName: 'truck',
-                    backgroundColor: Theme.of(context).colorScheme.onSurface,
-                    iconColor: Theme.of(context).focusColor,
+                    backgroundColor: theme.colorScheme.onSurface,
+                    iconColor: theme.focusColor,
                   ),
                   const SizedBox(height: 16),
                   const LicensePlate(adminNumber: 'AA 1234 AA'),
                   const SizedBox(height: 36),
-                  Divider(thickness: 1, color: Theme.of(context).hintColor),
+                  Divider(thickness: 1, color: theme.hintColor),
                   const SizedBox(height: 36),
                   Text(
                     state is Success
@@ -72,7 +73,7 @@ class ScaningPage extends StatelessWidget {
                   const SizedBox(height: 32),
                   CustomButton(
                     label: context.localizations.enter,
-                    onPressed: () => context.go('/list-bunker-page'),
+                    onPressed: () => context.go('/list-silo-page'),
                     height: 30,
                   ),
                 ],
@@ -84,97 +85,3 @@ class ScaningPage extends StatelessWidget {
     );
   }
 }
-
-// class ScaningPage extends StatefulWidget {
-//   const ScaningPage({super.key});
-
-//   @override
-//   State<ScaningPage> createState() => ScaningPageState();
-// }
-
-// class ScaningPageState extends State<ScaningPage> {
-//   String? _scannedValue;
-
-//   @override
-//   void initState() {
-//     super.initState();
-//   }
-
-//   @override
-//   void dispose() {
-//     super.dispose();
-//   }
-
-//   Future<void> startBarcodeScanStream() async {
-//     FlutterBarcodeScanner.getBarcodeStreamReceiver(
-//             '#ff6666', 'Cancel', true, ScanMode.BARCODE)!
-//         .listen((barcode) => _scannedValue = barcode);
-//   }
-
-//   Future<void> scanBarcodeNormal() async {
-//     String barcodeScanRes;
-//     try {
-//       barcodeScanRes = await FlutterBarcodeScanner.scanBarcode(
-//           '#ff6666', 'Cancel', true, ScanMode.BARCODE);
-//       print(barcodeScanRes);
-//     } on PlatformException {
-//       barcodeScanRes = 'Failed to get platform version.';
-//     }
-
-//     if (!mounted) return;
-
-//     setState(() {
-//       _scannedValue = barcodeScanRes;
-//     });
-//   }
-
-//   @override
-//   Widget build(BuildContext context) {
-//     final theme = Theme.of(context);
-//     return Scaffold(
-//       body: Padding(
-//         padding: const EdgeInsets.all(40.0),
-//         child: SingleChildScrollView(
-//           child: Column(
-//             crossAxisAlignment: CrossAxisAlignment.center,
-//             children: [
-//               const SizedBox(height: 36),
-//               Text(
-//                 context.localizations.kkzDelivery,
-//                 style: theme.textTheme.titleMedium,
-//               ),
-//               const SizedBox(height: 36),
-//               BigIconWidget(
-//                 iconName: 'truck',
-//                 backgroundColor: theme.colorScheme.onSurface,
-//                 iconColor: theme.focusColor,
-//               ),
-//               const SizedBox(height: 16),
-//               const LicensePlate(adminNumber: 'AA 1234 AA'),
-//               const SizedBox(height: 36),
-//               Divider(thickness: 1, color: Theme.of(context).hintColor),
-//               const SizedBox(height: 36),
-//               Text(
-//                 _scannedValue ?? context.localizations.pressButtonToScanTtn,
-//                 textAlign: TextAlign.center,
-//               ),
-//               const SizedBox(height: 32),
-//               CustomButton(
-//                 label: context.localizations.scanTtnButton,
-//                 onPressed: () => scanBarcodeNormal(),
-//                 height: 120,
-//                 iconName: 'scan',
-//               ),
-//               const SizedBox(height: 32),
-//               CustomButton(
-//                 label: context.localizations.enter,
-//                 onPressed: () => context.go('/list-bunker-page'),
-//                 height: 30,
-//               ),
-//             ],
-//           ),
-//         ),
-//       ),
-//     );
-//   }
-// }

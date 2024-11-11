@@ -1,16 +1,16 @@
-import 'package:feed_delivery/presentation/pages/list_bunker/widget/list_bunker_item.dart';
+import 'package:feed_delivery/presentation/pages/list_silo/widget/list_silo_item.dart';
 import 'package:feed_delivery/presentation/utility/extension/change_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class ListBunkerPage extends StatefulWidget {
-  const ListBunkerPage({super.key});
+class ListSiloPage extends StatefulWidget {
+  const ListSiloPage({super.key});
 
   @override
-  State<ListBunkerPage> createState() => _ListBunkerPageState();
+  State<ListSiloPage> createState() => _ListSiloPageState();
 }
 
-class _ListBunkerPageState extends State<ListBunkerPage> {
+class _ListSiloPageState extends State<ListSiloPage> {
   final ScrollController _scrollController = ScrollController();
   bool _isAppBarCollapsed = false;
 
@@ -80,7 +80,7 @@ class _ListBunkerPageState extends State<ListBunkerPage> {
                         ),
                         const SizedBox(height: 8),
                         Text(
-                          context.localizations.selectBunker,
+                          context.localizations.selectSilo,
                           style:
                               Theme.of(context).textTheme.labelMedium?.copyWith(
                                     color: Colors.grey,
@@ -99,15 +99,15 @@ class _ListBunkerPageState extends State<ListBunkerPage> {
             sliver: SliverGrid(
               delegate: SliverChildBuilderDelegate(
                 (context, index) {
-                  final cardItemModel = ListBunkerItemModel(
+                  final cardItemModel = ListSiloItemModel(
                     index: index + 1,
                     isEmpty: index % 3 != 0,
                   );
 
-                  return ListBunkerItem(
+                  return ListSiloItem(
                     cardItemModel: cardItemModel,
                     onTap: () => context.push(
-                        '/detail-bunker-page/${cardItemModel.index}',
+                        '/detail-silo-page/${cardItemModel.index}',
                         extra: cardItemModel),
                   );
                 },
@@ -127,11 +127,11 @@ class _ListBunkerPageState extends State<ListBunkerPage> {
   }
 }
 
-class ListBunkerItemModel {
+class ListSiloItemModel {
   final int index;
   final bool isEmpty;
 
-  ListBunkerItemModel({
+  ListSiloItemModel({
     required this.index,
     required this.isEmpty,
   });

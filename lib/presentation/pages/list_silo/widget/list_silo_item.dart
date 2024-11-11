@@ -1,13 +1,13 @@
-import 'package:feed_delivery/presentation/pages/list_bunker/list_bunker_page.dart';
+import 'package:feed_delivery/presentation/pages/list_silo/list_silo_page.dart';
 import 'package:feed_delivery/presentation/utility/extension/change_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class ListBunkerItem extends StatelessWidget {
-  final ListBunkerItemModel cardItemModel;
+class ListSiloItem extends StatelessWidget {
+  final ListSiloItemModel cardItemModel;
   final void Function()? onTap;
 
-  const ListBunkerItem({
+  const ListSiloItem({
     super.key,
     required this.cardItemModel,
     required this.onTap,
@@ -15,10 +15,11 @@ class ListBunkerItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return Card(
       color: cardItemModel.isEmpty
-          ? Theme.of(context).secondaryHeaderColor
-          : Theme.of(context).colorScheme.onSurface,
+          ? theme.secondaryHeaderColor
+          : theme.colorScheme.onSurface,
       child: InkWell(
         onTap: onTap,
         child: Padding(
@@ -37,24 +38,24 @@ class ListBunkerItem extends StatelessWidget {
                       height: 72,
                       child: Text(
                         '${cardItemModel.index}',
-                        style: Theme.of(context).textTheme.labelLarge!.copyWith(
-                              fontSize: 60,
-                              color: cardItemModel.isEmpty
-                                  ? Theme.of(context).colorScheme.onPrimary
-                                  : Theme.of(context).focusColor,
-                            ),
+                        style: theme.textTheme.labelLarge!.copyWith(
+                          fontSize: 60,
+                          color: cardItemModel.isEmpty
+                              ? theme.colorScheme.onPrimary
+                              : theme.focusColor,
+                        ),
                       ),
                     ),
                     if (cardItemModel.isEmpty)
                       SvgPicture.asset(
-                        'assets/icons/bunker_load.svg',
+                        'assets/icons/silo_load.svg',
                         width: 30,
                         height: 30,
-                        color: Theme.of(context).colorScheme.onPrimary,
+                        color: theme.colorScheme.onPrimary,
                       )
                     else
                       SvgPicture.asset(
-                        'assets/icons/bunker_full.svg',
+                        'assets/icons/silo_full.svg',
                         width: 30,
                         height: 30,
                       )
@@ -66,7 +67,7 @@ class ListBunkerItem extends StatelessWidget {
                 cardItemModel.isEmpty
                     ? context.localizations.empty
                     : context.localizations.full,
-                style: Theme.of(context).textTheme.bodyLarge,
+                style: theme.textTheme.bodyLarge,
               ),
             ],
           ),

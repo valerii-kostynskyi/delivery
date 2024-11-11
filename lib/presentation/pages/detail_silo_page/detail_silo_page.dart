@@ -1,15 +1,15 @@
 import 'package:feed_delivery/presentation/custom_widget/back_button_widget.dart';
 import 'package:feed_delivery/presentation/custom_widget/custom_button.dart';
-import 'package:feed_delivery/presentation/pages/list_bunker/list_bunker_page.dart';
+import 'package:feed_delivery/presentation/pages/list_silo/list_silo_page.dart';
 import 'package:feed_delivery/presentation/utility/extension/change_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 
-class DetailBunkerPage extends StatelessWidget {
-  final ListBunkerItemModel item;
+class DetailSiloPage extends StatelessWidget {
+  final ListSiloItemModel item;
 
-  const DetailBunkerPage({
+  const DetailSiloPage({
     super.key,
     required this.item,
   });
@@ -17,7 +17,7 @@ class DetailBunkerPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final String iconName = item.isEmpty ? 'bunker_load' : 'bunker_full';
+    final String iconName = item.isEmpty ? 'silo_load' : 'silo_full';
     return Scaffold(
       appBar: AppBar(
         backgroundColor: theme.scaffoldBackgroundColor,
@@ -86,7 +86,7 @@ class DetailBunkerPage extends StatelessWidget {
                                   : null),
                         ),
                         Text(
-                          context.localizations.bunker,
+                          context.localizations.silo,
                           style: theme.textTheme.labelLarge!.copyWith(
                               fontSize: 60,
                               color: item.isEmpty

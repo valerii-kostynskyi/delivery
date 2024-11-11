@@ -1,7 +1,7 @@
 import 'package:feed_delivery/presentation/pages/login/login_page.dart';
-import 'package:feed_delivery/presentation/pages/detail_bunker_page/detail_bunker_page.dart';
+import 'package:feed_delivery/presentation/pages/detail_silo_page/detail_silo_page.dart';
 import 'package:feed_delivery/presentation/pages/detail_task_page/detail_task_page.dart';
-import 'package:feed_delivery/presentation/pages/list_bunker/list_bunker_page.dart';
+import 'package:feed_delivery/presentation/pages/list_silo/list_silo_page.dart';
 import 'package:feed_delivery/presentation/pages/scaner/scaning_page.dart';
 import 'package:feed_delivery/presentation/pages/splash/splash_page.dart';
 import 'package:feed_delivery/presentation/pages/sector_info/sector_info_page.dart';
@@ -13,11 +13,11 @@ final GoRouter router = GoRouter(
   routes: [
     GoRoute(
       path: '/login',
-      builder: (context, state) => LoginPage(),
+      builder: (context, state) => const LoginPage(),
     ),
     GoRoute(
-      path: '/list-bunker-page',
-      builder: (context, state) => const ListBunkerPage(),
+      path: '/list-silo-page',
+      builder: (context, state) => const ListSiloPage(),
     ),
     GoRoute(
       path: '/sector-info-page',
@@ -39,11 +39,11 @@ final GoRouter router = GoRouter(
       builder: (context, state) => const ScaningPage(),
     ),
     GoRoute(
-      path: '/detail-bunker-page/:index',
+      path: '/detail-silo-page/:index',
       builder: (context, state) {
         final item = state.extra;
-        return DetailBunkerPage(
-          item: item as ListBunkerItemModel,
+        return DetailSiloPage(
+          item: item as ListSiloItemModel,
         );
       },
     ),
