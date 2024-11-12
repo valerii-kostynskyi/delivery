@@ -17,9 +17,6 @@ Future<void> initApp() async {
   // Initialize secure storage
   const FlutterSecureStorage secureStorage = FlutterSecureStorage();
 
-  // Initialize Flutter Downloader
-  // await FlutterDownloader.initialize();
-
   // Register ErrorHandler in GetIt
   final ErrorHandler errorHandler =
       GetIt.instance.registerSingleton<ErrorHandler>(ErrorHandlerImpl());
