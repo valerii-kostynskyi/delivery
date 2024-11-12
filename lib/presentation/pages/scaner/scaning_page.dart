@@ -1,4 +1,4 @@
-import 'package:feed_delivery/presentation/blocks/scan/bloc/scan_bloc.dart';
+import 'package:feed_delivery/presentation/blocks/scan/scan_bloc.dart';
 import 'package:feed_delivery/presentation/custom_widget/custom_button.dart';
 import 'package:feed_delivery/presentation/custom_widget/custom_error_widget.dart';
 import 'package:feed_delivery/presentation/custom_widget/error_icon.dart';

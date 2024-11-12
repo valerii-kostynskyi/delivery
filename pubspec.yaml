@@ -29,6 +29,7 @@ dependencies:
   flutter_barcode_scanner: ^2.0.0
 
   json_annotation: ^4.9.0
+  overlay_support: ^2.1.0
 
 dev_dependencies:
   flutter_lints: ^4.0.0
