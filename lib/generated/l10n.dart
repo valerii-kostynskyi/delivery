@@ -50,240 +50,240 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
-  /// `Enter`
+  /// `Sign in`
   String get enter {
     return Intl.message(
-      'Enter',
+      'Sign in',
       name: 'enter',
       desc: '',
       args: [],
     );
   }
 
-  /// `Password`
+  /// `Access code`
   String get password {
     return Intl.message(
-      'Password',
+      'Access code',
       name: 'password',
       desc: '',
       args: [],
     );
   }
 
-  /// `Email`
+  /// `Email address`
   String get email {
     return Intl.message(
-      'Email',
+      'Email address',
       name: 'email',
       desc: '',
       args: [],
     );
   }
 
-  /// `Phone number`
+  /// `Phone`
   String get phoneNumber {
     return Intl.message(
-      'Phone number',
+      'Phone',
       name: 'phoneNumber',
       desc: '',
       args: [],
     );
   }
 
-  /// `Scan TTN`
+  /// `Scan document`
   String get scanTtn {
     return Intl.message(
-      'Scan TTN',
+      'Scan document',
       name: 'scanTtn',
       desc: '',
       args: [],
     );
   }
 
-  /// `Scan TTN`
+  /// `Scan document`
   String get scanTtnButton {
     return Intl.message(
-      'Scan TTN',
+      'Scan document',
       name: 'scanTtnButton',
       desc: '',
       args: [],
     );
   }
 
-  /// `Point the camera at the invoice barcode`
+  /// `Point the camera at the barcode`
   String get pointCameraToBarcode {
     return Intl.message(
-      'Point the camera at the invoice barcode',
+      'Point the camera at the barcode',
       name: 'pointCameraToBarcode',
       desc: '',
       args: [],
     );
   }
 
-  /// `Press the button to start scanning TTN`
+  /// `Press the button to start scanning`
   String get pressButtonToScanTtn {
     return Intl.message(
-      'Press the button to start scanning TTN',
+      'Press the button to start scanning',
       name: 'pressButtonToScanTtn',
       desc: '',
       args: [],
     );
   }
 
-  /// `KKZ Delivery`
+  /// `Feed delivery`
   String get kkzDelivery {
     return Intl.message(
-      'KKZ Delivery',
+      'Feed delivery',
       name: 'kkzDelivery',
       desc: '',
       args: [],
     );
   }
 
-  /// `Select silo`
+  /// `Select storage`
   String get selectSilo {
     return Intl.message(
-      'Select silo',
+      'Select storage',
       name: 'selectSilo',
       desc: '',
       args: [],
     );
   }
 
-  /// `Sector № {number}`
+  /// `Section № {number}`
   String farmNumber(Object number) {
     return Intl.message(
-      'Sector № $number',
+      'Section № $number',
       name: 'farmNumber',
       desc: '',
       args: [number],
     );
   }
 
-  /// `TTN № {number}`
+  /// `Document № {number}`
   String ttnNumber(Object number) {
     return Intl.message(
-      'TTN № $number',
+      'Document № $number',
       name: 'ttnNumber',
       desc: '',
       args: [number],
     );
   }
 
-  /// `Empty`
+  /// `Vacant`
   String get empty {
     return Intl.message(
-      'Empty',
+      'Vacant',
       name: 'empty',
       desc: '',
       args: [],
     );
   }
 
-  /// `Full`
+  /// `Occupied`
   String get full {
     return Intl.message(
-      'Full',
+      'Occupied',
       name: 'full',
       desc: '',
       args: [],
     );
   }
 
-  /// `Entrance`
+  /// `Entry point`
   String get entrance {
     return Intl.message(
-      'Entrance',
+      'Entry point',
       name: 'entrance',
       desc: '',
       args: [],
     );
   }
 
-  /// `Try again`
+  /// `Retry`
   String get tryAgain {
     return Intl.message(
-      'Try again',
+      'Retry',
       name: 'tryAgain',
       desc: '',
       args: [],
     );
   }
 
-  /// `Car license plate`
+  /// `Vehicle license plate`
   String get carLicensePlate {
     return Intl.message(
-      'Car license plate',
+      'Vehicle license plate',
       name: 'carLicensePlate',
       desc: '',
       args: [],
     );
   }
 
-  /// `Enter password`
+  /// `Enter access code`
   String get enterPassword {
     return Intl.message(
-      'Enter password',
+      'Enter access code',
       name: 'enterPassword',
       desc: '',
       args: [],
     );
   }
 
-  /// `The car number is not registered. Contact the manager`
+  /// `The vehicle number is not registered. Contact the administrator`
   String get carNumberNotRegistered {
     return Intl.message(
-      'The car number is not registered. Contact the manager',
+      'The vehicle number is not registered. Contact the administrator',
       name: 'carNumberNotRegistered',
       desc: '',
       args: [],
     );
   }
 
-  /// `Password is incorrect. Contact the manager`
+  /// `Incorrect access code. Contact the administrator`
   String get incorrectPassword {
     return Intl.message(
-      'Password is incorrect. Contact the manager',
+      'Incorrect access code. Contact the administrator',
       name: 'incorrectPassword',
       desc: '',
       args: [],
     );
   }
 
-  /// `Please wait, loading`
+  /// `Loading, please wait`
   String get loadingPleaseWait {
     return Intl.message(
-      'Please wait, loading',
+      'Loading, please wait',
       name: 'loadingPleaseWait',
       desc: '',
       args: [],
     );
   }
 
-  /// `No server response`
+  /// `No response from server`
   String get noServerResponse {
     return Intl.message(
-      'No server response',
+      'No response from server',
       name: 'noServerResponse',
       desc: '',
       args: [],
     );
   }
 
-  /// `Please rescan TTN`
+  /// `Please rescan the document`
   String get tryRescanTtn {
     return Intl.message(
-      'Please rescan TTN',
+      'Please rescan the document',
       name: 'tryRescanTtn',
       desc: '',
       args: [],
     );
   }
 
-  /// `Incorrect code`
+  /// `Invalid code`
   String get incorrectCode {
     return Intl.message(
-      'Incorrect code',
+      'Invalid code',
       name: 'incorrectCode',
       desc: '',
       args: [],
@@ -300,40 +300,40 @@ class S {
     );
   }
 
-  /// `TTN task`
+  /// `Document task`
   String get ttnTask {
     return Intl.message(
-      'TTN task',
+      'Document task',
       name: 'ttnTask',
       desc: '',
       args: [],
     );
   }
 
-  /// `silo`
+  /// `Storage`
   String get silo {
     return Intl.message(
-      'silo',
+      'Storage',
       name: 'silo',
       desc: '',
       args: [],
     );
   }
 
-  /// `Sector`
+  /// `Section`
   String get farm {
     return Intl.message(
-      'Sector',
+      'Section',
       name: 'farm',
       desc: '',
       args: [],
     );
   }
 
-  /// `KKZ Distribution`
+  /// `Feed distribution`
   String get distributionKKZ {
     return Intl.message(
-      'KKZ Distribution',
+      'Feed distribution',
       name: 'distributionKKZ',
       desc: '',
       args: [],
@@ -350,16 +350,6 @@ class S {
     );
   }
 
-  /// `Select Shipment`
-  String get selectShipment {
-    return Intl.message(
-      'Select Shipment',
-      name: 'selectShipment',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Task № {number}`
   String taskNumber(Object number) {
     return Intl.message(
@@ -370,20 +360,20 @@ class S {
     );
   }
 
-  /// `Total actual`
+  /// `Total volume`
   String get totalActual {
     return Intl.message(
-      'Total actual',
+      'Total volume',
       name: 'totalActual',
       desc: '',
       args: [],
     );
   }
 
-  /// `Select poultry house`
+  /// `Select building`
   String get selectPoultryHouse {
     return Intl.message(
-      'Select poultry house',
+      'Select building',
       name: 'selectPoultryHouse',
       desc: '',
       args: [],
@@ -400,10 +390,10 @@ class S {
     );
   }
 
-  /// `Finish`
+  /// `End`
   String get finish {
     return Intl.message(
-      'Finish',
+      'End',
       name: 'finish',
       desc: '',
       args: [],
@@ -420,13 +410,23 @@ class S {
     );
   }
 
-  /// `Shipment № {number}`
+  /// `Delivery № {number}`
   String shipmentNumber(Object number) {
     return Intl.message(
-      'Shipment № $number',
+      'Delivery № $number',
       name: 'shipmentNumber',
       desc: '',
       args: [number],
+    );
+  }
+
+  /// `Select delivery`
+  String get selectShipment {
+    return Intl.message(
+      'Select delivery',
+      name: 'selectShipment',
+      desc: '',
+      args: [],
     );
   }
 
@@ -440,30 +440,30 @@ class S {
     );
   }
 
-  /// `Poultry house`
+  /// `Building`
   String get poultryHouse {
     return Intl.message(
-      'Poultry house',
+      'Building',
       name: 'poultryHouse',
       desc: '',
       args: [],
     );
   }
 
-  /// `Poultry № {number}`
+  /// `Building № {number}`
   String poultryHouseNumber(Object number) {
     return Intl.message(
-      'Poultry № $number',
+      'Building № $number',
       name: 'poultryHouseNumber',
       desc: '',
       args: [number],
     );
   }
 
-  /// `silo № {number}`
+  /// `Storage № {number}`
   String siloNumber(Object number) {
     return Intl.message(
-      'silo № $number',
+      'Storage № $number',
       name: 'siloNumber',
       desc: '',
       args: [number],
@@ -490,10 +490,10 @@ class S {
     );
   }
 
-  /// `silo № {number} is empty`
+  /// `Storage № {number} is vacant`
   String siloEmpty(Object number) {
     return Intl.message(
-      'silo № $number is empty',
+      'Storage № $number is vacant',
       name: 'siloEmpty',
       desc: '',
       args: [number],
@@ -510,10 +510,10 @@ class S {
     );
   }
 
-  /// `No feed`
+  /// `Feed not available`
   String get noFeed {
     return Intl.message(
-      'No feed',
+      'Feed not available',
       name: 'noFeed',
       desc: '',
       args: [],

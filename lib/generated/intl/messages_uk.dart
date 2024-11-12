@@ -20,81 +20,85 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'uk';
 
-  static String m0(number) => "Дільниця № ${number}";
+  static String m0(number) => "Секція № ${number}";
 
-  static String m1(number) => "Пташник № ${number}";
+  static String m1(number) => "Корпус № ${number}";
 
-  static String m2(number) => "Рейс № ${number}";
+  static String m2(number) => "Перевезення № ${number}";
 
-  static String m3(number) => "Бункер № ${number} порожній";
+  static String m3(number) => "Резервуар № ${number} вільний";
 
-  static String m4(number) => "Бункер № ${number}";
+  static String m4(number) => "Резервуар № ${number}";
 
   static String m5(number) => "Завдання № ${number}";
 
-  static String m6(number) => "ТТН № ${number}";
+  static String m6(number) => "Документ № ${number}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "back": MessageLookupByLibrary.simpleMessage("Назад"),
         "carLicensePlate":
-            MessageLookupByLibrary.simpleMessage("Державний номер автомобіля"),
+            MessageLookupByLibrary.simpleMessage("Номерний знак авто"),
         "carNumberNotRegistered": MessageLookupByLibrary.simpleMessage(
-            "Вказаний державний номер авто не зареєстрований. Зверніться до керівника"),
+            "Вказаний номер авто не зареєстрований. Зверніться до адміністратора"),
         "confirmCompletion":
-            MessageLookupByLibrary.simpleMessage("Підтвердити виконання"),
+            MessageLookupByLibrary.simpleMessage("Підтвердити завершення"),
         "confirmExecution":
             MessageLookupByLibrary.simpleMessage("Підтвердити виконання"),
-        "distributionKKZ": MessageLookupByLibrary.simpleMessage("Розподіл ККЗ"),
-        "email": MessageLookupByLibrary.simpleMessage("Пошта"),
-        "empty": MessageLookupByLibrary.simpleMessage("Порожній"),
-        "enter": MessageLookupByLibrary.simpleMessage("Увійти"),
-        "enterPassword": MessageLookupByLibrary.simpleMessage("Введіть пароль"),
-        "entrance": MessageLookupByLibrary.simpleMessage("Вхід"),
-        "farm": MessageLookupByLibrary.simpleMessage("Дільниця"),
+        "distributionKKZ":
+            MessageLookupByLibrary.simpleMessage("Розподіл комбікорму"),
+        "email": MessageLookupByLibrary.simpleMessage("Електронна адреса"),
+        "empty": MessageLookupByLibrary.simpleMessage("Вільний"),
+        "enter": MessageLookupByLibrary.simpleMessage("Вхід"),
+        "enterPassword":
+            MessageLookupByLibrary.simpleMessage("Введіть код доступу"),
+        "entrance": MessageLookupByLibrary.simpleMessage("Вхідна точка"),
+        "farm": MessageLookupByLibrary.simpleMessage("Секція"),
         "farmNumber": m0,
-        "finish": MessageLookupByLibrary.simpleMessage("Фініш"),
-        "full": MessageLookupByLibrary.simpleMessage("Повний"),
-        "growth": MessageLookupByLibrary.simpleMessage("Ріст"),
-        "incorrectCode":
-            MessageLookupByLibrary.simpleMessage("Неправильний код"),
+        "finish": MessageLookupByLibrary.simpleMessage("Закінчити"),
+        "full": MessageLookupByLibrary.simpleMessage("Заповнений"),
+        "growth": MessageLookupByLibrary.simpleMessage("Зростання"),
+        "incorrectCode": MessageLookupByLibrary.simpleMessage("Код невірний"),
         "incorrectPassword": MessageLookupByLibrary.simpleMessage(
-            "Пароль невірний. Зверніться до керівника"),
+            "Невірний код. Зверніться до адміністратора"),
         "kkzDelivery":
             MessageLookupByLibrary.simpleMessage("Доставка комбікорму"),
-        "loadingPleaseWait":
-            MessageLookupByLibrary.simpleMessage("Зачекайте, йде завантаження"),
+        "loadingPleaseWait": MessageLookupByLibrary.simpleMessage(
+            "Завантаження, будь ласка, зачекайте"),
         "next": MessageLookupByLibrary.simpleMessage("Далі"),
-        "noFeed": MessageLookupByLibrary.simpleMessage("Нема корму"),
-        "noServerResponse": MessageLookupByLibrary.simpleMessage(
-            "Не отримано відповідь від сервера"),
-        "password": MessageLookupByLibrary.simpleMessage("Пароль"),
-        "phoneNumber": MessageLookupByLibrary.simpleMessage("Номер телефону"),
+        "noFeed": MessageLookupByLibrary.simpleMessage("Корм відсутній"),
+        "noServerResponse":
+            MessageLookupByLibrary.simpleMessage("Немає відповіді від сервера"),
+        "password": MessageLookupByLibrary.simpleMessage("Код доступу"),
+        "phoneNumber": MessageLookupByLibrary.simpleMessage("Телефон"),
         "pointCameraToBarcode": MessageLookupByLibrary.simpleMessage(
-            "Наведіть камеру на штрих-код накладної"),
-        "poultryHouse": MessageLookupByLibrary.simpleMessage("Пташник"),
+            "Наведіть камеру на штрих-код"),
+        "poultryHouse": MessageLookupByLibrary.simpleMessage("Корпус"),
         "poultryHouseNumber": m1,
         "pressButtonToScanTtn": MessageLookupByLibrary.simpleMessage(
-            "Натисніть на кнопку, щоб почати сканування ТТН"),
-        "required": MessageLookupByLibrary.simpleMessage("Потрібно"),
-        "scanTtn": MessageLookupByLibrary.simpleMessage("Скануйте ТТН"),
-        "scanTtnButton": MessageLookupByLibrary.simpleMessage("Сканувати ТТН"),
+            "Натисніть кнопку для сканування документа"),
+        "required": MessageLookupByLibrary.simpleMessage("Необхідно"),
+        "scanTtn": MessageLookupByLibrary.simpleMessage("Скануйте документ"),
+        "scanTtnButton":
+            MessageLookupByLibrary.simpleMessage("Сканувати документ"),
         "selectPoultryHouse":
-            MessageLookupByLibrary.simpleMessage("Оберіть пташник"),
-        "selectShipment": MessageLookupByLibrary.simpleMessage("Оберіть РЕЙС"),
-        "selectSilo": MessageLookupByLibrary.simpleMessage("Оберіть бункер"),
-        "selectTask": MessageLookupByLibrary.simpleMessage("Оберіть завдання"),
+            MessageLookupByLibrary.simpleMessage("Виберіть корпус"),
+        "selectShipment":
+            MessageLookupByLibrary.simpleMessage("Виберіть перевезення"),
+        "selectSilo":
+            MessageLookupByLibrary.simpleMessage("Виберіть резервуар"),
+        "selectTask": MessageLookupByLibrary.simpleMessage("Виберіть завдання"),
         "shipmentNumber": m2,
-        "silo": MessageLookupByLibrary.simpleMessage("Бункер"),
+        "silo": MessageLookupByLibrary.simpleMessage("Резервуар"),
         "siloEmpty": m3,
         "siloNumber": m4,
-        "start": MessageLookupByLibrary.simpleMessage("Старт"),
+        "start": MessageLookupByLibrary.simpleMessage("Почати"),
         "taskNumber": m5,
-        "totalActual": MessageLookupByLibrary.simpleMessage("Факт загальний"),
-        "tryAgain": MessageLookupByLibrary.simpleMessage("Спробувати ще раз"),
+        "totalActual": MessageLookupByLibrary.simpleMessage("Загальний обсяг"),
+        "tryAgain": MessageLookupByLibrary.simpleMessage("Повторити спробу"),
         "tryRescanTtn": MessageLookupByLibrary.simpleMessage(
-            "Будь ласка, спробуйте ще раз відсканувати ТТН"),
+            "Спробуйте ще раз відсканувати документ"),
         "ttnNumber": m6,
-        "ttnTask": MessageLookupByLibrary.simpleMessage("Завдання ТТН")
+        "ttnTask": MessageLookupByLibrary.simpleMessage("Завдання документа")
       };
 }
