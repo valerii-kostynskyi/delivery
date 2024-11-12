@@ -20,15 +20,15 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'uk';
 
-  static String m0(number) => "Бункер № ${number} порожній";
+  static String m0(number) => "Дільниця № ${number}";
 
-  static String m1(number) => "Бункер № ${number}";
+  static String m1(number) => "Пташник № ${number}";
 
-  static String m2(number) => "Пташник № ${number}";
+  static String m2(number) => "Рейс № ${number}";
 
-  static String m3(number) => "Дільниця № ${number}";
+  static String m3(number) => "Бункер № ${number} порожній";
 
-  static String m4(number) => "Рейс № ${number}";
+  static String m4(number) => "Бункер № ${number}";
 
   static String m5(number) => "Завдання № ${number}";
 
@@ -37,9 +37,6 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "back": MessageLookupByLibrary.simpleMessage("Назад"),
-        "bunker": MessageLookupByLibrary.simpleMessage("Бункер"),
-        "bunkerEmpty": m0,
-        "bunkerNumber": m1,
         "carLicensePlate":
             MessageLookupByLibrary.simpleMessage("Державний номер автомобіля"),
         "carNumberNotRegistered": MessageLookupByLibrary.simpleMessage(
@@ -54,6 +51,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "enter": MessageLookupByLibrary.simpleMessage("Увійти"),
         "enterPassword": MessageLookupByLibrary.simpleMessage("Введіть пароль"),
         "entrance": MessageLookupByLibrary.simpleMessage("Вхід"),
+        "farm": MessageLookupByLibrary.simpleMessage("Дільниця"),
+        "farmNumber": m0,
         "finish": MessageLookupByLibrary.simpleMessage("Фініш"),
         "full": MessageLookupByLibrary.simpleMessage("Повний"),
         "growth": MessageLookupByLibrary.simpleMessage("Ріст"),
@@ -74,22 +73,21 @@ class MessageLookup extends MessageLookupByLibrary {
         "pointCameraToBarcode": MessageLookupByLibrary.simpleMessage(
             "Наведіть камеру на штрих-код накладної"),
         "poultryHouse": MessageLookupByLibrary.simpleMessage("Пташник"),
-        "poultryHouseNumber": m2,
+        "poultryHouseNumber": m1,
         "pressButtonToScanTtn": MessageLookupByLibrary.simpleMessage(
             "Натисніть на кнопку, щоб почати сканування ТТН"),
         "required": MessageLookupByLibrary.simpleMessage("Потрібно"),
         "scanTtn": MessageLookupByLibrary.simpleMessage("Скануйте ТТН"),
         "scanTtnButton": MessageLookupByLibrary.simpleMessage("Сканувати ТТН"),
-        "sector": MessageLookupByLibrary.simpleMessage("Дільниця"),
-        "sectorNumber": m3,
-        "selectBunker": MessageLookupByLibrary.simpleMessage("Оберіть бункер"),
         "selectPoultryHouse":
             MessageLookupByLibrary.simpleMessage("Оберіть пташник"),
-        "selectSector":
-            MessageLookupByLibrary.simpleMessage("Оберіть дільницю"),
         "selectShipment": MessageLookupByLibrary.simpleMessage("Оберіть РЕЙС"),
+        "selectSilo": MessageLookupByLibrary.simpleMessage("Оберіть бункер"),
         "selectTask": MessageLookupByLibrary.simpleMessage("Оберіть завдання"),
-        "shipmentNumber": m4,
+        "shipmentNumber": m2,
+        "silo": MessageLookupByLibrary.simpleMessage("Бункер"),
+        "siloEmpty": m3,
+        "siloNumber": m4,
         "start": MessageLookupByLibrary.simpleMessage("Старт"),
         "taskNumber": m5,
         "totalActual": MessageLookupByLibrary.simpleMessage("Факт загальний"),

@@ -20,15 +20,15 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
-  static String m0(number) => "Bunker № ${number} is empty";
+  static String m0(number) => "Sector № ${number}";
 
-  static String m1(number) => "Bunker № ${number}";
+  static String m1(number) => "Poultry № ${number}";
 
-  static String m2(number) => "Poultry № ${number}";
+  static String m2(number) => "Shipment № ${number}";
 
-  static String m3(number) => "Sector № ${number}";
+  static String m3(number) => "silo № ${number} is empty";
 
-  static String m4(number) => "Shipment № ${number}";
+  static String m4(number) => "silo № ${number}";
 
   static String m5(number) => "Task № ${number}";
 
@@ -37,9 +37,6 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "back": MessageLookupByLibrary.simpleMessage("Back"),
-        "bunker": MessageLookupByLibrary.simpleMessage("Bunker"),
-        "bunkerEmpty": m0,
-        "bunkerNumber": m1,
         "carLicensePlate":
             MessageLookupByLibrary.simpleMessage("Car license plate"),
         "carNumberNotRegistered": MessageLookupByLibrary.simpleMessage(
@@ -55,6 +52,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "enter": MessageLookupByLibrary.simpleMessage("Enter"),
         "enterPassword": MessageLookupByLibrary.simpleMessage("Enter password"),
         "entrance": MessageLookupByLibrary.simpleMessage("Entrance"),
+        "farm": MessageLookupByLibrary.simpleMessage("Sector"),
+        "farmNumber": m0,
         "finish": MessageLookupByLibrary.simpleMessage("Finish"),
         "full": MessageLookupByLibrary.simpleMessage("Full"),
         "growth": MessageLookupByLibrary.simpleMessage("Growth"),
@@ -73,22 +72,22 @@ class MessageLookup extends MessageLookupByLibrary {
         "pointCameraToBarcode": MessageLookupByLibrary.simpleMessage(
             "Point the camera at the invoice barcode"),
         "poultryHouse": MessageLookupByLibrary.simpleMessage("Poultry house"),
-        "poultryHouseNumber": m2,
+        "poultryHouseNumber": m1,
         "pressButtonToScanTtn": MessageLookupByLibrary.simpleMessage(
             "Press the button to start scanning TTN"),
         "required": MessageLookupByLibrary.simpleMessage("Required"),
         "scanTtn": MessageLookupByLibrary.simpleMessage("Scan TTN"),
         "scanTtnButton": MessageLookupByLibrary.simpleMessage("Scan TTN"),
-        "sector": MessageLookupByLibrary.simpleMessage("Sector"),
-        "sectorNumber": m3,
-        "selectBunker": MessageLookupByLibrary.simpleMessage("Select bunker"),
         "selectPoultryHouse":
             MessageLookupByLibrary.simpleMessage("Select poultry house"),
-        "selectSector": MessageLookupByLibrary.simpleMessage("Select sector"),
         "selectShipment":
             MessageLookupByLibrary.simpleMessage("Select Shipment"),
+        "selectSilo": MessageLookupByLibrary.simpleMessage("Select silo"),
         "selectTask": MessageLookupByLibrary.simpleMessage("Select task"),
-        "shipmentNumber": m4,
+        "shipmentNumber": m2,
+        "silo": MessageLookupByLibrary.simpleMessage("silo"),
+        "siloEmpty": m3,
+        "siloNumber": m4,
         "start": MessageLookupByLibrary.simpleMessage("Start"),
         "taskNumber": m5,
         "totalActual": MessageLookupByLibrary.simpleMessage("Total actual"),

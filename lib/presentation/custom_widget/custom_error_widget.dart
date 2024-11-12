@@ -2,10 +2,16 @@ import 'package:feed_delivery/presentation/custom_widget/custom_button.dart';
 import 'package:feed_delivery/presentation/custom_widget/error_icon.dart';
 import 'package:feed_delivery/presentation/utility/extension/change_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
 class CustomErrorWidget extends StatelessWidget {
-  const CustomErrorWidget({super.key});
+  final String message;
+  final VoidCallback onRetry;
+
+  const CustomErrorWidget({
+    super.key,
+    required this.message,
+    required this.onRetry,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +26,7 @@ class CustomErrorWidget extends StatelessWidget {
           ),
           const SizedBox(height: 24),
           Text(
-            context.localizations.noServerResponse,
+            message,
             textAlign: TextAlign.center,
             style: Theme.of(context).textTheme.labelLarge,
           ),
@@ -32,8 +38,8 @@ class CustomErrorWidget extends StatelessWidget {
           const SizedBox(height: 32),
           CustomButton(
             label: context.localizations.tryAgain,
-            onPressed: () => context.pop(),
-          )
+            onPressed: onRetry,
+          ),
         ],
       ),
     );

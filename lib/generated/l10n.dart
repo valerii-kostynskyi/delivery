@@ -140,21 +140,21 @@ class S {
     );
   }
 
-  /// `Select bunker`
-  String get selectBunker {
+  /// `Select silo`
+  String get selectSilo {
     return Intl.message(
-      'Select bunker',
-      name: 'selectBunker',
+      'Select silo',
+      name: 'selectSilo',
       desc: '',
       args: [],
     );
   }
 
   /// `Sector № {number}`
-  String sectorNumber(Object number) {
+  String farmNumber(Object number) {
     return Intl.message(
       'Sector № $number',
-      name: 'sectorNumber',
+      name: 'farmNumber',
       desc: '',
       args: [number],
     );
@@ -310,21 +310,21 @@ class S {
     );
   }
 
-  /// `Bunker`
-  String get bunker {
+  /// `silo`
+  String get silo {
     return Intl.message(
-      'Bunker',
-      name: 'bunker',
+      'silo',
+      name: 'silo',
       desc: '',
       args: [],
     );
   }
 
   /// `Sector`
-  String get sector {
+  String get farm {
     return Intl.message(
       'Sector',
-      name: 'sector',
+      name: 'farm',
       desc: '',
       args: [],
     );
@@ -345,16 +345,6 @@ class S {
     return Intl.message(
       'Select task',
       name: 'selectTask',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Select sector`
-  String get selectSector {
-    return Intl.message(
-      'Select sector',
-      name: 'selectSector',
       desc: '',
       args: [],
     );
@@ -470,11 +460,11 @@ class S {
     );
   }
 
-  /// `Bunker № {number}`
-  String bunkerNumber(Object number) {
+  /// `silo № {number}`
+  String siloNumber(Object number) {
     return Intl.message(
-      'Bunker № $number',
-      name: 'bunkerNumber',
+      'silo № $number',
+      name: 'siloNumber',
       desc: '',
       args: [number],
     );
@@ -500,11 +490,11 @@ class S {
     );
   }
 
-  /// `Bunker № {number} is empty`
-  String bunkerEmpty(Object number) {
+  /// `silo № {number} is empty`
+  String siloEmpty(Object number) {
     return Intl.message(
-      'Bunker № $number is empty',
-      name: 'bunkerEmpty',
+      'silo № $number is empty',
+      name: 'siloEmpty',
       desc: '',
       args: [number],
     );

@@ -1,17 +1,41 @@
+# Flutter related files
+.dart_tool/
+.packages
+.flutter-plugins
+.flutter-plugins-dependencies
+.metadata
+build/
+pubspec.lock
+.idea/
+.vscode/
+*.iml
+android/.gradle
+android/app/proguard-rules.pro
+android/gradle/wrapper/gradle-wrapper.properties
+ios/Pods
+ios/.symlinks/
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+
+# FVM related files
+.fvm/
+.flutter_sdk/
+fvm/flutter_sdk
+flutter/.fvm
+
+# Flutter ephemeral files
 flutter/ephemeral/
 
-# Visual Studio user-specific files.
+# Visual Studio specific files
 *.suo
 *.user
 *.userosscache
 *.sln.docstates
 
-# Visual Studio build-related files.
+# Visual Studio build-related files
 x64/
 x86/
 
 # Visual Studio cache files
-# files ending in .cache can be ignored
 *.[Cc]ache
-# but keep track of directories ending in .cache
 !*.[Cc]ache/

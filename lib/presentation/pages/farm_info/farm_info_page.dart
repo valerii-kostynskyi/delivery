@@ -1,12 +1,12 @@
 import 'package:feed_delivery/presentation/custom_widget/license_palet.dart';
 import 'package:feed_delivery/presentation/custom_widget/progress_widget.dart';
-import 'package:feed_delivery/presentation/pages/sector_info/widget/sector_info_task_item.dart';
+import 'package:feed_delivery/presentation/pages/farm_info/widget/farm_info_task_item.dart';
 import 'package:feed_delivery/presentation/utility/extension/change_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class SectorInfoPage extends StatelessWidget {
-  const SectorInfoPage({super.key});
+class FarmInfoPage extends StatelessWidget {
+  const FarmInfoPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,7 @@ class SectorInfoPage extends StatelessWidget {
             children: [
               const SizedBox(height: 48),
               Text(
-                context.localizations.sectorNumber(1),
+                context.localizations.farmNumber(1),
                 style: Theme.of(context).textTheme.bodyLarge,
               ),
               const SizedBox(height: 8),
@@ -40,8 +40,8 @@ class SectorInfoPage extends StatelessWidget {
                 children: [
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 16),
-                    child: SectorInfoTaskItem(
-                      taskItemModel: SectorInfoTaskModel(
+                    child: FarmInfoTaskItem(
+                      taskItemModel: FarmInfoTaskModel(
                         index: 1,
                         completedUnits: 12,
                         totalUnits: 12,
@@ -53,8 +53,8 @@ class SectorInfoPage extends StatelessWidget {
                   const SizedBox(height: 16),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 16),
-                    child: SectorInfoTaskItem(
-                      taskItemModel: SectorInfoTaskModel(
+                    child: FarmInfoTaskItem(
+                      taskItemModel: FarmInfoTaskModel(
                         index: 2,
                         completedUnits: 8,
                         totalUnits: 12,
@@ -67,7 +67,7 @@ class SectorInfoPage extends StatelessWidget {
               ),
             ),
           ),
-          SectorProgressComponent(
+          FarmProgressComponent(
             totalCapacity: 300,
             items: [
               ProgressListItem(
@@ -93,12 +93,12 @@ class SectorInfoPage extends StatelessWidget {
   }
 }
 
-class SectorInfoTaskModel {
+class FarmInfoTaskModel {
   final int index;
   final int completedUnits;
   final int totalUnits;
 
-  SectorInfoTaskModel({
+  FarmInfoTaskModel({
     required this.index,
     required this.completedUnits,
     required this.totalUnits,

@@ -1,14 +1,14 @@
-import 'package:feed_delivery/presentation/pages/sector_info/sector_info_page.dart';
+import 'package:feed_delivery/presentation/pages/farm_info/farm_info_page.dart';
 import 'package:feed_delivery/presentation/utility/extension/change_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-class SectorInfoTaskItem extends StatelessWidget {
-  final SectorInfoTaskModel taskItemModel;
+class FarmInfoTaskItem extends StatelessWidget {
+  final FarmInfoTaskModel taskItemModel;
   final bool isTaskItem;
   final void Function()? onTap;
 
-  const SectorInfoTaskItem({
+  const FarmInfoTaskItem({
     super.key,
     required this.taskItemModel,
     this.isTaskItem = false,
@@ -21,7 +21,7 @@ class SectorInfoTaskItem extends StatelessWidget {
     final theme = Theme.of(context);
     String title = isTaskItem
         ? context.localizations.taskNumber(taskItemModel.index)
-        : context.localizations.sectorNumber(taskItemModel.index);
+        : context.localizations.farmNumber(taskItemModel.index);
     String iconName = isCompleted ? 'check' : 'arrow-right';
     return GestureDetector(
       onTap: onTap,

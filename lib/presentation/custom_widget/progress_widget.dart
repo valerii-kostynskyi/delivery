@@ -14,12 +14,12 @@ class ProgressListItem {
   });
 }
 
-class SectorProgressComponent extends StatelessWidget {
+class FarmProgressComponent extends StatelessWidget {
   final List<ProgressListItem> items;
   final int totalCapacity;
   final double barHeight = 56;
 
-  const SectorProgressComponent({
+  const FarmProgressComponent({
     super.key,
     required this.items,
     required this.totalCapacity,
