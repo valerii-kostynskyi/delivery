@@ -20,82 +20,82 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
-  static String m0(number) => "Section № ${number}";
+  static String m0(number) => "Sector № ${number}";
 
-  static String m1(number) => "Building № ${number}";
+  static String m1(number) => "Poultry № ${number}";
 
-  static String m2(number) => "Delivery № ${number}";
+  static String m2(number) => "Shipment № ${number}";
 
-  static String m3(number) => "Storage № ${number} is vacant";
+  static String m3(number) => "silo № ${number} is empty";
 
-  static String m4(number) => "Storage № ${number}";
+  static String m4(number) => "silo № ${number}";
 
   static String m5(number) => "Task № ${number}";
 
-  static String m6(number) => "Document № ${number}";
+  static String m6(number) => "TTN № ${number}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "back": MessageLookupByLibrary.simpleMessage("Back"),
         "carLicensePlate":
-            MessageLookupByLibrary.simpleMessage("Vehicle license plate"),
+            MessageLookupByLibrary.simpleMessage("Car license plate"),
         "carNumberNotRegistered": MessageLookupByLibrary.simpleMessage(
-            "The vehicle number is not registered. Contact the administrator"),
+            "The car number is not registered. Contact the manager"),
         "confirmCompletion":
             MessageLookupByLibrary.simpleMessage("Confirm completion"),
         "confirmExecution":
             MessageLookupByLibrary.simpleMessage("Confirm execution"),
         "distributionKKZ":
-            MessageLookupByLibrary.simpleMessage("Feed distribution"),
-        "email": MessageLookupByLibrary.simpleMessage("Email address"),
-        "empty": MessageLookupByLibrary.simpleMessage("Vacant"),
-        "enter": MessageLookupByLibrary.simpleMessage("Sign in"),
-        "enterPassword":
-            MessageLookupByLibrary.simpleMessage("Enter access code"),
-        "entrance": MessageLookupByLibrary.simpleMessage("Entry point"),
-        "farm": MessageLookupByLibrary.simpleMessage("Section"),
+            MessageLookupByLibrary.simpleMessage("KKZ Distribution"),
+        "email": MessageLookupByLibrary.simpleMessage("Email"),
+        "empty": MessageLookupByLibrary.simpleMessage("Empty"),
+        "enter": MessageLookupByLibrary.simpleMessage("Enter"),
+        "enterPassword": MessageLookupByLibrary.simpleMessage("Enter password"),
+        "entrance": MessageLookupByLibrary.simpleMessage("Entrance"),
+        "farm": MessageLookupByLibrary.simpleMessage("Sector"),
         "farmNumber": m0,
-        "finish": MessageLookupByLibrary.simpleMessage("End"),
-        "full": MessageLookupByLibrary.simpleMessage("Occupied"),
+        "finish": MessageLookupByLibrary.simpleMessage("Finish"),
+        "full": MessageLookupByLibrary.simpleMessage("Full"),
         "growth": MessageLookupByLibrary.simpleMessage("Growth"),
-        "incorrectCode": MessageLookupByLibrary.simpleMessage("Invalid code"),
+        "incorrectCode": MessageLookupByLibrary.simpleMessage("Incorrect code"),
         "incorrectPassword": MessageLookupByLibrary.simpleMessage(
-            "Incorrect access code. Contact the administrator"),
-        "kkzDelivery": MessageLookupByLibrary.simpleMessage("Feed delivery"),
+            "Password is incorrect. Contact the manager"),
+        "kkzDelivery": MessageLookupByLibrary.simpleMessage("KKZ Delivery"),
         "loadingPleaseWait":
-            MessageLookupByLibrary.simpleMessage("Loading, please wait"),
+            MessageLookupByLibrary.simpleMessage("Please wait, loading"),
+        "logout": MessageLookupByLibrary.simpleMessage("Logout"),
         "next": MessageLookupByLibrary.simpleMessage("Next"),
-        "noFeed": MessageLookupByLibrary.simpleMessage("Feed not available"),
+        "noFeed": MessageLookupByLibrary.simpleMessage("No feed"),
         "noServerResponse":
-            MessageLookupByLibrary.simpleMessage("No response from server"),
-        "password": MessageLookupByLibrary.simpleMessage("Access code"),
-        "phoneNumber": MessageLookupByLibrary.simpleMessage("Phone"),
+            MessageLookupByLibrary.simpleMessage("No server response"),
+        "password": MessageLookupByLibrary.simpleMessage("Password"),
+        "phoneNumber": MessageLookupByLibrary.simpleMessage("Phone number"),
         "pointCameraToBarcode": MessageLookupByLibrary.simpleMessage(
-            "Point the camera at the barcode"),
-        "poultryHouse": MessageLookupByLibrary.simpleMessage("Building"),
+            "Point the camera at the invoice barcode"),
+        "poultryHouse": MessageLookupByLibrary.simpleMessage("Poultry house"),
         "poultryHouseNumber": m1,
         "pressButtonToScanTtn": MessageLookupByLibrary.simpleMessage(
-            "Press the button to start scanning"),
+            "Press the button to start scanning TTN"),
         "required": MessageLookupByLibrary.simpleMessage("Required"),
-        "scanTtn": MessageLookupByLibrary.simpleMessage("Scan document"),
-        "scanTtnButton": MessageLookupByLibrary.simpleMessage("Scan document"),
+        "scanTtn": MessageLookupByLibrary.simpleMessage("Scan TTN"),
+        "scanTtnButton": MessageLookupByLibrary.simpleMessage("Scan TTN"),
         "selectPoultryHouse":
-            MessageLookupByLibrary.simpleMessage("Select building"),
+            MessageLookupByLibrary.simpleMessage("Select poultry house"),
         "selectShipment":
-            MessageLookupByLibrary.simpleMessage("Select delivery"),
-        "selectSilo": MessageLookupByLibrary.simpleMessage("Select storage"),
+            MessageLookupByLibrary.simpleMessage("Select Shipment"),
+        "selectSilo": MessageLookupByLibrary.simpleMessage("Select silo"),
         "selectTask": MessageLookupByLibrary.simpleMessage("Select task"),
         "shipmentNumber": m2,
-        "silo": MessageLookupByLibrary.simpleMessage("Storage"),
+        "silo": MessageLookupByLibrary.simpleMessage("silo"),
         "siloEmpty": m3,
         "siloNumber": m4,
         "start": MessageLookupByLibrary.simpleMessage("Start"),
         "taskNumber": m5,
-        "totalActual": MessageLookupByLibrary.simpleMessage("Total volume"),
-        "tryAgain": MessageLookupByLibrary.simpleMessage("Retry"),
+        "totalActual": MessageLookupByLibrary.simpleMessage("Total actual"),
+        "tryAgain": MessageLookupByLibrary.simpleMessage("Try again"),
         "tryRescanTtn":
-            MessageLookupByLibrary.simpleMessage("Please rescan the document"),
+            MessageLookupByLibrary.simpleMessage("Please rescan TTN"),
         "ttnNumber": m6,
-        "ttnTask": MessageLookupByLibrary.simpleMessage("Document task")
+        "ttnTask": MessageLookupByLibrary.simpleMessage("TTN task")
       };
 }
