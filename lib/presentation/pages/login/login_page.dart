@@ -1,9 +1,9 @@
-import 'package:feed_delivery/presentation/blocks/login/login_bloc.dart';
-import 'package:feed_delivery/presentation/custom_widget/custom_button.dart';
-import 'package:feed_delivery/presentation/custom_widget/custom_text_field.dart';
-import 'package:feed_delivery/presentation/custom_widget/warning.dart';
-import 'package:feed_delivery/presentation/utility/extension/change_localization.dart';
-import 'package:feed_delivery/presentation/utility/extension/uppercase_text_formater.dart';
+import 'package:delivery/presentation/blocks/login/login_bloc.dart';
+import 'package:delivery/presentation/custom_widget/custom_button.dart';
+import 'package:delivery/presentation/custom_widget/custom_text_field.dart';
+import 'package:delivery/presentation/custom_widget/warning.dart';
+import 'package:delivery/presentation/utility/extension/change_localization.dart';
+import 'package:delivery/presentation/utility/extension/uppercase_text_formater.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -33,7 +33,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return BlocProvider(
-      create: (_) => LoginBloc(),
+      create: (_) => LoginBloc()..add(const CheckAuthentication()),
       child: Scaffold(
         body: SafeArea(
           child: Padding(

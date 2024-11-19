@@ -1,5 +1,5 @@
-import 'package:feed_delivery/presentation/pages/list_silo/list_silo_page.dart';
-import 'package:feed_delivery/presentation/utility/extension/change_localization.dart';
+import 'package:delivery/data/models/list_silo_item_model.dart';
+import 'package:delivery/presentation/utility/extension/change_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 

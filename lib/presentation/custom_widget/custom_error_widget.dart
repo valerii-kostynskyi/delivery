@@ -1,6 +1,6 @@
-import 'package:feed_delivery/presentation/custom_widget/custom_button.dart';
-import 'package:feed_delivery/presentation/custom_widget/error_icon.dart';
-import 'package:feed_delivery/presentation/utility/extension/change_localization.dart';
+import 'package:delivery/presentation/custom_widget/custom_button.dart';
+import 'package:delivery/presentation/custom_widget/error_icon.dart';
+import 'package:delivery/presentation/utility/extension/change_localization.dart';
 import 'package:flutter/material.dart';
 
 class CustomErrorWidget extends StatelessWidget {

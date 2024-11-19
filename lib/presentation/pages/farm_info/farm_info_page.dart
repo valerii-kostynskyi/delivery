@@ -1,7 +1,8 @@
-import 'package:feed_delivery/presentation/custom_widget/license_palet.dart';
-import 'package:feed_delivery/presentation/custom_widget/progress_widget.dart';
-import 'package:feed_delivery/presentation/pages/farm_info/widget/farm_info_task_item.dart';
-import 'package:feed_delivery/presentation/utility/extension/change_localization.dart';
+import 'package:delivery/data/models/farm_info_task_model.dart';
+import 'package:delivery/presentation/custom_widget/license_palet.dart';
+import 'package:delivery/presentation/custom_widget/progress_widget.dart';
+import 'package:delivery/presentation/pages/farm_info/widget/farm_info_task_item.dart';
+import 'package:delivery/presentation/utility/extension/change_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -91,16 +92,4 @@ class FarmInfoPage extends StatelessWidget {
       ),
     );
   }
-}
-
-class FarmInfoTaskModel {
-  final int index;
-  final int completedUnits;
-  final int totalUnits;
-
-  FarmInfoTaskModel({
-    required this.index,
-    required this.completedUnits,
-    required this.totalUnits,
-  });
 }

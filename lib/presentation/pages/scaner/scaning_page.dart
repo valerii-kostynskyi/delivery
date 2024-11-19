@@ -1,10 +1,10 @@
-import 'package:feed_delivery/presentation/blocks/scan/scan_bloc.dart';
-import 'package:feed_delivery/presentation/custom_widget/custom_button.dart';
-import 'package:feed_delivery/presentation/custom_widget/custom_error_widget.dart';
-import 'package:feed_delivery/presentation/custom_widget/error_icon.dart';
-import 'package:feed_delivery/presentation/custom_widget/license_palet.dart';
-import 'package:feed_delivery/presentation/custom_widget/loading_screen.dart';
-import 'package:feed_delivery/presentation/utility/extension/change_localization.dart';
+import 'package:delivery/presentation/blocks/scan/scan_bloc.dart';
+import 'package:delivery/presentation/custom_widget/custom_button.dart';
+import 'package:delivery/presentation/custom_widget/custom_error_widget.dart';
+import 'package:delivery/presentation/custom_widget/error_icon.dart';
+import 'package:delivery/presentation/custom_widget/license_palet.dart';
+import 'package:delivery/presentation/custom_widget/loading_screen.dart';
+import 'package:delivery/presentation/utility/extension/change_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';

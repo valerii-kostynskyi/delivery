@@ -1,4 +1,4 @@
-import 'package:feed_delivery/domain/auth_repositoy.dart';
+import 'package:delivery/domain/auth_repositoy.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:get_it/get_it.dart';
@@ -13,8 +13,6 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
   LoginBloc() : super(const LoginState.initial()) {
     on<Submit>(_onSubmit);
     on<CheckAuthentication>(_onCheckAuthentication);
-
-    add(const LoginEvent.checkAuthentication());
   }
 
   Future<void> _onSubmit(Submit event, Emitter<LoginState> emit) async {

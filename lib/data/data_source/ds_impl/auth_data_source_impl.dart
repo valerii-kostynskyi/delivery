@@ -1,5 +1,5 @@
-import 'package:feed_delivery/data/data_source/auth_data_source.dart';
-import 'package:feed_delivery/presentation/utility/error_handler/error_handler.dart';
+import 'package:delivery/data/data_source/auth_data_source.dart';
+import 'package:delivery/presentation/utility/error_handler/error_handler.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
 class AuthDataSourceImpl implements AuthDataSource {

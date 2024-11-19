@@ -1,5 +1,5 @@
-import 'package:feed_delivery/presentation/pages/task_list/task_list_page.dart';
-import 'package:feed_delivery/presentation/utility/extension/change_localization.dart';
+import 'package:delivery/data/models/task_list_item_model.dart';
+import 'package:delivery/presentation/utility/extension/change_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 

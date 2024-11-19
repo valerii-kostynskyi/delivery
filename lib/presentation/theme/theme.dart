@@ -1,4 +1,4 @@
-import 'package:feed_delivery/presentation/theme/app_colors.dart';
+import 'package:delivery/presentation/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 
 final lightTheme = ThemeData(

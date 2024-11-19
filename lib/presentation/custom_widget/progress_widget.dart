@@ -1,5 +1,5 @@
-import 'package:feed_delivery/presentation/custom_widget/dotted_separator.dart';
-import 'package:feed_delivery/presentation/utility/extension/change_localization.dart';
+import 'package:delivery/presentation/custom_widget/dotted_separator.dart';
+import 'package:delivery/presentation/utility/extension/change_localization.dart';
 import 'package:flutter/material.dart';
 
 class ProgressListItem {

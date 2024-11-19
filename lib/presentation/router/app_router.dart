@@ -1,11 +1,13 @@
-import 'package:feed_delivery/presentation/pages/login/login_page.dart';
-import 'package:feed_delivery/presentation/pages/detail_silo_page/detail_silo_page.dart';
-import 'package:feed_delivery/presentation/pages/detail_task_page/detail_task_page.dart';
-import 'package:feed_delivery/presentation/pages/list_silo/list_silo_page.dart';
-import 'package:feed_delivery/presentation/pages/scaner/scaning_page.dart';
-import 'package:feed_delivery/presentation/pages/splash/splash_page.dart';
-import 'package:feed_delivery/presentation/pages/farm_info/farm_info_page.dart';
-import 'package:feed_delivery/presentation/pages/task_list/task_list_page.dart';
+import 'package:delivery/data/models/list_silo_item_model.dart';
+import 'package:delivery/data/models/task_list_item_model.dart';
+import 'package:delivery/presentation/pages/login/login_page.dart';
+import 'package:delivery/presentation/pages/detail_silo_page/detail_silo_page.dart';
+import 'package:delivery/presentation/pages/detail_task_page/detail_task_page.dart';
+import 'package:delivery/presentation/pages/list_silo/list_silo_page.dart';
+import 'package:delivery/presentation/pages/scaner/scaning_page.dart';
+import 'package:delivery/presentation/pages/splash/splash_page.dart';
+import 'package:delivery/presentation/pages/farm_info/farm_info_page.dart';
+import 'package:delivery/presentation/pages/task_list/task_list_page.dart';
 import 'package:go_router/go_router.dart';
 
 final GoRouter router = GoRouter(

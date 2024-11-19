@@ -1,7 +1,7 @@
+import 'package:delivery/data/data_source/api_data_source.dart';
+import 'package:delivery/data/data_source/auth_data_source.dart';
+import 'package:delivery/presentation/utility/error_handler/error_handler.dart';
 import 'package:dio/dio.dart';
-import 'package:feed_delivery/data/data_source/api_data_source.dart';
-import 'package:feed_delivery/data/data_source/auth_data_source.dart';
-import 'package:feed_delivery/presentation/utility/error_handler/error_handler.dart';
 import 'package:flutter/foundation.dart';
 
 class ApiDataSourceImpl implements ApiDataSource {
