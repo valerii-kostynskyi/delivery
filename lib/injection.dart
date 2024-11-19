@@ -1,14 +1,14 @@
 import 'package:dio/dio.dart';
-import 'package:feed_delivery/data/data_source/api_data_source.dart';
-import 'package:feed_delivery/data/data_source/auth_data_source.dart';
-import 'package:feed_delivery/data/data_source/ds_impl/api_data_source_impl.dart';
-import 'package:feed_delivery/data/data_source/ds_impl/auth_data_source_impl.dart';
-import 'package:feed_delivery/data/data_source/ds_impl/mock_data_source_impl.dart';
-import 'package:feed_delivery/data/data_source/mock_data_source.dart';
-import 'package:feed_delivery/domain/auth_repositoy.dart';
-import 'package:feed_delivery/domain/repo_impl/auth_repositoy_impl.dart';
-import 'package:feed_delivery/presentation/utility/error_handler/error_handler.dart';
-import 'package:feed_delivery/presentation/utility/error_handler/error_handler_impl.dart';
+import 'package:delivery/data/data_source/api_data_source.dart';
+import 'package:delivery/data/data_source/auth_data_source.dart';
+import 'package:delivery/data/data_source/ds_impl/api_data_source_impl.dart';
+import 'package:delivery/data/data_source/ds_impl/auth_data_source_impl.dart';
+import 'package:delivery/data/data_source/ds_impl/mock_data_source_impl.dart';
+import 'package:delivery/data/data_source/mock_data_source.dart';
+import 'package:delivery/domain/auth_repositoy.dart';
+import 'package:delivery/domain/repo_impl/auth_repositoy_impl.dart';
+import 'package:delivery/presentation/utility/error_handler/error_handler.dart';
+import 'package:delivery/presentation/utility/error_handler/error_handler_impl.dart';
 
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:get_it/get_it.dart';

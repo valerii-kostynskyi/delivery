@@ -1,7 +1,23 @@
-import 'package:feed_delivery/data/data_source/mock_data_source.dart';
+import 'package:delivery/data/data_source/mock_data_source.dart';
+import 'package:delivery/data/models/list_silo_item_model.dart';
 
 class MockDataSourceImpl implements MockDataSource {
   MockDataSourceImpl();
+
+  @override
+  Future<List<ListSiloItemModel>> fetchSilos() async {
+    await Future.delayed(const Duration(seconds: 1));
+    return List.generate(
+      11,
+      (index) => ListSiloItemModel(
+        index: index + 1,
+        isEmpty: index % 3 == 0,
+        farmNumber: index + 1,
+        siloNumber: index + 1,
+        ttnNumber: index + 12345678 + index,
+      ),
+    );
+  }
 
   @override
   Future<String?> authenticate({

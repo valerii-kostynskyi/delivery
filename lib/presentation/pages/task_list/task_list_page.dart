@@ -1,6 +1,7 @@
-import 'package:feed_delivery/presentation/custom_widget/back_button_widget.dart';
-import 'package:feed_delivery/presentation/pages/task_list/widget/task_list_item.dart';
-import 'package:feed_delivery/presentation/utility/extension/change_localization.dart';
+import 'package:delivery/data/models/task_list_item_model.dart';
+import 'package:delivery/presentation/custom_widget/back_button_widget.dart';
+import 'package:delivery/presentation/pages/task_list/widget/task_list_item.dart';
+import 'package:delivery/presentation/utility/extension/change_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
@@ -189,19 +190,3 @@ class _TaskListPageState extends State<TaskListPage> {
     );
   }
 }
-
-class TaskListItemModel {
-  final int index;
-  final String title;
-  final double tons;
-  final Status status;
-
-  TaskListItemModel({
-    required this.index,
-    required this.title,
-    required this.tons,
-    required this.status,
-  });
-}
-
-enum Status { empty, full, inProcess }

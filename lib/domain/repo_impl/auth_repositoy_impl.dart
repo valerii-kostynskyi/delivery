@@ -1,7 +1,7 @@
-import 'package:feed_delivery/data/data_source/api_data_source.dart';
-import 'package:feed_delivery/data/data_source/auth_data_source.dart';
-import 'package:feed_delivery/data/data_source/mock_data_source.dart';
-import 'package:feed_delivery/domain/auth_repositoy.dart';
+import 'package:delivery/data/data_source/api_data_source.dart';
+import 'package:delivery/data/data_source/auth_data_source.dart';
+import 'package:delivery/data/data_source/mock_data_source.dart';
+import 'package:delivery/domain/auth_repositoy.dart';
 
 class AuthRepositoryImpl implements AuthRepository {
   final AuthDataSource authDataSource;

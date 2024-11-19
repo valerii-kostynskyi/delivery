@@ -1,6 +1,9 @@
-import 'package:feed_delivery/presentation/blocks/list_silo/list_silo_bloc.dart';
-import 'package:feed_delivery/presentation/pages/list_silo/widget/list_silo_item.dart';
-import 'package:feed_delivery/presentation/utility/extension/change_localization.dart';
+import 'package:delivery/data/models/list_silo_item_model.dart';
+import 'package:delivery/presentation/blocks/list_silo/list_silo_bloc.dart';
+import 'package:delivery/presentation/custom_widget/custom_error_widget.dart';
+import 'package:delivery/presentation/pages/list_silo/widget/list_silo_item.dart';
+import 'package:delivery/presentation/utility/extension/change_localization.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -44,7 +47,7 @@ class _ListSiloPageState extends State<ListSiloPage> {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return BlocProvider(
-      create: (_) => ListSiloBloc(),
+      create: (_) => ListSiloBloc()..add(const ListSiloEvent.loadSilos()),
       child: Scaffold(
         body: CustomScrollView(
           controller: _scrollController,
@@ -100,49 +103,72 @@ class _ListSiloPageState extends State<ListSiloPage> {
                 },
               ),
             ),
-            SliverPadding(
-              padding: const EdgeInsets.all(16.0),
-              sliver: SliverGrid(
-                delegate: SliverChildBuilderDelegate(
-                  (context, index) {
-                    final cardItemModel = ListSiloItemModel(
-                      index: index + 1,
-                      isEmpty: index % 3 != 0,
-                    );
+            BlocBuilder<ListSiloBloc, ListSiloState>(
+              builder: (context, state) {
+                if (state.status == ListSiloStatus.loading) {
+                  return const SliverFillRemaining(
+                    child: Center(
+                      child: CupertinoActivityIndicator(radius: 15),
+                    ),
+                  );
+                }
 
-                    return ListSiloItem(
-                      cardItemModel: cardItemModel,
-                      onTap: () {
-                        context.push(
-                          '/detail-silo-page/${cardItemModel.index}',
-                          extra: cardItemModel,
+                if (state.status == ListSiloStatus.error) {
+                  return SliverFillRemaining(
+                    child: CustomErrorWidget(
+                      message: context.localizations.noServerResponse,
+                      onRetry: () => context.read<ListSiloBloc>()
+                        ..add(const ListSiloEvent.loadSilos()),
+                    ),
+                  );
+                }
+
+                if (state.status == ListSiloStatus.empty) {
+                  return SliverFillRemaining(
+                    child: Center(
+                      child: Text(
+                        'context.localizations.noSilosAvailable',
+                        style: theme.textTheme.bodyLarge,
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  );
+                }
+
+                return SliverPadding(
+                  padding: const EdgeInsets.all(16.0),
+                  sliver: SliverGrid(
+                    delegate: SliverChildBuilderDelegate(
+                      (context, index) {
+                        final ListSiloItemModel cardItemModel =
+                            state.silos[index];
+
+                        return ListSiloItem(
+                          cardItemModel: cardItemModel,
+                          onTap: () {
+                            context.push(
+                              '/detail-silo-page/${cardItemModel.index}',
+                              extra: cardItemModel,
+                            );
+                          },
                         );
                       },
-                    );
-                  },
-                  childCount: 17,
-                ),
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  mainAxisSpacing: 2,
-                  crossAxisSpacing: 2,
-                  childAspectRatio: 1,
-                ),
-              ),
+                      childCount: state.silos.length,
+                    ),
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      mainAxisSpacing: 2,
+                      crossAxisSpacing: 2,
+                      childAspectRatio: 1,
+                    ),
+                  ),
+                );
+              },
             ),
           ],
         ),
       ),
     );
   }
-}
-
-class ListSiloItemModel {
-  final int index;
-  final bool isEmpty;
-
-  ListSiloItemModel({
-    required this.index,
-    required this.isEmpty,
-  });
 }

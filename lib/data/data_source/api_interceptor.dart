@@ -1,5 +1,5 @@
+import 'package:delivery/data/data_source/auth_data_source.dart';
 import 'package:dio/dio.dart';
-import 'package:feed_delivery/data/data_source/auth_data_source.dart';
 import 'package:flutter/foundation.dart';
 
 class AuthInterceptor extends Interceptor {
