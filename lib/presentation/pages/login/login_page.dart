@@ -42,10 +42,10 @@ class _LoginPageState extends State<LoginPage> {
                 child: BlocConsumer<LoginBloc, LoginState>(
               listener: (context, state) {
                 if (state is Success) {
-                  if (state.driver == "driver_1") {
+                  if (state.driver == "outer") {
                     context.go('/scaning-page');
-                  } else if (state.driver == "driver_2") {
-                    context.go('/farm-info-page');
+                  } else if (state.driver == "inner") {
+                    context.go('/general-info-page');
                   }
                 }
                 if (state is Login) {

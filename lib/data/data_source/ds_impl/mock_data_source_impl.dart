@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:delivery/data/data_source/mock_data_source.dart';
+import 'package:delivery/data/models/auth_model/auth_model.dart';
 import 'package:delivery/data/models/detail_task_model/detail_task_model.dart';
 import 'package:delivery/data/models/general_inner_info/general_info_inner_model.dart';
 import 'package:delivery/data/models/list_silo_item/list_silo_item_model.dart';
@@ -312,5 +313,18 @@ class MockDataSourceImpl implements MockDataSource {
   Future<int?> getWayBillID({required String barcode}) async {
     await Future.delayed(const Duration(milliseconds: 500));
     return 1;
+  }
+
+  @override
+  Future<AuthModel?> login({
+    required String carNumber,
+    required String password,
+  }) async {
+    return AuthModel(
+      accessToken: '',
+      tokenType: '',
+      // role: 'outer',
+      role: 'inner',
+    );
   }
 }

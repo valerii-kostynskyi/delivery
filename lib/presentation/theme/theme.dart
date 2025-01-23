@@ -15,7 +15,7 @@ final lightTheme = ThemeData(
   hoverColor: AppColors.lightGreen,
   highlightColor: AppColors.lightGreen,
   hintColor: AppColors.hint,
-  indicatorColor: AppColors.green,
+  indicatorColor: AppColors.lightGreen,
   splashColor: AppColors.lightGreen,
   shadowColor: AppColors.black.withOpacity(0.08),
   dialogBackgroundColor: AppColors.white,
