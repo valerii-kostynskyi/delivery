@@ -20,18 +20,24 @@ mixin _$ScanEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() startScan,
     required TResult Function() retryScan,
+    required TResult Function() initializeCarNumber,
+    required TResult Function() logout,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? startScan,
     TResult? Function()? retryScan,
+    TResult? Function()? initializeCarNumber,
+    TResult? Function()? logout,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? startScan,
     TResult Function()? retryScan,
+    TResult Function()? initializeCarNumber,
+    TResult Function()? logout,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -39,18 +45,24 @@ mixin _$ScanEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(StartScan value) startScan,
     required TResult Function(RetryScan value) retryScan,
+    required TResult Function(InitializeCarNumber value) initializeCarNumber,
+    required TResult Function(Logout value) logout,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(StartScan value)? startScan,
     TResult? Function(RetryScan value)? retryScan,
+    TResult? Function(InitializeCarNumber value)? initializeCarNumber,
+    TResult? Function(Logout value)? logout,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(StartScan value)? startScan,
     TResult Function(RetryScan value)? retryScan,
+    TResult Function(InitializeCarNumber value)? initializeCarNumber,
+    TResult Function(Logout value)? logout,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -71,6 +83,9 @@ class _$ScanEventCopyWithImpl<$Res, $Val extends ScanEvent>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of ScanEvent
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -87,6 +102,9 @@ class __$$StartScanImplCopyWithImpl<$Res>
   __$$StartScanImplCopyWithImpl(
       _$StartScanImpl _value, $Res Function(_$StartScanImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of ScanEvent
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -113,6 +131,8 @@ class _$StartScanImpl implements StartScan {
   TResult when<TResult extends Object?>({
     required TResult Function() startScan,
     required TResult Function() retryScan,
+    required TResult Function() initializeCarNumber,
+    required TResult Function() logout,
   }) {
     return startScan();
   }
@@ -122,6 +142,8 @@ class _$StartScanImpl implements StartScan {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? startScan,
     TResult? Function()? retryScan,
+    TResult? Function()? initializeCarNumber,
+    TResult? Function()? logout,
   }) {
     return startScan?.call();
   }
@@ -131,6 +153,8 @@ class _$StartScanImpl implements StartScan {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? startScan,
     TResult Function()? retryScan,
+    TResult Function()? initializeCarNumber,
+    TResult Function()? logout,
     required TResult orElse(),
   }) {
     if (startScan != null) {
@@ -144,6 +168,8 @@ class _$StartScanImpl implements StartScan {
   TResult map<TResult extends Object?>({
     required TResult Function(StartScan value) startScan,
     required TResult Function(RetryScan value) retryScan,
+    required TResult Function(InitializeCarNumber value) initializeCarNumber,
+    required TResult Function(Logout value) logout,
   }) {
     return startScan(this);
   }
@@ -153,6 +179,8 @@ class _$StartScanImpl implements StartScan {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(StartScan value)? startScan,
     TResult? Function(RetryScan value)? retryScan,
+    TResult? Function(InitializeCarNumber value)? initializeCarNumber,
+    TResult? Function(Logout value)? logout,
   }) {
     return startScan?.call(this);
   }
@@ -162,6 +190,8 @@ class _$StartScanImpl implements StartScan {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(StartScan value)? startScan,
     TResult Function(RetryScan value)? retryScan,
+    TResult Function(InitializeCarNumber value)? initializeCarNumber,
+    TResult Function(Logout value)? logout,
     required TResult orElse(),
   }) {
     if (startScan != null) {
@@ -189,6 +219,9 @@ class __$$RetryScanImplCopyWithImpl<$Res>
   __$$RetryScanImplCopyWithImpl(
       _$RetryScanImpl _value, $Res Function(_$RetryScanImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of ScanEvent
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -215,6 +248,8 @@ class _$RetryScanImpl implements RetryScan {
   TResult when<TResult extends Object?>({
     required TResult Function() startScan,
     required TResult Function() retryScan,
+    required TResult Function() initializeCarNumber,
+    required TResult Function() logout,
   }) {
     return retryScan();
   }
@@ -224,6 +259,8 @@ class _$RetryScanImpl implements RetryScan {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? startScan,
     TResult? Function()? retryScan,
+    TResult? Function()? initializeCarNumber,
+    TResult? Function()? logout,
   }) {
     return retryScan?.call();
   }
@@ -233,6 +270,8 @@ class _$RetryScanImpl implements RetryScan {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? startScan,
     TResult Function()? retryScan,
+    TResult Function()? initializeCarNumber,
+    TResult Function()? logout,
     required TResult orElse(),
   }) {
     if (retryScan != null) {
@@ -246,6 +285,8 @@ class _$RetryScanImpl implements RetryScan {
   TResult map<TResult extends Object?>({
     required TResult Function(StartScan value) startScan,
     required TResult Function(RetryScan value) retryScan,
+    required TResult Function(InitializeCarNumber value) initializeCarNumber,
+    required TResult Function(Logout value) logout,
   }) {
     return retryScan(this);
   }
@@ -255,6 +296,8 @@ class _$RetryScanImpl implements RetryScan {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(StartScan value)? startScan,
     TResult? Function(RetryScan value)? retryScan,
+    TResult? Function(InitializeCarNumber value)? initializeCarNumber,
+    TResult? Function(Logout value)? logout,
   }) {
     return retryScan?.call(this);
   }
@@ -264,6 +307,8 @@ class _$RetryScanImpl implements RetryScan {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(StartScan value)? startScan,
     TResult Function(RetryScan value)? retryScan,
+    TResult Function(InitializeCarNumber value)? initializeCarNumber,
+    TResult Function(Logout value)? logout,
     required TResult orElse(),
   }) {
     if (retryScan != null) {
@@ -278,29 +323,274 @@ abstract class RetryScan implements ScanEvent {
 }
 
 /// @nodoc
+abstract class _$$InitializeCarNumberImplCopyWith<$Res> {
+  factory _$$InitializeCarNumberImplCopyWith(_$InitializeCarNumberImpl value,
+          $Res Function(_$InitializeCarNumberImpl) then) =
+      __$$InitializeCarNumberImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$InitializeCarNumberImplCopyWithImpl<$Res>
+    extends _$ScanEventCopyWithImpl<$Res, _$InitializeCarNumberImpl>
+    implements _$$InitializeCarNumberImplCopyWith<$Res> {
+  __$$InitializeCarNumberImplCopyWithImpl(_$InitializeCarNumberImpl _value,
+      $Res Function(_$InitializeCarNumberImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ScanEvent
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$InitializeCarNumberImpl implements InitializeCarNumber {
+  const _$InitializeCarNumberImpl();
+
+  @override
+  String toString() {
+    return 'ScanEvent.initializeCarNumber()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$InitializeCarNumberImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() startScan,
+    required TResult Function() retryScan,
+    required TResult Function() initializeCarNumber,
+    required TResult Function() logout,
+  }) {
+    return initializeCarNumber();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? startScan,
+    TResult? Function()? retryScan,
+    TResult? Function()? initializeCarNumber,
+    TResult? Function()? logout,
+  }) {
+    return initializeCarNumber?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? startScan,
+    TResult Function()? retryScan,
+    TResult Function()? initializeCarNumber,
+    TResult Function()? logout,
+    required TResult orElse(),
+  }) {
+    if (initializeCarNumber != null) {
+      return initializeCarNumber();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(StartScan value) startScan,
+    required TResult Function(RetryScan value) retryScan,
+    required TResult Function(InitializeCarNumber value) initializeCarNumber,
+    required TResult Function(Logout value) logout,
+  }) {
+    return initializeCarNumber(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(StartScan value)? startScan,
+    TResult? Function(RetryScan value)? retryScan,
+    TResult? Function(InitializeCarNumber value)? initializeCarNumber,
+    TResult? Function(Logout value)? logout,
+  }) {
+    return initializeCarNumber?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(StartScan value)? startScan,
+    TResult Function(RetryScan value)? retryScan,
+    TResult Function(InitializeCarNumber value)? initializeCarNumber,
+    TResult Function(Logout value)? logout,
+    required TResult orElse(),
+  }) {
+    if (initializeCarNumber != null) {
+      return initializeCarNumber(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class InitializeCarNumber implements ScanEvent {
+  const factory InitializeCarNumber() = _$InitializeCarNumberImpl;
+}
+
+/// @nodoc
+abstract class _$$LogoutImplCopyWith<$Res> {
+  factory _$$LogoutImplCopyWith(
+          _$LogoutImpl value, $Res Function(_$LogoutImpl) then) =
+      __$$LogoutImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$LogoutImplCopyWithImpl<$Res>
+    extends _$ScanEventCopyWithImpl<$Res, _$LogoutImpl>
+    implements _$$LogoutImplCopyWith<$Res> {
+  __$$LogoutImplCopyWithImpl(
+      _$LogoutImpl _value, $Res Function(_$LogoutImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ScanEvent
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$LogoutImpl implements Logout {
+  const _$LogoutImpl();
+
+  @override
+  String toString() {
+    return 'ScanEvent.logout()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$LogoutImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() startScan,
+    required TResult Function() retryScan,
+    required TResult Function() initializeCarNumber,
+    required TResult Function() logout,
+  }) {
+    return logout();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? startScan,
+    TResult? Function()? retryScan,
+    TResult? Function()? initializeCarNumber,
+    TResult? Function()? logout,
+  }) {
+    return logout?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? startScan,
+    TResult Function()? retryScan,
+    TResult Function()? initializeCarNumber,
+    TResult Function()? logout,
+    required TResult orElse(),
+  }) {
+    if (logout != null) {
+      return logout();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(StartScan value) startScan,
+    required TResult Function(RetryScan value) retryScan,
+    required TResult Function(InitializeCarNumber value) initializeCarNumber,
+    required TResult Function(Logout value) logout,
+  }) {
+    return logout(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(StartScan value)? startScan,
+    TResult? Function(RetryScan value)? retryScan,
+    TResult? Function(InitializeCarNumber value)? initializeCarNumber,
+    TResult? Function(Logout value)? logout,
+  }) {
+    return logout?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(StartScan value)? startScan,
+    TResult Function(RetryScan value)? retryScan,
+    TResult Function(InitializeCarNumber value)? initializeCarNumber,
+    TResult Function(Logout value)? logout,
+    required TResult orElse(),
+  }) {
+    if (logout != null) {
+      return logout(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class Logout implements ScanEvent {
+  const factory Logout() = _$LogoutImpl;
+}
+
+/// @nodoc
 mixin _$ScanState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(String scannedValue) success,
+    required TResult Function(int waybillId, String barcode) success,
     required TResult Function(String message) error,
+    required TResult Function(String carNumber) initialWithCarNumber,
+    required TResult Function() logoutSuccess,
+    required TResult Function(String ttnNumber, bool isTimeOutError)
+        errorWithWidget,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(String scannedValue)? success,
+    TResult? Function(int waybillId, String barcode)? success,
     TResult? Function(String message)? error,
+    TResult? Function(String carNumber)? initialWithCarNumber,
+    TResult? Function()? logoutSuccess,
+    TResult? Function(String ttnNumber, bool isTimeOutError)? errorWithWidget,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(String scannedValue)? success,
+    TResult Function(int waybillId, String barcode)? success,
     TResult Function(String message)? error,
+    TResult Function(String carNumber)? initialWithCarNumber,
+    TResult Function()? logoutSuccess,
+    TResult Function(String ttnNumber, bool isTimeOutError)? errorWithWidget,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -310,6 +600,9 @@ mixin _$ScanState {
     required TResult Function(Loading value) loading,
     required TResult Function(Success value) success,
     required TResult Function(Error value) error,
+    required TResult Function(InitialWithCarNumber value) initialWithCarNumber,
+    required TResult Function(LogoutSuccess value) logoutSuccess,
+    required TResult Function(_ErrorWithWidget value) errorWithWidget,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -318,6 +611,9 @@ mixin _$ScanState {
     TResult? Function(Loading value)? loading,
     TResult? Function(Success value)? success,
     TResult? Function(Error value)? error,
+    TResult? Function(InitialWithCarNumber value)? initialWithCarNumber,
+    TResult? Function(LogoutSuccess value)? logoutSuccess,
+    TResult? Function(_ErrorWithWidget value)? errorWithWidget,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -326,6 +622,9 @@ mixin _$ScanState {
     TResult Function(Loading value)? loading,
     TResult Function(Success value)? success,
     TResult Function(Error value)? error,
+    TResult Function(InitialWithCarNumber value)? initialWithCarNumber,
+    TResult Function(LogoutSuccess value)? logoutSuccess,
+    TResult Function(_ErrorWithWidget value)? errorWithWidget,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -346,6 +645,9 @@ class _$ScanStateCopyWithImpl<$Res, $Val extends ScanState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of ScanState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -362,6 +664,9 @@ class __$$InitialImplCopyWithImpl<$Res>
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of ScanState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -388,8 +693,12 @@ class _$InitialImpl implements Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(String scannedValue) success,
+    required TResult Function(int waybillId, String barcode) success,
     required TResult Function(String message) error,
+    required TResult Function(String carNumber) initialWithCarNumber,
+    required TResult Function() logoutSuccess,
+    required TResult Function(String ttnNumber, bool isTimeOutError)
+        errorWithWidget,
   }) {
     return initial();
   }
@@ -399,8 +708,11 @@ class _$InitialImpl implements Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(String scannedValue)? success,
+    TResult? Function(int waybillId, String barcode)? success,
     TResult? Function(String message)? error,
+    TResult? Function(String carNumber)? initialWithCarNumber,
+    TResult? Function()? logoutSuccess,
+    TResult? Function(String ttnNumber, bool isTimeOutError)? errorWithWidget,
   }) {
     return initial?.call();
   }
@@ -410,8 +722,11 @@ class _$InitialImpl implements Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(String scannedValue)? success,
+    TResult Function(int waybillId, String barcode)? success,
     TResult Function(String message)? error,
+    TResult Function(String carNumber)? initialWithCarNumber,
+    TResult Function()? logoutSuccess,
+    TResult Function(String ttnNumber, bool isTimeOutError)? errorWithWidget,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -427,6 +742,9 @@ class _$InitialImpl implements Initial {
     required TResult Function(Loading value) loading,
     required TResult Function(Success value) success,
     required TResult Function(Error value) error,
+    required TResult Function(InitialWithCarNumber value) initialWithCarNumber,
+    required TResult Function(LogoutSuccess value) logoutSuccess,
+    required TResult Function(_ErrorWithWidget value) errorWithWidget,
   }) {
     return initial(this);
   }
@@ -438,6 +756,9 @@ class _$InitialImpl implements Initial {
     TResult? Function(Loading value)? loading,
     TResult? Function(Success value)? success,
     TResult? Function(Error value)? error,
+    TResult? Function(InitialWithCarNumber value)? initialWithCarNumber,
+    TResult? Function(LogoutSuccess value)? logoutSuccess,
+    TResult? Function(_ErrorWithWidget value)? errorWithWidget,
   }) {
     return initial?.call(this);
   }
@@ -449,6 +770,9 @@ class _$InitialImpl implements Initial {
     TResult Function(Loading value)? loading,
     TResult Function(Success value)? success,
     TResult Function(Error value)? error,
+    TResult Function(InitialWithCarNumber value)? initialWithCarNumber,
+    TResult Function(LogoutSuccess value)? logoutSuccess,
+    TResult Function(_ErrorWithWidget value)? errorWithWidget,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -476,6 +800,9 @@ class __$$LoadingImplCopyWithImpl<$Res>
   __$$LoadingImplCopyWithImpl(
       _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of ScanState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -502,8 +829,12 @@ class _$LoadingImpl implements Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(String scannedValue) success,
+    required TResult Function(int waybillId, String barcode) success,
     required TResult Function(String message) error,
+    required TResult Function(String carNumber) initialWithCarNumber,
+    required TResult Function() logoutSuccess,
+    required TResult Function(String ttnNumber, bool isTimeOutError)
+        errorWithWidget,
   }) {
     return loading();
   }
@@ -513,8 +844,11 @@ class _$LoadingImpl implements Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(String scannedValue)? success,
+    TResult? Function(int waybillId, String barcode)? success,
     TResult? Function(String message)? error,
+    TResult? Function(String carNumber)? initialWithCarNumber,
+    TResult? Function()? logoutSuccess,
+    TResult? Function(String ttnNumber, bool isTimeOutError)? errorWithWidget,
   }) {
     return loading?.call();
   }
@@ -524,8 +858,11 @@ class _$LoadingImpl implements Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(String scannedValue)? success,
+    TResult Function(int waybillId, String barcode)? success,
     TResult Function(String message)? error,
+    TResult Function(String carNumber)? initialWithCarNumber,
+    TResult Function()? logoutSuccess,
+    TResult Function(String ttnNumber, bool isTimeOutError)? errorWithWidget,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -541,6 +878,9 @@ class _$LoadingImpl implements Loading {
     required TResult Function(Loading value) loading,
     required TResult Function(Success value) success,
     required TResult Function(Error value) error,
+    required TResult Function(InitialWithCarNumber value) initialWithCarNumber,
+    required TResult Function(LogoutSuccess value) logoutSuccess,
+    required TResult Function(_ErrorWithWidget value) errorWithWidget,
   }) {
     return loading(this);
   }
@@ -552,6 +892,9 @@ class _$LoadingImpl implements Loading {
     TResult? Function(Loading value)? loading,
     TResult? Function(Success value)? success,
     TResult? Function(Error value)? error,
+    TResult? Function(InitialWithCarNumber value)? initialWithCarNumber,
+    TResult? Function(LogoutSuccess value)? logoutSuccess,
+    TResult? Function(_ErrorWithWidget value)? errorWithWidget,
   }) {
     return loading?.call(this);
   }
@@ -563,6 +906,9 @@ class _$LoadingImpl implements Loading {
     TResult Function(Loading value)? loading,
     TResult Function(Success value)? success,
     TResult Function(Error value)? error,
+    TResult Function(InitialWithCarNumber value)? initialWithCarNumber,
+    TResult Function(LogoutSuccess value)? logoutSuccess,
+    TResult Function(_ErrorWithWidget value)? errorWithWidget,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -582,7 +928,7 @@ abstract class _$$SuccessImplCopyWith<$Res> {
           _$SuccessImpl value, $Res Function(_$SuccessImpl) then) =
       __$$SuccessImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({String scannedValue});
+  $Res call({int waybillId, String barcode});
 }
 
 /// @nodoc
@@ -593,15 +939,22 @@ class __$$SuccessImplCopyWithImpl<$Res>
       _$SuccessImpl _value, $Res Function(_$SuccessImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ScanState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? scannedValue = null,
+    Object? waybillId = null,
+    Object? barcode = null,
   }) {
     return _then(_$SuccessImpl(
-      null == scannedValue
-          ? _value.scannedValue
-          : scannedValue // ignore: cast_nullable_to_non_nullable
+      waybillId: null == waybillId
+          ? _value.waybillId
+          : waybillId // ignore: cast_nullable_to_non_nullable
+              as int,
+      barcode: null == barcode
+          ? _value.barcode
+          : barcode // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -610,14 +963,16 @@ class __$$SuccessImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$SuccessImpl implements Success {
-  const _$SuccessImpl(this.scannedValue);
+  const _$SuccessImpl({required this.waybillId, required this.barcode});
 
   @override
-  final String scannedValue;
+  final int waybillId;
+  @override
+  final String barcode;
 
   @override
   String toString() {
-    return 'ScanState.success(scannedValue: $scannedValue)';
+    return 'ScanState.success(waybillId: $waybillId, barcode: $barcode)';
   }
 
   @override
@@ -625,14 +980,17 @@ class _$SuccessImpl implements Success {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SuccessImpl &&
-            (identical(other.scannedValue, scannedValue) ||
-                other.scannedValue == scannedValue));
+            (identical(other.waybillId, waybillId) ||
+                other.waybillId == waybillId) &&
+            (identical(other.barcode, barcode) || other.barcode == barcode));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, scannedValue);
+  int get hashCode => Object.hash(runtimeType, waybillId, barcode);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ScanState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
@@ -643,10 +1001,14 @@ class _$SuccessImpl implements Success {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(String scannedValue) success,
+    required TResult Function(int waybillId, String barcode) success,
     required TResult Function(String message) error,
+    required TResult Function(String carNumber) initialWithCarNumber,
+    required TResult Function() logoutSuccess,
+    required TResult Function(String ttnNumber, bool isTimeOutError)
+        errorWithWidget,
   }) {
-    return success(scannedValue);
+    return success(waybillId, barcode);
   }
 
   @override
@@ -654,10 +1016,13 @@ class _$SuccessImpl implements Success {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(String scannedValue)? success,
+    TResult? Function(int waybillId, String barcode)? success,
     TResult? Function(String message)? error,
+    TResult? Function(String carNumber)? initialWithCarNumber,
+    TResult? Function()? logoutSuccess,
+    TResult? Function(String ttnNumber, bool isTimeOutError)? errorWithWidget,
   }) {
-    return success?.call(scannedValue);
+    return success?.call(waybillId, barcode);
   }
 
   @override
@@ -665,12 +1030,15 @@ class _$SuccessImpl implements Success {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(String scannedValue)? success,
+    TResult Function(int waybillId, String barcode)? success,
     TResult Function(String message)? error,
+    TResult Function(String carNumber)? initialWithCarNumber,
+    TResult Function()? logoutSuccess,
+    TResult Function(String ttnNumber, bool isTimeOutError)? errorWithWidget,
     required TResult orElse(),
   }) {
     if (success != null) {
-      return success(scannedValue);
+      return success(waybillId, barcode);
     }
     return orElse();
   }
@@ -682,6 +1050,9 @@ class _$SuccessImpl implements Success {
     required TResult Function(Loading value) loading,
     required TResult Function(Success value) success,
     required TResult Function(Error value) error,
+    required TResult Function(InitialWithCarNumber value) initialWithCarNumber,
+    required TResult Function(LogoutSuccess value) logoutSuccess,
+    required TResult Function(_ErrorWithWidget value) errorWithWidget,
   }) {
     return success(this);
   }
@@ -693,6 +1064,9 @@ class _$SuccessImpl implements Success {
     TResult? Function(Loading value)? loading,
     TResult? Function(Success value)? success,
     TResult? Function(Error value)? error,
+    TResult? Function(InitialWithCarNumber value)? initialWithCarNumber,
+    TResult? Function(LogoutSuccess value)? logoutSuccess,
+    TResult? Function(_ErrorWithWidget value)? errorWithWidget,
   }) {
     return success?.call(this);
   }
@@ -704,6 +1078,9 @@ class _$SuccessImpl implements Success {
     TResult Function(Loading value)? loading,
     TResult Function(Success value)? success,
     TResult Function(Error value)? error,
+    TResult Function(InitialWithCarNumber value)? initialWithCarNumber,
+    TResult Function(LogoutSuccess value)? logoutSuccess,
+    TResult Function(_ErrorWithWidget value)? errorWithWidget,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -714,10 +1091,16 @@ class _$SuccessImpl implements Success {
 }
 
 abstract class Success implements ScanState {
-  const factory Success(final String scannedValue) = _$SuccessImpl;
+  const factory Success(
+      {required final int waybillId,
+      required final String barcode}) = _$SuccessImpl;
 
-  String get scannedValue;
-  @JsonKey(ignore: true)
+  int get waybillId;
+  String get barcode;
+
+  /// Create a copy of ScanState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -739,6 +1122,8 @@ class __$$ErrorImplCopyWithImpl<$Res>
       _$ErrorImpl _value, $Res Function(_$ErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ScanState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -777,7 +1162,9 @@ class _$ErrorImpl implements Error {
   @override
   int get hashCode => Object.hash(runtimeType, message);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ScanState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ErrorImplCopyWith<_$ErrorImpl> get copyWith =>
@@ -788,8 +1175,12 @@ class _$ErrorImpl implements Error {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(String scannedValue) success,
+    required TResult Function(int waybillId, String barcode) success,
     required TResult Function(String message) error,
+    required TResult Function(String carNumber) initialWithCarNumber,
+    required TResult Function() logoutSuccess,
+    required TResult Function(String ttnNumber, bool isTimeOutError)
+        errorWithWidget,
   }) {
     return error(message);
   }
@@ -799,8 +1190,11 @@ class _$ErrorImpl implements Error {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(String scannedValue)? success,
+    TResult? Function(int waybillId, String barcode)? success,
     TResult? Function(String message)? error,
+    TResult? Function(String carNumber)? initialWithCarNumber,
+    TResult? Function()? logoutSuccess,
+    TResult? Function(String ttnNumber, bool isTimeOutError)? errorWithWidget,
   }) {
     return error?.call(message);
   }
@@ -810,8 +1204,11 @@ class _$ErrorImpl implements Error {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(String scannedValue)? success,
+    TResult Function(int waybillId, String barcode)? success,
     TResult Function(String message)? error,
+    TResult Function(String carNumber)? initialWithCarNumber,
+    TResult Function()? logoutSuccess,
+    TResult Function(String ttnNumber, bool isTimeOutError)? errorWithWidget,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -827,6 +1224,9 @@ class _$ErrorImpl implements Error {
     required TResult Function(Loading value) loading,
     required TResult Function(Success value) success,
     required TResult Function(Error value) error,
+    required TResult Function(InitialWithCarNumber value) initialWithCarNumber,
+    required TResult Function(LogoutSuccess value) logoutSuccess,
+    required TResult Function(_ErrorWithWidget value) errorWithWidget,
   }) {
     return error(this);
   }
@@ -838,6 +1238,9 @@ class _$ErrorImpl implements Error {
     TResult? Function(Loading value)? loading,
     TResult? Function(Success value)? success,
     TResult? Function(Error value)? error,
+    TResult? Function(InitialWithCarNumber value)? initialWithCarNumber,
+    TResult? Function(LogoutSuccess value)? logoutSuccess,
+    TResult? Function(_ErrorWithWidget value)? errorWithWidget,
   }) {
     return error?.call(this);
   }
@@ -849,6 +1252,9 @@ class _$ErrorImpl implements Error {
     TResult Function(Loading value)? loading,
     TResult Function(Success value)? success,
     TResult Function(Error value)? error,
+    TResult Function(InitialWithCarNumber value)? initialWithCarNumber,
+    TResult Function(LogoutSuccess value)? logoutSuccess,
+    TResult Function(_ErrorWithWidget value)? errorWithWidget,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -862,7 +1268,507 @@ abstract class Error implements ScanState {
   const factory Error(final String message) = _$ErrorImpl;
 
   String get message;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ScanState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ErrorImplCopyWith<_$ErrorImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$InitialWithCarNumberImplCopyWith<$Res> {
+  factory _$$InitialWithCarNumberImplCopyWith(_$InitialWithCarNumberImpl value,
+          $Res Function(_$InitialWithCarNumberImpl) then) =
+      __$$InitialWithCarNumberImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String carNumber});
+}
+
+/// @nodoc
+class __$$InitialWithCarNumberImplCopyWithImpl<$Res>
+    extends _$ScanStateCopyWithImpl<$Res, _$InitialWithCarNumberImpl>
+    implements _$$InitialWithCarNumberImplCopyWith<$Res> {
+  __$$InitialWithCarNumberImplCopyWithImpl(_$InitialWithCarNumberImpl _value,
+      $Res Function(_$InitialWithCarNumberImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ScanState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? carNumber = null,
+  }) {
+    return _then(_$InitialWithCarNumberImpl(
+      null == carNumber
+          ? _value.carNumber
+          : carNumber // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$InitialWithCarNumberImpl implements InitialWithCarNumber {
+  const _$InitialWithCarNumberImpl(this.carNumber);
+
+  @override
+  final String carNumber;
+
+  @override
+  String toString() {
+    return 'ScanState.initialWithCarNumber(carNumber: $carNumber)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$InitialWithCarNumberImpl &&
+            (identical(other.carNumber, carNumber) ||
+                other.carNumber == carNumber));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, carNumber);
+
+  /// Create a copy of ScanState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$InitialWithCarNumberImplCopyWith<_$InitialWithCarNumberImpl>
+      get copyWith =>
+          __$$InitialWithCarNumberImplCopyWithImpl<_$InitialWithCarNumberImpl>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(int waybillId, String barcode) success,
+    required TResult Function(String message) error,
+    required TResult Function(String carNumber) initialWithCarNumber,
+    required TResult Function() logoutSuccess,
+    required TResult Function(String ttnNumber, bool isTimeOutError)
+        errorWithWidget,
+  }) {
+    return initialWithCarNumber(carNumber);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(int waybillId, String barcode)? success,
+    TResult? Function(String message)? error,
+    TResult? Function(String carNumber)? initialWithCarNumber,
+    TResult? Function()? logoutSuccess,
+    TResult? Function(String ttnNumber, bool isTimeOutError)? errorWithWidget,
+  }) {
+    return initialWithCarNumber?.call(carNumber);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(int waybillId, String barcode)? success,
+    TResult Function(String message)? error,
+    TResult Function(String carNumber)? initialWithCarNumber,
+    TResult Function()? logoutSuccess,
+    TResult Function(String ttnNumber, bool isTimeOutError)? errorWithWidget,
+    required TResult orElse(),
+  }) {
+    if (initialWithCarNumber != null) {
+      return initialWithCarNumber(carNumber);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Initial value) initial,
+    required TResult Function(Loading value) loading,
+    required TResult Function(Success value) success,
+    required TResult Function(Error value) error,
+    required TResult Function(InitialWithCarNumber value) initialWithCarNumber,
+    required TResult Function(LogoutSuccess value) logoutSuccess,
+    required TResult Function(_ErrorWithWidget value) errorWithWidget,
+  }) {
+    return initialWithCarNumber(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Initial value)? initial,
+    TResult? Function(Loading value)? loading,
+    TResult? Function(Success value)? success,
+    TResult? Function(Error value)? error,
+    TResult? Function(InitialWithCarNumber value)? initialWithCarNumber,
+    TResult? Function(LogoutSuccess value)? logoutSuccess,
+    TResult? Function(_ErrorWithWidget value)? errorWithWidget,
+  }) {
+    return initialWithCarNumber?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
+    TResult Function(Loading value)? loading,
+    TResult Function(Success value)? success,
+    TResult Function(Error value)? error,
+    TResult Function(InitialWithCarNumber value)? initialWithCarNumber,
+    TResult Function(LogoutSuccess value)? logoutSuccess,
+    TResult Function(_ErrorWithWidget value)? errorWithWidget,
+    required TResult orElse(),
+  }) {
+    if (initialWithCarNumber != null) {
+      return initialWithCarNumber(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class InitialWithCarNumber implements ScanState {
+  const factory InitialWithCarNumber(final String carNumber) =
+      _$InitialWithCarNumberImpl;
+
+  String get carNumber;
+
+  /// Create a copy of ScanState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$InitialWithCarNumberImplCopyWith<_$InitialWithCarNumberImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$LogoutSuccessImplCopyWith<$Res> {
+  factory _$$LogoutSuccessImplCopyWith(
+          _$LogoutSuccessImpl value, $Res Function(_$LogoutSuccessImpl) then) =
+      __$$LogoutSuccessImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$LogoutSuccessImplCopyWithImpl<$Res>
+    extends _$ScanStateCopyWithImpl<$Res, _$LogoutSuccessImpl>
+    implements _$$LogoutSuccessImplCopyWith<$Res> {
+  __$$LogoutSuccessImplCopyWithImpl(
+      _$LogoutSuccessImpl _value, $Res Function(_$LogoutSuccessImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ScanState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$LogoutSuccessImpl implements LogoutSuccess {
+  const _$LogoutSuccessImpl();
+
+  @override
+  String toString() {
+    return 'ScanState.logoutSuccess()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$LogoutSuccessImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(int waybillId, String barcode) success,
+    required TResult Function(String message) error,
+    required TResult Function(String carNumber) initialWithCarNumber,
+    required TResult Function() logoutSuccess,
+    required TResult Function(String ttnNumber, bool isTimeOutError)
+        errorWithWidget,
+  }) {
+    return logoutSuccess();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(int waybillId, String barcode)? success,
+    TResult? Function(String message)? error,
+    TResult? Function(String carNumber)? initialWithCarNumber,
+    TResult? Function()? logoutSuccess,
+    TResult? Function(String ttnNumber, bool isTimeOutError)? errorWithWidget,
+  }) {
+    return logoutSuccess?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(int waybillId, String barcode)? success,
+    TResult Function(String message)? error,
+    TResult Function(String carNumber)? initialWithCarNumber,
+    TResult Function()? logoutSuccess,
+    TResult Function(String ttnNumber, bool isTimeOutError)? errorWithWidget,
+    required TResult orElse(),
+  }) {
+    if (logoutSuccess != null) {
+      return logoutSuccess();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Initial value) initial,
+    required TResult Function(Loading value) loading,
+    required TResult Function(Success value) success,
+    required TResult Function(Error value) error,
+    required TResult Function(InitialWithCarNumber value) initialWithCarNumber,
+    required TResult Function(LogoutSuccess value) logoutSuccess,
+    required TResult Function(_ErrorWithWidget value) errorWithWidget,
+  }) {
+    return logoutSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Initial value)? initial,
+    TResult? Function(Loading value)? loading,
+    TResult? Function(Success value)? success,
+    TResult? Function(Error value)? error,
+    TResult? Function(InitialWithCarNumber value)? initialWithCarNumber,
+    TResult? Function(LogoutSuccess value)? logoutSuccess,
+    TResult? Function(_ErrorWithWidget value)? errorWithWidget,
+  }) {
+    return logoutSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
+    TResult Function(Loading value)? loading,
+    TResult Function(Success value)? success,
+    TResult Function(Error value)? error,
+    TResult Function(InitialWithCarNumber value)? initialWithCarNumber,
+    TResult Function(LogoutSuccess value)? logoutSuccess,
+    TResult Function(_ErrorWithWidget value)? errorWithWidget,
+    required TResult orElse(),
+  }) {
+    if (logoutSuccess != null) {
+      return logoutSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LogoutSuccess implements ScanState {
+  const factory LogoutSuccess() = _$LogoutSuccessImpl;
+}
+
+/// @nodoc
+abstract class _$$ErrorWithWidgetImplCopyWith<$Res> {
+  factory _$$ErrorWithWidgetImplCopyWith(_$ErrorWithWidgetImpl value,
+          $Res Function(_$ErrorWithWidgetImpl) then) =
+      __$$ErrorWithWidgetImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String ttnNumber, bool isTimeOutError});
+}
+
+/// @nodoc
+class __$$ErrorWithWidgetImplCopyWithImpl<$Res>
+    extends _$ScanStateCopyWithImpl<$Res, _$ErrorWithWidgetImpl>
+    implements _$$ErrorWithWidgetImplCopyWith<$Res> {
+  __$$ErrorWithWidgetImplCopyWithImpl(
+      _$ErrorWithWidgetImpl _value, $Res Function(_$ErrorWithWidgetImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ScanState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? ttnNumber = null,
+    Object? isTimeOutError = null,
+  }) {
+    return _then(_$ErrorWithWidgetImpl(
+      ttnNumber: null == ttnNumber
+          ? _value.ttnNumber
+          : ttnNumber // ignore: cast_nullable_to_non_nullable
+              as String,
+      isTimeOutError: null == isTimeOutError
+          ? _value.isTimeOutError
+          : isTimeOutError // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ErrorWithWidgetImpl implements _ErrorWithWidget {
+  const _$ErrorWithWidgetImpl(
+      {required this.ttnNumber, required this.isTimeOutError});
+
+  @override
+  final String ttnNumber;
+  @override
+  final bool isTimeOutError;
+
+  @override
+  String toString() {
+    return 'ScanState.errorWithWidget(ttnNumber: $ttnNumber, isTimeOutError: $isTimeOutError)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ErrorWithWidgetImpl &&
+            (identical(other.ttnNumber, ttnNumber) ||
+                other.ttnNumber == ttnNumber) &&
+            (identical(other.isTimeOutError, isTimeOutError) ||
+                other.isTimeOutError == isTimeOutError));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, ttnNumber, isTimeOutError);
+
+  /// Create a copy of ScanState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ErrorWithWidgetImplCopyWith<_$ErrorWithWidgetImpl> get copyWith =>
+      __$$ErrorWithWidgetImplCopyWithImpl<_$ErrorWithWidgetImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(int waybillId, String barcode) success,
+    required TResult Function(String message) error,
+    required TResult Function(String carNumber) initialWithCarNumber,
+    required TResult Function() logoutSuccess,
+    required TResult Function(String ttnNumber, bool isTimeOutError)
+        errorWithWidget,
+  }) {
+    return errorWithWidget(ttnNumber, isTimeOutError);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(int waybillId, String barcode)? success,
+    TResult? Function(String message)? error,
+    TResult? Function(String carNumber)? initialWithCarNumber,
+    TResult? Function()? logoutSuccess,
+    TResult? Function(String ttnNumber, bool isTimeOutError)? errorWithWidget,
+  }) {
+    return errorWithWidget?.call(ttnNumber, isTimeOutError);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(int waybillId, String barcode)? success,
+    TResult Function(String message)? error,
+    TResult Function(String carNumber)? initialWithCarNumber,
+    TResult Function()? logoutSuccess,
+    TResult Function(String ttnNumber, bool isTimeOutError)? errorWithWidget,
+    required TResult orElse(),
+  }) {
+    if (errorWithWidget != null) {
+      return errorWithWidget(ttnNumber, isTimeOutError);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Initial value) initial,
+    required TResult Function(Loading value) loading,
+    required TResult Function(Success value) success,
+    required TResult Function(Error value) error,
+    required TResult Function(InitialWithCarNumber value) initialWithCarNumber,
+    required TResult Function(LogoutSuccess value) logoutSuccess,
+    required TResult Function(_ErrorWithWidget value) errorWithWidget,
+  }) {
+    return errorWithWidget(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Initial value)? initial,
+    TResult? Function(Loading value)? loading,
+    TResult? Function(Success value)? success,
+    TResult? Function(Error value)? error,
+    TResult? Function(InitialWithCarNumber value)? initialWithCarNumber,
+    TResult? Function(LogoutSuccess value)? logoutSuccess,
+    TResult? Function(_ErrorWithWidget value)? errorWithWidget,
+  }) {
+    return errorWithWidget?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
+    TResult Function(Loading value)? loading,
+    TResult Function(Success value)? success,
+    TResult Function(Error value)? error,
+    TResult Function(InitialWithCarNumber value)? initialWithCarNumber,
+    TResult Function(LogoutSuccess value)? logoutSuccess,
+    TResult Function(_ErrorWithWidget value)? errorWithWidget,
+    required TResult orElse(),
+  }) {
+    if (errorWithWidget != null) {
+      return errorWithWidget(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ErrorWithWidget implements ScanState {
+  const factory _ErrorWithWidget(
+      {required final String ttnNumber,
+      required final bool isTimeOutError}) = _$ErrorWithWidgetImpl;
+
+  String get ttnNumber;
+  bool get isTimeOutError;
+
+  /// Create a copy of ScanState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ErrorWithWidgetImplCopyWith<_$ErrorWithWidgetImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

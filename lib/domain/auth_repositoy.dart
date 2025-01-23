@@ -6,5 +6,9 @@ abstract class AuthRepository {
 
   Future<void> logout();
 
+  Future<String> getCarNumber();
+
+  Future<String> getRole();
+
   Future<bool> isAuthenticated();
 }

@@ -6,37 +6,46 @@ import 'package:flutter/material.dart';
 class CustomErrorWidget extends StatelessWidget {
   final String message;
   final VoidCallback onRetry;
+  final bool isTimeOutError;
 
   const CustomErrorWidget({
     super.key,
     required this.message,
     required this.onRetry,
+    required this.isTimeOutError,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(40.0),
+    final theme = Theme.of(context);
+    return Expanded(
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          const BigIconWidget(
-            iconName: 'alert-octagon',
+          Column(
+            children: [
+              BigIconWidget(
+                iconName: 'alert-octagon',
+                iconColor: theme.colorScheme.error,
+              ),
+              const SizedBox(height: 24),
+              Text(
+                message,
+                textAlign: TextAlign.center,
+                style: Theme.of(context).textTheme.labelLarge,
+              ),
+              const SizedBox(height: 32),
+              Text(
+                context.localizations.tryRescanTtn,
+                textAlign: TextAlign.center,
+              ),
+              const SizedBox(height: 32),
+            ],
           ),
-          const SizedBox(height: 24),
-          Text(
-            message,
-            textAlign: TextAlign.center,
-            style: Theme.of(context).textTheme.labelLarge,
-          ),
-          const SizedBox(height: 32),
-          Text(
-            context.localizations.tryRescanTtn,
-            textAlign: TextAlign.center,
-          ),
-          const SizedBox(height: 32),
           CustomButton(
+            iconName: 'refresh',
+            backgroundColor: theme.colorScheme.secondary,
             label: context.localizations.tryAgain,
             onPressed: onRetry,
           ),

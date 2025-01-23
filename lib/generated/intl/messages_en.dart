@@ -45,6 +45,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Confirm completion"),
         "confirmExecution":
             MessageLookupByLibrary.simpleMessage("Confirm execution"),
+        "confirmed": MessageLookupByLibrary.simpleMessage("Confirmed"),
+        "dataUpdated": MessageLookupByLibrary.simpleMessage("Data updated"),
         "distributionKKZ":
             MessageLookupByLibrary.simpleMessage("KKZ Distribution"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
@@ -68,6 +70,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "noFeed": MessageLookupByLibrary.simpleMessage("No feed"),
         "noServerResponse":
             MessageLookupByLibrary.simpleMessage("No server response"),
+        "noTasksAvailable":
+            MessageLookupByLibrary.simpleMessage("No tasks available"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "phoneNumber": MessageLookupByLibrary.simpleMessage("Phone number"),
         "pointCameraToBarcode": MessageLookupByLibrary.simpleMessage(
@@ -76,6 +80,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "poultryHouseNumber": m1,
         "pressButtonToScanTtn": MessageLookupByLibrary.simpleMessage(
             "Press the button to start scanning TTN"),
+        "refilled": MessageLookupByLibrary.simpleMessage("Refilled"),
         "required": MessageLookupByLibrary.simpleMessage("Required"),
         "scanTtn": MessageLookupByLibrary.simpleMessage("Scan TTN"),
         "scanTtnButton": MessageLookupByLibrary.simpleMessage("Scan TTN"),
@@ -89,6 +94,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "silo": MessageLookupByLibrary.simpleMessage("silo"),
         "siloEmpty": m3,
         "siloNumber": m4,
+        "somethingWentWrong": MessageLookupByLibrary.simpleMessage(
+            "Something went wrong, try again..."),
         "start": MessageLookupByLibrary.simpleMessage("Start"),
         "taskNumber": m5,
         "totalActual": MessageLookupByLibrary.simpleMessage("Total actual"),

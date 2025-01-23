@@ -1,3 +1,8 @@
+import 'package:delivery/domain/inner_repository.dart';
+import 'package:delivery/domain/repo_impl/inner_repository_impl.dart';
+import 'package:delivery/domain/repo_impl/silo_repository_impl.dart';
+import 'package:delivery/domain/silo_repository.dart';
+import 'package:delivery/presentation/utility/app_bloc_observer.dart/app_bloc_observer.dart';
 import 'package:dio/dio.dart';
 import 'package:delivery/data/data_source/api_data_source.dart';
 import 'package:delivery/data/data_source/auth_data_source.dart';
@@ -9,13 +14,14 @@ import 'package:delivery/domain/auth_repositoy.dart';
 import 'package:delivery/domain/repo_impl/auth_repositoy_impl.dart';
 import 'package:delivery/presentation/utility/error_handler/error_handler.dart';
 import 'package:delivery/presentation/utility/error_handler/error_handler_impl.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:get_it/get_it.dart';
 
 Future<void> initApp() async {
   final Dio dio = Dio();
-
+  Bloc.observer = AppBlocObserver();
   const FlutterSecureStorage secureStorage = FlutterSecureStorage();
 
   final ErrorHandler errorHandler =
@@ -26,6 +32,8 @@ Future<void> initApp() async {
     AuthDataSourceImpl(
       errorHandler: errorHandler,
       secureStorage: secureStorage,
+      dio: dio,
+      api: '',
     ),
   );
 
@@ -38,7 +46,7 @@ Future<void> initApp() async {
       dio: dio,
       errorHandler: errorHandler,
       authDataSource: authDataSource,
-      api: 'https:www:',
+      api: '',
     ),
   );
 
@@ -47,4 +55,16 @@ Future<void> initApp() async {
     apiDataSource: apiDataSource,
     mockDataSource: mockDataSource,
   ));
+
+  GetIt.instance.registerSingleton<SiloRepository>(SiloRepositoryImpl(
+    apiDataSource: apiDataSource,
+    mockDataSource: mockDataSource,
+  ));
+
+  GetIt.instance.registerSingleton<InnerRepository>(
+    InnerRepositoryImpl(
+      apiDataSource: apiDataSource,
+      mockDataSource: mockDataSource,
+    ),
+  );
 }

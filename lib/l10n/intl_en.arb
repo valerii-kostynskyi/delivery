@@ -13,6 +13,8 @@
   "farmNumber": "Sector № {number}",
   "ttnNumber": "TTN № {number}",
   "empty": "Empty",
+  "refilled": "Refilled",
+  "confirmed": "Confirmed",
   "full": "Full",
   "entrance": "Entrance",
   "tryAgain": "Try again",
@@ -47,5 +49,8 @@
   "siloEmpty": "silo № {number} is empty",
   "back": "Back",
   "noFeed": "No feed",
-  "logout": "Logout"
+  "logout": "Logout",
+  "noTasksAvailable": "No tasks available",
+  "somethingWentWrong": "Something went wrong, try again...",
+  "dataUpdated": "Data updated"
 }

@@ -13,25 +13,45 @@ class AuthRepositoryImpl implements AuthRepository {
     required this.apiDataSource,
     required this.mockDataSource,
   });
+
   @override
   Future<bool> isAuthenticated() async {
     final String? token = await authDataSource.getAuthToken();
-    if (token != null) {
-      return await authDataSource.verifyToken(token);
+    if (token != null && token.isNotEmpty) {
+      return true;
     }
     return false;
   }
 
   @override
-  Future<String?> login(
-      {required String carNumber, required String password}) async {
-    final String? authToken = await mockDataSource.authenticate(
-      carNumber: carNumber,
-      password: password,
-    );
-    if (authToken == null) return '';
-    authDataSource.saveAccessToken(authToken);
-    return authToken;
+  Future<String?> login({
+    required String carNumber,
+    required String password,
+  }) async {
+    // final AuthModel? authModel = await apiDataSource.login(
+    //   carNumber: carNumber,
+    //   password: password,
+    // );
+    // if (authModel != null && authModel.accessToken.isNotEmpty) {
+    //   log('accessToken = ${authModel.accessToken}\n carNumner = $carNumber\n role = ${authModel.role}');
+    //   await authDataSource.saveCredentials(
+    //     authToken: authModel.accessToken,
+    //     carNumber: carNumber,
+    //     role: authModel.role,
+    //   );
+    //   return authModel.role;
+    // }
+    return null;
+  }
+
+  @override
+  Future<String> getCarNumber() async {
+    return await authDataSource.getCarNumber();
+  }
+
+  @override
+  Future<String> getRole() async {
+    return await authDataSource.getRole();
   }
 
   @override

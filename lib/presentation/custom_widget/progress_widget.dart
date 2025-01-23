@@ -1,5 +1,6 @@
 import 'package:delivery/presentation/custom_widget/dotted_separator.dart';
 import 'package:delivery/presentation/utility/extension/change_localization.dart';
+import 'package:delivery/presentation/utility/extension/formatter.dart';
 import 'package:flutter/material.dart';
 
 class ProgressListItem {
@@ -16,19 +17,21 @@ class ProgressListItem {
 
 class FarmProgressComponent extends StatelessWidget {
   final List<ProgressListItem> items;
-  final int totalCapacity;
+  final int totalAmount;
+  final int isDoneAmount;
   final double barHeight = 56;
 
   const FarmProgressComponent({
     super.key,
     required this.items,
-    required this.totalCapacity,
+    required this.totalAmount,
+    required this.isDoneAmount,
   });
 
   @override
   Widget build(BuildContext context) {
     int totalLoaded = items.fold(0, (sum, item) => sum + item.currentUnits);
-    int remainingCapacity = totalCapacity - totalLoaded;
+    int remainingCapacity = totalAmount - totalLoaded;
     final theme = Theme.of(context);
     return Container(
       decoration: BoxDecoration(
@@ -50,7 +53,7 @@ class FarmProgressComponent extends StatelessWidget {
                 style: Theme.of(context).textTheme.bodyLarge,
               ),
               Text(
-                '$totalLoaded / $totalCapacity т',
+                '${formatWeight(isDoneAmount)} / ${formatWeight(totalAmount)}',
                 style: Theme.of(context).textTheme.bodyLarge,
               ),
             ],
@@ -141,7 +144,7 @@ class FarmProgressComponent extends StatelessWidget {
                           ],
                         ),
                         Text(
-                          '${items[index].currentUnits} т',
+                          formatWeight(items[index].currentUnits),
                           style: Theme.of(context)
                               .textTheme
                               .bodyLarge

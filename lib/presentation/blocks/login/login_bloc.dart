@@ -1,4 +1,8 @@
+import 'dart:developer';
+
 import 'package:delivery/domain/auth_repositoy.dart';
+import 'package:delivery/presentation/utility/error_handler/error_handler.dart';
+import 'package:delivery/presentation/utility/error_handler/exception/validation_exception.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:get_it/get_it.dart';
@@ -9,6 +13,7 @@ part 'login_bloc.freezed.dart';
 
 class LoginBloc extends Bloc<LoginEvent, LoginState> {
   final AuthRepository authRepository = GetIt.instance<AuthRepository>();
+  final ErrorHandler errorHandler = GetIt.instance<ErrorHandler>();
 
   LoginBloc() : super(const LoginState.initial()) {
     on<Submit>(_onSubmit);
@@ -17,19 +22,29 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
 
   Future<void> _onSubmit(Submit event, Emitter<LoginState> emit) async {
     emit(const LoginState.loading());
-
+    String carNumber = 'КА0202АА'; // driver_outer
+    // String carNumber = 'КА0101АА'; // driver_inner
+    // String carNumber = 'ВА7777ВА'; // driver_inner
+    // String carNumber = 'ВБ4300ВБ'; // driver_inner
+    // String carNumber = 'ВБ1000ВБ'; // driver_inner
     try {
-      final String? driver = await authRepository.login(
-        carNumber: event.carNumber,
-        password: event.password,
+      final String? role = await authRepository.login(
+        carNumber: carNumber,
+        password: '12345678',
       );
-      if (driver != null && driver.isNotEmpty) {
-        emit(LoginState.success(driver));
+      if (role != null) {
+        emit(LoginState.success(role));
       } else {
-        emit(const LoginState.error());
+        emit(const LoginState.error('Авторизація не пройшла'));
       }
-    } catch (e) {
-      emit(const LoginState.error());
+    } on ValidationException catch (e) {
+      errorHandler.handle(e);
+      final errorMessage = e.message.values.join(', ');
+      emit(LoginState.error('Помилка валідації: $errorMessage'));
+    } on Exception catch (e) {
+      log('error ${e.toString()}');
+      errorHandler.handle(e);
+      emit(LoginState.error(e.toString()));
     }
   }
 
@@ -37,11 +52,23 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
       CheckAuthentication event, Emitter<LoginState> emit) async {
     emit(const LoginState.loading());
 
-    final bool isAuthenticated = await authRepository.isAuthenticated();
-    if (isAuthenticated) {
-      // emit(const LoginState.success());
-    } else {
-      emit(const LoginState.login());
+    try {
+      final bool isAuthenticated = await authRepository.isAuthenticated();
+      await Future.delayed(const Duration(seconds: 2));
+      if (isAuthenticated) {
+        final String role = await authRepository.getRole();
+
+        emit(LoginState.success(role));
+      } else {
+        emit(const LoginState.login());
+      }
+    } on ValidationException catch (e) {
+      errorHandler.handle(e);
+      final errorMessage = e.message.values.join(', ');
+      emit(LoginState.error('Помилка валідації: $errorMessage'));
+    } on Exception catch (e) {
+      errorHandler.handle(e);
+      emit(LoginState.error(e.toString()));
     }
   }
 }

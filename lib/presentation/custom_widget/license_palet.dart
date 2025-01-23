@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 
 class LicensePlate extends StatelessWidget {
-  final String adminNumber;
+  final String carNumber;
 
   const LicensePlate({
     super.key,
-    required this.adminNumber,
+    required this.carNumber,
   });
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final formattedCarNumber = _formatCarNumber(carNumber);
     return Container(
       width: 295,
       decoration: BoxDecoration(
@@ -71,7 +72,7 @@ class LicensePlate extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
-                  adminNumber,
+                  formattedCarNumber,
                   style: theme.textTheme.labelLarge,
                 ),
               ],
@@ -80,5 +81,15 @@ class LicensePlate extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  String _formatCarNumber(String carNumber) {
+    if (carNumber.length != 8) {
+      return carNumber;
+    }
+    final part1 = carNumber.substring(0, 2);
+    final part2 = carNumber.substring(2, 6);
+    final part3 = carNumber.substring(6, 8);
+    return '$part1 $part2 $part3';
   }
 }

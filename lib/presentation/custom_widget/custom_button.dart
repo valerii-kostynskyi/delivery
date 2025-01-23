@@ -9,6 +9,7 @@ class CustomButton extends StatelessWidget {
   final double height;
   final bool isDisabled;
   final String? iconName;
+  final Color? backgroundColor;
 
   const CustomButton({
     super.key,
@@ -18,6 +19,7 @@ class CustomButton extends StatelessWidget {
     this.height = 56,
     this.isDisabled = false,
     this.iconName,
+    this.backgroundColor,
   });
 
   @override
@@ -28,9 +30,10 @@ class CustomButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: isDisabled ? null : onPressed,
         style: ElevatedButton.styleFrom(
-          backgroundColor: isDisabled
-              ? Theme.of(context).dividerColor
-              : Theme.of(context).focusColor,
+          backgroundColor: backgroundColor ??
+              (isDisabled
+                  ? Theme.of(context).dividerColor
+                  : Theme.of(context).focusColor),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(8),
           ),
@@ -45,7 +48,7 @@ class CustomButton extends StatelessWidget {
                 children: [
                   if (iconName != null)
                     Padding(
-                      padding: const EdgeInsets.only(right: 8),
+                      padding: const EdgeInsets.only(right: 12),
                       child: SvgPicture.asset(
                         'assets/icons/$iconName.svg',
                         width: 22,

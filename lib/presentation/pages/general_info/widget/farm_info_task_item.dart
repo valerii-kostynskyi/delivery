@@ -29,9 +29,8 @@ class FarmInfoTaskItem extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 16),
         height: 96,
         decoration: BoxDecoration(
-          color: isCompleted
-              ? theme.colorScheme.onSurface
-              : theme.scaffoldBackgroundColor,
+          color:
+              isCompleted ? theme.indicatorColor : theme.dialogBackgroundColor,
           borderRadius: BorderRadius.circular(12.0),
           boxShadow: [
             BoxShadow(

@@ -1,5 +1,5 @@
-import 'package:delivery/data/data_source/mock_data_source.dart';
-import 'package:delivery/data/models/list_silo_item_model.dart';
+import 'package:delivery/data/models/list_silo_item/list_silo_item_model.dart';
+import 'package:delivery/domain/silo_repository.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:get_it/get_it.dart';
@@ -9,40 +9,24 @@ part 'list_silo_state.dart';
 part 'list_silo_bloc.freezed.dart';
 
 class ListSiloBloc extends Bloc<ListSiloEvent, ListSiloState> {
-  final MockDataSource dataSource = GetIt.instance<MockDataSource>();
+  final SiloRepository siloRepository = GetIt.instance<SiloRepository>();
 
-  ListSiloBloc() : super(const ListSiloState()) {
-    on<LoadSilosEvent>(_onLoadSilos);
-    on<SelectSiloEvent>(_onSelectSilo);
-    on<CompleteTaskEvent>(_onCompleteTask);
+  ListSiloBloc() : super(const ListSiloState.initial()) {
+    on<LoadSilos>(_onLoadSilos);
   }
 
   Future<void> _onLoadSilos(
-      LoadSilosEvent event, Emitter<ListSiloState> emit) async {
-    emit(state.copyWith(status: ListSiloStatus.loading));
+      LoadSilos event, Emitter<ListSiloState> emit) async {
+    emit(const ListSiloState.loading());
     try {
-      final silos = await dataSource.fetchSilos();
+      final silos = await siloRepository.fetchSilos(waybillId: event.waybillId);
       if (silos.isEmpty) {
-        emit(state.copyWith(status: ListSiloStatus.empty));
+        emit(const ListSiloState.empty());
       } else {
-        emit(
-          state.copyWith(status: ListSiloStatus.success, silos: silos),
-        );
+        emit(ListSiloState.success(silos: silos));
       }
     } catch (e) {
-      emit(state.copyWith(
-          status: ListSiloStatus.error, errorMessage: e.toString()));
+      emit(ListSiloState.error(errorMessage: e.toString()));
     }
-  }
-
-  void _onSelectSilo(SelectSiloEvent event, Emitter<ListSiloState> emit) {
-    // emit(state.copyWith(selectedSilo: event.silo));
-  }
-
-  Future<void> _onCompleteTask(
-      CompleteTaskEvent event, Emitter<ListSiloState> emit) async {
-    emit(state.copyWith(status: ListSiloStatus.loading));
-    await Future.delayed(const Duration(seconds: 1));
-    emit(state.copyWith(status: ListSiloStatus.success));
   }
 }

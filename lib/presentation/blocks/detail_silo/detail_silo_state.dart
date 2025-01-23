@@ -5,4 +5,6 @@ class DetailSiloState with _$DetailSiloState {
   const factory DetailSiloState.initial() = Initial;
   const factory DetailSiloState.loading() = Loading;
   const factory DetailSiloState.completed() = Completed;
+  const factory DetailSiloState.error({required String errorMessage}) =
+      DetailSiloError;
 }

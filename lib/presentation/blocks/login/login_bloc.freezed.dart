@@ -72,6 +72,9 @@ class _$LoginEventCopyWithImpl<$Res, $Val extends LoginEvent>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of LoginEvent
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -91,6 +94,8 @@ class __$$SubmitImplCopyWithImpl<$Res>
       _$SubmitImpl _value, $Res Function(_$SubmitImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of LoginEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -139,7 +144,9 @@ class _$SubmitImpl implements Submit {
   @override
   int get hashCode => Object.hash(runtimeType, carNumber, password);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of LoginEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SubmitImplCopyWith<_$SubmitImpl> get copyWith =>
@@ -214,7 +221,10 @@ abstract class Submit implements LoginEvent {
 
   String get carNumber;
   String get password;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of LoginEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SubmitImplCopyWith<_$SubmitImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -233,6 +243,9 @@ class __$$CheckAuthenticationImplCopyWithImpl<$Res>
   __$$CheckAuthenticationImplCopyWithImpl(_$CheckAuthenticationImpl _value,
       $Res Function(_$CheckAuthenticationImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of LoginEvent
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -330,7 +343,7 @@ mixin _$LoginState {
     required TResult Function() loading,
     required TResult Function() login,
     required TResult Function(String driver) success,
-    required TResult Function() error,
+    required TResult Function(String errorText) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -339,7 +352,7 @@ mixin _$LoginState {
     TResult? Function()? loading,
     TResult? Function()? login,
     TResult? Function(String driver)? success,
-    TResult? Function()? error,
+    TResult? Function(String errorText)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -348,7 +361,7 @@ mixin _$LoginState {
     TResult Function()? loading,
     TResult Function()? login,
     TResult Function(String driver)? success,
-    TResult Function()? error,
+    TResult Function(String errorText)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -398,6 +411,9 @@ class _$LoginStateCopyWithImpl<$Res, $Val extends LoginState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of LoginState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -414,6 +430,9 @@ class __$$InitialImplCopyWithImpl<$Res>
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of LoginState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -442,7 +461,7 @@ class _$InitialImpl implements Initial {
     required TResult Function() loading,
     required TResult Function() login,
     required TResult Function(String driver) success,
-    required TResult Function() error,
+    required TResult Function(String errorText) error,
   }) {
     return initial();
   }
@@ -454,7 +473,7 @@ class _$InitialImpl implements Initial {
     TResult? Function()? loading,
     TResult? Function()? login,
     TResult? Function(String driver)? success,
-    TResult? Function()? error,
+    TResult? Function(String errorText)? error,
   }) {
     return initial?.call();
   }
@@ -466,7 +485,7 @@ class _$InitialImpl implements Initial {
     TResult Function()? loading,
     TResult Function()? login,
     TResult Function(String driver)? success,
-    TResult Function()? error,
+    TResult Function(String errorText)? error,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -534,6 +553,9 @@ class __$$LoadingImplCopyWithImpl<$Res>
   __$$LoadingImplCopyWithImpl(
       _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of LoginState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -562,7 +584,7 @@ class _$LoadingImpl implements Loading {
     required TResult Function() loading,
     required TResult Function() login,
     required TResult Function(String driver) success,
-    required TResult Function() error,
+    required TResult Function(String errorText) error,
   }) {
     return loading();
   }
@@ -574,7 +596,7 @@ class _$LoadingImpl implements Loading {
     TResult? Function()? loading,
     TResult? Function()? login,
     TResult? Function(String driver)? success,
-    TResult? Function()? error,
+    TResult? Function(String errorText)? error,
   }) {
     return loading?.call();
   }
@@ -586,7 +608,7 @@ class _$LoadingImpl implements Loading {
     TResult Function()? loading,
     TResult Function()? login,
     TResult Function(String driver)? success,
-    TResult Function()? error,
+    TResult Function(String errorText)? error,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -654,6 +676,9 @@ class __$$LoginImplCopyWithImpl<$Res>
   __$$LoginImplCopyWithImpl(
       _$LoginImpl _value, $Res Function(_$LoginImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of LoginState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -682,7 +707,7 @@ class _$LoginImpl implements Login {
     required TResult Function() loading,
     required TResult Function() login,
     required TResult Function(String driver) success,
-    required TResult Function() error,
+    required TResult Function(String errorText) error,
   }) {
     return login();
   }
@@ -694,7 +719,7 @@ class _$LoginImpl implements Login {
     TResult? Function()? loading,
     TResult? Function()? login,
     TResult? Function(String driver)? success,
-    TResult? Function()? error,
+    TResult? Function(String errorText)? error,
   }) {
     return login?.call();
   }
@@ -706,7 +731,7 @@ class _$LoginImpl implements Login {
     TResult Function()? loading,
     TResult Function()? login,
     TResult Function(String driver)? success,
-    TResult Function()? error,
+    TResult Function(String errorText)? error,
     required TResult orElse(),
   }) {
     if (login != null) {
@@ -777,6 +802,8 @@ class __$$SuccessImplCopyWithImpl<$Res>
       _$SuccessImpl _value, $Res Function(_$SuccessImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of LoginState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -815,7 +842,9 @@ class _$SuccessImpl implements Success {
   @override
   int get hashCode => Object.hash(runtimeType, driver);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of LoginState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
@@ -828,7 +857,7 @@ class _$SuccessImpl implements Success {
     required TResult Function() loading,
     required TResult Function() login,
     required TResult Function(String driver) success,
-    required TResult Function() error,
+    required TResult Function(String errorText) error,
   }) {
     return success(driver);
   }
@@ -840,7 +869,7 @@ class _$SuccessImpl implements Success {
     TResult? Function()? loading,
     TResult? Function()? login,
     TResult? Function(String driver)? success,
-    TResult? Function()? error,
+    TResult? Function(String errorText)? error,
   }) {
     return success?.call(driver);
   }
@@ -852,7 +881,7 @@ class _$SuccessImpl implements Success {
     TResult Function()? loading,
     TResult Function()? login,
     TResult Function(String driver)? success,
-    TResult Function()? error,
+    TResult Function(String errorText)? error,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -906,7 +935,10 @@ abstract class Success implements LoginState {
   const factory Success(final String driver) = _$SuccessImpl;
 
   String get driver;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of LoginState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -916,6 +948,8 @@ abstract class _$$ErrorImplCopyWith<$Res> {
   factory _$$ErrorImplCopyWith(
           _$ErrorImpl value, $Res Function(_$ErrorImpl) then) =
       __$$ErrorImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String errorText});
 }
 
 /// @nodoc
@@ -925,26 +959,55 @@ class __$$ErrorImplCopyWithImpl<$Res>
   __$$ErrorImplCopyWithImpl(
       _$ErrorImpl _value, $Res Function(_$ErrorImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of LoginState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? errorText = null,
+  }) {
+    return _then(_$ErrorImpl(
+      null == errorText
+          ? _value.errorText
+          : errorText // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$ErrorImpl implements Error {
-  const _$ErrorImpl();
+  const _$ErrorImpl(this.errorText);
+
+  @override
+  final String errorText;
 
   @override
   String toString() {
-    return 'LoginState.error()';
+    return 'LoginState.error(errorText: $errorText)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$ErrorImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$ErrorImpl &&
+            (identical(other.errorText, errorText) ||
+                other.errorText == errorText));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, errorText);
+
+  /// Create a copy of LoginState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ErrorImplCopyWith<_$ErrorImpl> get copyWith =>
+      __$$ErrorImplCopyWithImpl<_$ErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -953,9 +1016,9 @@ class _$ErrorImpl implements Error {
     required TResult Function() loading,
     required TResult Function() login,
     required TResult Function(String driver) success,
-    required TResult Function() error,
+    required TResult Function(String errorText) error,
   }) {
-    return error();
+    return error(errorText);
   }
 
   @override
@@ -965,9 +1028,9 @@ class _$ErrorImpl implements Error {
     TResult? Function()? loading,
     TResult? Function()? login,
     TResult? Function(String driver)? success,
-    TResult? Function()? error,
+    TResult? Function(String errorText)? error,
   }) {
-    return error?.call();
+    return error?.call(errorText);
   }
 
   @override
@@ -977,11 +1040,11 @@ class _$ErrorImpl implements Error {
     TResult Function()? loading,
     TResult Function()? login,
     TResult Function(String driver)? success,
-    TResult Function()? error,
+    TResult Function(String errorText)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
-      return error();
+      return error(errorText);
     }
     return orElse();
   }
@@ -1028,5 +1091,13 @@ class _$ErrorImpl implements Error {
 }
 
 abstract class Error implements LoginState {
-  const factory Error() = _$ErrorImpl;
+  const factory Error(final String errorText) = _$ErrorImpl;
+
+  String get errorText;
+
+  /// Create a copy of LoginState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ErrorImplCopyWith<_$ErrorImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

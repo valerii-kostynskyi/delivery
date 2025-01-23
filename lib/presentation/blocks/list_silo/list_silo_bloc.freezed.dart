@@ -16,49 +16,44 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$ListSiloEvent {
+  int get waybillId => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() loadSilos,
-    required TResult Function(ListSiloItemModel silo) selectSilo,
-    required TResult Function() completeTask,
+    required TResult Function(int waybillId) loadSilos,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? loadSilos,
-    TResult? Function(ListSiloItemModel silo)? selectSilo,
-    TResult? Function()? completeTask,
+    TResult? Function(int waybillId)? loadSilos,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? loadSilos,
-    TResult Function(ListSiloItemModel silo)? selectSilo,
-    TResult Function()? completeTask,
+    TResult Function(int waybillId)? loadSilos,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(LoadSilosEvent value) loadSilos,
-    required TResult Function(SelectSiloEvent value) selectSilo,
-    required TResult Function(CompleteTaskEvent value) completeTask,
+    required TResult Function(LoadSilos value) loadSilos,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(LoadSilosEvent value)? loadSilos,
-    TResult? Function(SelectSiloEvent value)? selectSilo,
-    TResult? Function(CompleteTaskEvent value)? completeTask,
+    TResult? Function(LoadSilos value)? loadSilos,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(LoadSilosEvent value)? loadSilos,
-    TResult Function(SelectSiloEvent value)? selectSilo,
-    TResult Function(CompleteTaskEvent value)? completeTask,
+    TResult Function(LoadSilos value)? loadSilos,
     required TResult orElse(),
   }) =>
+      throw _privateConstructorUsedError;
+
+  /// Create a copy of ListSiloEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $ListSiloEventCopyWith<ListSiloEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -67,6 +62,8 @@ abstract class $ListSiloEventCopyWith<$Res> {
   factory $ListSiloEventCopyWith(
           ListSiloEvent value, $Res Function(ListSiloEvent) then) =
       _$ListSiloEventCopyWithImpl<$Res, ListSiloEvent>;
+  @useResult
+  $Res call({int waybillId});
 }
 
 /// @nodoc
@@ -78,73 +75,115 @@ class _$ListSiloEventCopyWithImpl<$Res, $Val extends ListSiloEvent>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of ListSiloEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? waybillId = null,
+  }) {
+    return _then(_value.copyWith(
+      waybillId: null == waybillId
+          ? _value.waybillId
+          : waybillId // ignore: cast_nullable_to_non_nullable
+              as int,
+    ) as $Val);
+  }
 }
 
 /// @nodoc
-abstract class _$$LoadSilosEventImplCopyWith<$Res> {
-  factory _$$LoadSilosEventImplCopyWith(_$LoadSilosEventImpl value,
-          $Res Function(_$LoadSilosEventImpl) then) =
-      __$$LoadSilosEventImplCopyWithImpl<$Res>;
+abstract class _$$LoadSilosImplCopyWith<$Res>
+    implements $ListSiloEventCopyWith<$Res> {
+  factory _$$LoadSilosImplCopyWith(
+          _$LoadSilosImpl value, $Res Function(_$LoadSilosImpl) then) =
+      __$$LoadSilosImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({int waybillId});
 }
 
 /// @nodoc
-class __$$LoadSilosEventImplCopyWithImpl<$Res>
-    extends _$ListSiloEventCopyWithImpl<$Res, _$LoadSilosEventImpl>
-    implements _$$LoadSilosEventImplCopyWith<$Res> {
-  __$$LoadSilosEventImplCopyWithImpl(
-      _$LoadSilosEventImpl _value, $Res Function(_$LoadSilosEventImpl) _then)
+class __$$LoadSilosImplCopyWithImpl<$Res>
+    extends _$ListSiloEventCopyWithImpl<$Res, _$LoadSilosImpl>
+    implements _$$LoadSilosImplCopyWith<$Res> {
+  __$$LoadSilosImplCopyWithImpl(
+      _$LoadSilosImpl _value, $Res Function(_$LoadSilosImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of ListSiloEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? waybillId = null,
+  }) {
+    return _then(_$LoadSilosImpl(
+      waybillId: null == waybillId
+          ? _value.waybillId
+          : waybillId // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
 }
 
 /// @nodoc
 
-class _$LoadSilosEventImpl implements LoadSilosEvent {
-  const _$LoadSilosEventImpl();
+class _$LoadSilosImpl implements LoadSilos {
+  const _$LoadSilosImpl({required this.waybillId});
+
+  @override
+  final int waybillId;
 
   @override
   String toString() {
-    return 'ListSiloEvent.loadSilos()';
+    return 'ListSiloEvent.loadSilos(waybillId: $waybillId)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$LoadSilosEventImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$LoadSilosImpl &&
+            (identical(other.waybillId, waybillId) ||
+                other.waybillId == waybillId));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, waybillId);
+
+  /// Create a copy of ListSiloEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LoadSilosImplCopyWith<_$LoadSilosImpl> get copyWith =>
+      __$$LoadSilosImplCopyWithImpl<_$LoadSilosImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() loadSilos,
-    required TResult Function(ListSiloItemModel silo) selectSilo,
-    required TResult Function() completeTask,
+    required TResult Function(int waybillId) loadSilos,
   }) {
-    return loadSilos();
+    return loadSilos(waybillId);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? loadSilos,
-    TResult? Function(ListSiloItemModel silo)? selectSilo,
-    TResult? Function()? completeTask,
+    TResult? Function(int waybillId)? loadSilos,
   }) {
-    return loadSilos?.call();
+    return loadSilos?.call(waybillId);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? loadSilos,
-    TResult Function(ListSiloItemModel silo)? selectSilo,
-    TResult Function()? completeTask,
+    TResult Function(int waybillId)? loadSilos,
     required TResult orElse(),
   }) {
     if (loadSilos != null) {
-      return loadSilos();
+      return loadSilos(waybillId);
     }
     return orElse();
   }
@@ -152,9 +191,7 @@ class _$LoadSilosEventImpl implements LoadSilosEvent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(LoadSilosEvent value) loadSilos,
-    required TResult Function(SelectSiloEvent value) selectSilo,
-    required TResult Function(CompleteTaskEvent value) completeTask,
+    required TResult Function(LoadSilos value) loadSilos,
   }) {
     return loadSilos(this);
   }
@@ -162,9 +199,7 @@ class _$LoadSilosEventImpl implements LoadSilosEvent {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(LoadSilosEvent value)? loadSilos,
-    TResult? Function(SelectSiloEvent value)? selectSilo,
-    TResult? Function(CompleteTaskEvent value)? completeTask,
+    TResult? Function(LoadSilos value)? loadSilos,
   }) {
     return loadSilos?.call(this);
   }
@@ -172,9 +207,7 @@ class _$LoadSilosEventImpl implements LoadSilosEvent {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(LoadSilosEvent value)? loadSilos,
-    TResult Function(SelectSiloEvent value)? selectSilo,
-    TResult Function(CompleteTaskEvent value)? completeTask,
+    TResult Function(LoadSilos value)? loadSilos,
     required TResult orElse(),
   }) {
     if (loadSilos != null) {
@@ -184,267 +217,77 @@ class _$LoadSilosEventImpl implements LoadSilosEvent {
   }
 }
 
-abstract class LoadSilosEvent implements ListSiloEvent {
-  const factory LoadSilosEvent() = _$LoadSilosEventImpl;
-}
-
-/// @nodoc
-abstract class _$$SelectSiloEventImplCopyWith<$Res> {
-  factory _$$SelectSiloEventImplCopyWith(_$SelectSiloEventImpl value,
-          $Res Function(_$SelectSiloEventImpl) then) =
-      __$$SelectSiloEventImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({ListSiloItemModel silo});
-}
-
-/// @nodoc
-class __$$SelectSiloEventImplCopyWithImpl<$Res>
-    extends _$ListSiloEventCopyWithImpl<$Res, _$SelectSiloEventImpl>
-    implements _$$SelectSiloEventImplCopyWith<$Res> {
-  __$$SelectSiloEventImplCopyWithImpl(
-      _$SelectSiloEventImpl _value, $Res Function(_$SelectSiloEventImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? silo = null,
-  }) {
-    return _then(_$SelectSiloEventImpl(
-      null == silo
-          ? _value.silo
-          : silo // ignore: cast_nullable_to_non_nullable
-              as ListSiloItemModel,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$SelectSiloEventImpl implements SelectSiloEvent {
-  const _$SelectSiloEventImpl(this.silo);
+abstract class LoadSilos implements ListSiloEvent {
+  const factory LoadSilos({required final int waybillId}) = _$LoadSilosImpl;
 
   @override
-  final ListSiloItemModel silo;
+  int get waybillId;
 
+  /// Create a copy of ListSiloEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'ListSiloEvent.selectSilo(silo: $silo)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$SelectSiloEventImpl &&
-            (identical(other.silo, silo) || other.silo == silo));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, silo);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$SelectSiloEventImplCopyWith<_$SelectSiloEventImpl> get copyWith =>
-      __$$SelectSiloEventImplCopyWithImpl<_$SelectSiloEventImpl>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() loadSilos,
-    required TResult Function(ListSiloItemModel silo) selectSilo,
-    required TResult Function() completeTask,
-  }) {
-    return selectSilo(silo);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? loadSilos,
-    TResult? Function(ListSiloItemModel silo)? selectSilo,
-    TResult? Function()? completeTask,
-  }) {
-    return selectSilo?.call(silo);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? loadSilos,
-    TResult Function(ListSiloItemModel silo)? selectSilo,
-    TResult Function()? completeTask,
-    required TResult orElse(),
-  }) {
-    if (selectSilo != null) {
-      return selectSilo(silo);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(LoadSilosEvent value) loadSilos,
-    required TResult Function(SelectSiloEvent value) selectSilo,
-    required TResult Function(CompleteTaskEvent value) completeTask,
-  }) {
-    return selectSilo(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(LoadSilosEvent value)? loadSilos,
-    TResult? Function(SelectSiloEvent value)? selectSilo,
-    TResult? Function(CompleteTaskEvent value)? completeTask,
-  }) {
-    return selectSilo?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(LoadSilosEvent value)? loadSilos,
-    TResult Function(SelectSiloEvent value)? selectSilo,
-    TResult Function(CompleteTaskEvent value)? completeTask,
-    required TResult orElse(),
-  }) {
-    if (selectSilo != null) {
-      return selectSilo(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class SelectSiloEvent implements ListSiloEvent {
-  const factory SelectSiloEvent(final ListSiloItemModel silo) =
-      _$SelectSiloEventImpl;
-
-  ListSiloItemModel get silo;
-  @JsonKey(ignore: true)
-  _$$SelectSiloEventImplCopyWith<_$SelectSiloEventImpl> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$LoadSilosImplCopyWith<_$LoadSilosImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$CompleteTaskEventImplCopyWith<$Res> {
-  factory _$$CompleteTaskEventImplCopyWith(_$CompleteTaskEventImpl value,
-          $Res Function(_$CompleteTaskEventImpl) then) =
-      __$$CompleteTaskEventImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$CompleteTaskEventImplCopyWithImpl<$Res>
-    extends _$ListSiloEventCopyWithImpl<$Res, _$CompleteTaskEventImpl>
-    implements _$$CompleteTaskEventImplCopyWith<$Res> {
-  __$$CompleteTaskEventImplCopyWithImpl(_$CompleteTaskEventImpl _value,
-      $Res Function(_$CompleteTaskEventImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$CompleteTaskEventImpl implements CompleteTaskEvent {
-  const _$CompleteTaskEventImpl();
-
-  @override
-  String toString() {
-    return 'ListSiloEvent.completeTask()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$CompleteTaskEventImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
+mixin _$ListSiloState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() loadSilos,
-    required TResult Function(ListSiloItemModel silo) selectSilo,
-    required TResult Function() completeTask,
-  }) {
-    return completeTask();
-  }
-
-  @override
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(List<ListSiloItemModel> silos) success,
+    required TResult Function(String errorMessage) error,
+    required TResult Function() empty,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? loadSilos,
-    TResult? Function(ListSiloItemModel silo)? selectSilo,
-    TResult? Function()? completeTask,
-  }) {
-    return completeTask?.call();
-  }
-
-  @override
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(List<ListSiloItemModel> silos)? success,
+    TResult? Function(String errorMessage)? error,
+    TResult? Function()? empty,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? loadSilos,
-    TResult Function(ListSiloItemModel silo)? selectSilo,
-    TResult Function()? completeTask,
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(List<ListSiloItemModel> silos)? success,
+    TResult Function(String errorMessage)? error,
+    TResult Function()? empty,
     required TResult orElse(),
-  }) {
-    if (completeTask != null) {
-      return completeTask();
-    }
-    return orElse();
-  }
-
-  @override
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(LoadSilosEvent value) loadSilos,
-    required TResult Function(SelectSiloEvent value) selectSilo,
-    required TResult Function(CompleteTaskEvent value) completeTask,
-  }) {
-    return completeTask(this);
-  }
-
-  @override
+    required TResult Function(ListSiloInitial value) initial,
+    required TResult Function(ListSiloLoading value) loading,
+    required TResult Function(ListSiloSuccess value) success,
+    required TResult Function(ListSiloError value) error,
+    required TResult Function(ListSiloEmpty value) empty,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(LoadSilosEvent value)? loadSilos,
-    TResult? Function(SelectSiloEvent value)? selectSilo,
-    TResult? Function(CompleteTaskEvent value)? completeTask,
-  }) {
-    return completeTask?.call(this);
-  }
-
-  @override
+    TResult? Function(ListSiloInitial value)? initial,
+    TResult? Function(ListSiloLoading value)? loading,
+    TResult? Function(ListSiloSuccess value)? success,
+    TResult? Function(ListSiloError value)? error,
+    TResult? Function(ListSiloEmpty value)? empty,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(LoadSilosEvent value)? loadSilos,
-    TResult Function(SelectSiloEvent value)? selectSilo,
-    TResult Function(CompleteTaskEvent value)? completeTask,
+    TResult Function(ListSiloInitial value)? initial,
+    TResult Function(ListSiloLoading value)? loading,
+    TResult Function(ListSiloSuccess value)? success,
+    TResult Function(ListSiloError value)? error,
+    TResult Function(ListSiloEmpty value)? empty,
     required TResult orElse(),
-  }) {
-    if (completeTask != null) {
-      return completeTask(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class CompleteTaskEvent implements ListSiloEvent {
-  const factory CompleteTaskEvent() = _$CompleteTaskEventImpl;
-}
-
-/// @nodoc
-mixin _$ListSiloState {
-  ListSiloStatus get status => throw _privateConstructorUsedError;
-  List<ListSiloItemModel> get silos => throw _privateConstructorUsedError;
-  String? get errorMessage => throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $ListSiloStateCopyWith<ListSiloState> get copyWith =>
+  }) =>
       throw _privateConstructorUsedError;
 }
 
@@ -453,11 +296,6 @@ abstract class $ListSiloStateCopyWith<$Res> {
   factory $ListSiloStateCopyWith(
           ListSiloState value, $Res Function(ListSiloState) then) =
       _$ListSiloStateCopyWithImpl<$Res, ListSiloState>;
-  @useResult
-  $Res call(
-      {ListSiloStatus status,
-      List<ListSiloItemModel> silos,
-      String? errorMessage});
 }
 
 /// @nodoc
@@ -470,91 +308,297 @@ class _$ListSiloStateCopyWithImpl<$Res, $Val extends ListSiloState>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  @pragma('vm:prefer-inline')
+  /// Create a copy of ListSiloState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+abstract class _$$ListSiloInitialImplCopyWith<$Res> {
+  factory _$$ListSiloInitialImplCopyWith(_$ListSiloInitialImpl value,
+          $Res Function(_$ListSiloInitialImpl) then) =
+      __$$ListSiloInitialImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ListSiloInitialImplCopyWithImpl<$Res>
+    extends _$ListSiloStateCopyWithImpl<$Res, _$ListSiloInitialImpl>
+    implements _$$ListSiloInitialImplCopyWith<$Res> {
+  __$$ListSiloInitialImplCopyWithImpl(
+      _$ListSiloInitialImpl _value, $Res Function(_$ListSiloInitialImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ListSiloState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$ListSiloInitialImpl implements ListSiloInitial {
+  const _$ListSiloInitialImpl();
+
   @override
-  $Res call({
-    Object? status = null,
-    Object? silos = null,
-    Object? errorMessage = freezed,
+  String toString() {
+    return 'ListSiloState.initial()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$ListSiloInitialImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(List<ListSiloItemModel> silos) success,
+    required TResult Function(String errorMessage) error,
+    required TResult Function() empty,
   }) {
-    return _then(_value.copyWith(
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as ListSiloStatus,
-      silos: null == silos
-          ? _value.silos
-          : silos // ignore: cast_nullable_to_non_nullable
-              as List<ListSiloItemModel>,
-      errorMessage: freezed == errorMessage
-          ? _value.errorMessage
-          : errorMessage // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
+    return initial();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(List<ListSiloItemModel> silos)? success,
+    TResult? Function(String errorMessage)? error,
+    TResult? Function()? empty,
+  }) {
+    return initial?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(List<ListSiloItemModel> silos)? success,
+    TResult Function(String errorMessage)? error,
+    TResult Function()? empty,
+    required TResult orElse(),
+  }) {
+    if (initial != null) {
+      return initial();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ListSiloInitial value) initial,
+    required TResult Function(ListSiloLoading value) loading,
+    required TResult Function(ListSiloSuccess value) success,
+    required TResult Function(ListSiloError value) error,
+    required TResult Function(ListSiloEmpty value) empty,
+  }) {
+    return initial(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ListSiloInitial value)? initial,
+    TResult? Function(ListSiloLoading value)? loading,
+    TResult? Function(ListSiloSuccess value)? success,
+    TResult? Function(ListSiloError value)? error,
+    TResult? Function(ListSiloEmpty value)? empty,
+  }) {
+    return initial?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ListSiloInitial value)? initial,
+    TResult Function(ListSiloLoading value)? loading,
+    TResult Function(ListSiloSuccess value)? success,
+    TResult Function(ListSiloError value)? error,
+    TResult Function(ListSiloEmpty value)? empty,
+    required TResult orElse(),
+  }) {
+    if (initial != null) {
+      return initial(this);
+    }
+    return orElse();
   }
 }
 
-/// @nodoc
-abstract class _$$ListSiloStateImplCopyWith<$Res>
-    implements $ListSiloStateCopyWith<$Res> {
-  factory _$$ListSiloStateImplCopyWith(
-          _$ListSiloStateImpl value, $Res Function(_$ListSiloStateImpl) then) =
-      __$$ListSiloStateImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {ListSiloStatus status,
-      List<ListSiloItemModel> silos,
-      String? errorMessage});
+abstract class ListSiloInitial implements ListSiloState {
+  const factory ListSiloInitial() = _$ListSiloInitialImpl;
 }
 
 /// @nodoc
-class __$$ListSiloStateImplCopyWithImpl<$Res>
-    extends _$ListSiloStateCopyWithImpl<$Res, _$ListSiloStateImpl>
-    implements _$$ListSiloStateImplCopyWith<$Res> {
-  __$$ListSiloStateImplCopyWithImpl(
-      _$ListSiloStateImpl _value, $Res Function(_$ListSiloStateImpl) _then)
+abstract class _$$ListSiloLoadingImplCopyWith<$Res> {
+  factory _$$ListSiloLoadingImplCopyWith(_$ListSiloLoadingImpl value,
+          $Res Function(_$ListSiloLoadingImpl) then) =
+      __$$ListSiloLoadingImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ListSiloLoadingImplCopyWithImpl<$Res>
+    extends _$ListSiloStateCopyWithImpl<$Res, _$ListSiloLoadingImpl>
+    implements _$$ListSiloLoadingImplCopyWith<$Res> {
+  __$$ListSiloLoadingImplCopyWithImpl(
+      _$ListSiloLoadingImpl _value, $Res Function(_$ListSiloLoadingImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ListSiloState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$ListSiloLoadingImpl implements ListSiloLoading {
+  const _$ListSiloLoadingImpl();
+
+  @override
+  String toString() {
+    return 'ListSiloState.loading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$ListSiloLoadingImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(List<ListSiloItemModel> silos) success,
+    required TResult Function(String errorMessage) error,
+    required TResult Function() empty,
+  }) {
+    return loading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(List<ListSiloItemModel> silos)? success,
+    TResult? Function(String errorMessage)? error,
+    TResult? Function()? empty,
+  }) {
+    return loading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(List<ListSiloItemModel> silos)? success,
+    TResult Function(String errorMessage)? error,
+    TResult Function()? empty,
+    required TResult orElse(),
+  }) {
+    if (loading != null) {
+      return loading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ListSiloInitial value) initial,
+    required TResult Function(ListSiloLoading value) loading,
+    required TResult Function(ListSiloSuccess value) success,
+    required TResult Function(ListSiloError value) error,
+    required TResult Function(ListSiloEmpty value) empty,
+  }) {
+    return loading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ListSiloInitial value)? initial,
+    TResult? Function(ListSiloLoading value)? loading,
+    TResult? Function(ListSiloSuccess value)? success,
+    TResult? Function(ListSiloError value)? error,
+    TResult? Function(ListSiloEmpty value)? empty,
+  }) {
+    return loading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ListSiloInitial value)? initial,
+    TResult Function(ListSiloLoading value)? loading,
+    TResult Function(ListSiloSuccess value)? success,
+    TResult Function(ListSiloError value)? error,
+    TResult Function(ListSiloEmpty value)? empty,
+    required TResult orElse(),
+  }) {
+    if (loading != null) {
+      return loading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ListSiloLoading implements ListSiloState {
+  const factory ListSiloLoading() = _$ListSiloLoadingImpl;
+}
+
+/// @nodoc
+abstract class _$$ListSiloSuccessImplCopyWith<$Res> {
+  factory _$$ListSiloSuccessImplCopyWith(_$ListSiloSuccessImpl value,
+          $Res Function(_$ListSiloSuccessImpl) then) =
+      __$$ListSiloSuccessImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<ListSiloItemModel> silos});
+}
+
+/// @nodoc
+class __$$ListSiloSuccessImplCopyWithImpl<$Res>
+    extends _$ListSiloStateCopyWithImpl<$Res, _$ListSiloSuccessImpl>
+    implements _$$ListSiloSuccessImplCopyWith<$Res> {
+  __$$ListSiloSuccessImplCopyWithImpl(
+      _$ListSiloSuccessImpl _value, $Res Function(_$ListSiloSuccessImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ListSiloState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? status = null,
     Object? silos = null,
-    Object? errorMessage = freezed,
   }) {
-    return _then(_$ListSiloStateImpl(
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as ListSiloStatus,
+    return _then(_$ListSiloSuccessImpl(
       silos: null == silos
           ? _value._silos
           : silos // ignore: cast_nullable_to_non_nullable
               as List<ListSiloItemModel>,
-      errorMessage: freezed == errorMessage
-          ? _value.errorMessage
-          : errorMessage // ignore: cast_nullable_to_non_nullable
-              as String?,
     ));
   }
 }
 
 /// @nodoc
 
-class _$ListSiloStateImpl implements _ListSiloState {
-  const _$ListSiloStateImpl(
-      {this.status = ListSiloStatus.initial,
-      final List<ListSiloItemModel> silos = const [],
-      this.errorMessage})
+class _$ListSiloSuccessImpl implements ListSiloSuccess {
+  const _$ListSiloSuccessImpl({required final List<ListSiloItemModel> silos})
       : _silos = silos;
 
-  @override
-  @JsonKey()
-  final ListSiloStatus status;
   final List<ListSiloItemModel> _silos;
   @override
-  @JsonKey()
   List<ListSiloItemModel> get silos {
     if (_silos is EqualUnmodifiableListView) return _silos;
     // ignore: implicit_dynamic_type
@@ -562,49 +606,404 @@ class _$ListSiloStateImpl implements _ListSiloState {
   }
 
   @override
-  final String? errorMessage;
-
-  @override
   String toString() {
-    return 'ListSiloState(status: $status, silos: $silos, errorMessage: $errorMessage)';
+    return 'ListSiloState.success(silos: $silos)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ListSiloStateImpl &&
-            (identical(other.status, status) || other.status == status) &&
-            const DeepCollectionEquality().equals(other._silos, _silos) &&
+            other is _$ListSiloSuccessImpl &&
+            const DeepCollectionEquality().equals(other._silos, _silos));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_silos));
+
+  /// Create a copy of ListSiloState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ListSiloSuccessImplCopyWith<_$ListSiloSuccessImpl> get copyWith =>
+      __$$ListSiloSuccessImplCopyWithImpl<_$ListSiloSuccessImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(List<ListSiloItemModel> silos) success,
+    required TResult Function(String errorMessage) error,
+    required TResult Function() empty,
+  }) {
+    return success(silos);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(List<ListSiloItemModel> silos)? success,
+    TResult? Function(String errorMessage)? error,
+    TResult? Function()? empty,
+  }) {
+    return success?.call(silos);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(List<ListSiloItemModel> silos)? success,
+    TResult Function(String errorMessage)? error,
+    TResult Function()? empty,
+    required TResult orElse(),
+  }) {
+    if (success != null) {
+      return success(silos);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ListSiloInitial value) initial,
+    required TResult Function(ListSiloLoading value) loading,
+    required TResult Function(ListSiloSuccess value) success,
+    required TResult Function(ListSiloError value) error,
+    required TResult Function(ListSiloEmpty value) empty,
+  }) {
+    return success(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ListSiloInitial value)? initial,
+    TResult? Function(ListSiloLoading value)? loading,
+    TResult? Function(ListSiloSuccess value)? success,
+    TResult? Function(ListSiloError value)? error,
+    TResult? Function(ListSiloEmpty value)? empty,
+  }) {
+    return success?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ListSiloInitial value)? initial,
+    TResult Function(ListSiloLoading value)? loading,
+    TResult Function(ListSiloSuccess value)? success,
+    TResult Function(ListSiloError value)? error,
+    TResult Function(ListSiloEmpty value)? empty,
+    required TResult orElse(),
+  }) {
+    if (success != null) {
+      return success(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ListSiloSuccess implements ListSiloState {
+  const factory ListSiloSuccess(
+      {required final List<ListSiloItemModel> silos}) = _$ListSiloSuccessImpl;
+
+  List<ListSiloItemModel> get silos;
+
+  /// Create a copy of ListSiloState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ListSiloSuccessImplCopyWith<_$ListSiloSuccessImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ListSiloErrorImplCopyWith<$Res> {
+  factory _$$ListSiloErrorImplCopyWith(
+          _$ListSiloErrorImpl value, $Res Function(_$ListSiloErrorImpl) then) =
+      __$$ListSiloErrorImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String errorMessage});
+}
+
+/// @nodoc
+class __$$ListSiloErrorImplCopyWithImpl<$Res>
+    extends _$ListSiloStateCopyWithImpl<$Res, _$ListSiloErrorImpl>
+    implements _$$ListSiloErrorImplCopyWith<$Res> {
+  __$$ListSiloErrorImplCopyWithImpl(
+      _$ListSiloErrorImpl _value, $Res Function(_$ListSiloErrorImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ListSiloState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? errorMessage = null,
+  }) {
+    return _then(_$ListSiloErrorImpl(
+      errorMessage: null == errorMessage
+          ? _value.errorMessage
+          : errorMessage // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ListSiloErrorImpl implements ListSiloError {
+  const _$ListSiloErrorImpl({required this.errorMessage});
+
+  @override
+  final String errorMessage;
+
+  @override
+  String toString() {
+    return 'ListSiloState.error(errorMessage: $errorMessage)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ListSiloErrorImpl &&
             (identical(other.errorMessage, errorMessage) ||
                 other.errorMessage == errorMessage));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, status,
-      const DeepCollectionEquality().hash(_silos), errorMessage);
+  int get hashCode => Object.hash(runtimeType, errorMessage);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ListSiloState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$ListSiloStateImplCopyWith<_$ListSiloStateImpl> get copyWith =>
-      __$$ListSiloStateImplCopyWithImpl<_$ListSiloStateImpl>(this, _$identity);
+  _$$ListSiloErrorImplCopyWith<_$ListSiloErrorImpl> get copyWith =>
+      __$$ListSiloErrorImplCopyWithImpl<_$ListSiloErrorImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(List<ListSiloItemModel> silos) success,
+    required TResult Function(String errorMessage) error,
+    required TResult Function() empty,
+  }) {
+    return error(errorMessage);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(List<ListSiloItemModel> silos)? success,
+    TResult? Function(String errorMessage)? error,
+    TResult? Function()? empty,
+  }) {
+    return error?.call(errorMessage);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(List<ListSiloItemModel> silos)? success,
+    TResult Function(String errorMessage)? error,
+    TResult Function()? empty,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(errorMessage);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ListSiloInitial value) initial,
+    required TResult Function(ListSiloLoading value) loading,
+    required TResult Function(ListSiloSuccess value) success,
+    required TResult Function(ListSiloError value) error,
+    required TResult Function(ListSiloEmpty value) empty,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ListSiloInitial value)? initial,
+    TResult? Function(ListSiloLoading value)? loading,
+    TResult? Function(ListSiloSuccess value)? success,
+    TResult? Function(ListSiloError value)? error,
+    TResult? Function(ListSiloEmpty value)? empty,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ListSiloInitial value)? initial,
+    TResult Function(ListSiloLoading value)? loading,
+    TResult Function(ListSiloSuccess value)? success,
+    TResult Function(ListSiloError value)? error,
+    TResult Function(ListSiloEmpty value)? empty,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
 }
 
-abstract class _ListSiloState implements ListSiloState {
-  const factory _ListSiloState(
-      {final ListSiloStatus status,
-      final List<ListSiloItemModel> silos,
-      final String? errorMessage}) = _$ListSiloStateImpl;
+abstract class ListSiloError implements ListSiloState {
+  const factory ListSiloError({required final String errorMessage}) =
+      _$ListSiloErrorImpl;
+
+  String get errorMessage;
+
+  /// Create a copy of ListSiloState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ListSiloErrorImplCopyWith<_$ListSiloErrorImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ListSiloEmptyImplCopyWith<$Res> {
+  factory _$$ListSiloEmptyImplCopyWith(
+          _$ListSiloEmptyImpl value, $Res Function(_$ListSiloEmptyImpl) then) =
+      __$$ListSiloEmptyImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ListSiloEmptyImplCopyWithImpl<$Res>
+    extends _$ListSiloStateCopyWithImpl<$Res, _$ListSiloEmptyImpl>
+    implements _$$ListSiloEmptyImplCopyWith<$Res> {
+  __$$ListSiloEmptyImplCopyWithImpl(
+      _$ListSiloEmptyImpl _value, $Res Function(_$ListSiloEmptyImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ListSiloState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$ListSiloEmptyImpl implements ListSiloEmpty {
+  const _$ListSiloEmptyImpl();
 
   @override
-  ListSiloStatus get status;
+  String toString() {
+    return 'ListSiloState.empty()';
+  }
+
   @override
-  List<ListSiloItemModel> get silos;
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$ListSiloEmptyImpl);
+  }
+
   @override
-  String? get errorMessage;
+  int get hashCode => runtimeType.hashCode;
+
   @override
-  @JsonKey(ignore: true)
-  _$$ListSiloStateImplCopyWith<_$ListSiloStateImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(List<ListSiloItemModel> silos) success,
+    required TResult Function(String errorMessage) error,
+    required TResult Function() empty,
+  }) {
+    return empty();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(List<ListSiloItemModel> silos)? success,
+    TResult? Function(String errorMessage)? error,
+    TResult? Function()? empty,
+  }) {
+    return empty?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(List<ListSiloItemModel> silos)? success,
+    TResult Function(String errorMessage)? error,
+    TResult Function()? empty,
+    required TResult orElse(),
+  }) {
+    if (empty != null) {
+      return empty();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ListSiloInitial value) initial,
+    required TResult Function(ListSiloLoading value) loading,
+    required TResult Function(ListSiloSuccess value) success,
+    required TResult Function(ListSiloError value) error,
+    required TResult Function(ListSiloEmpty value) empty,
+  }) {
+    return empty(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ListSiloInitial value)? initial,
+    TResult? Function(ListSiloLoading value)? loading,
+    TResult? Function(ListSiloSuccess value)? success,
+    TResult? Function(ListSiloError value)? error,
+    TResult? Function(ListSiloEmpty value)? empty,
+  }) {
+    return empty?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ListSiloInitial value)? initial,
+    TResult Function(ListSiloLoading value)? loading,
+    TResult Function(ListSiloSuccess value)? success,
+    TResult Function(ListSiloError value)? error,
+    TResult Function(ListSiloEmpty value)? empty,
+    required TResult orElse(),
+  }) {
+    if (empty != null) {
+      return empty(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ListSiloEmpty implements ListSiloState {
+  const factory ListSiloEmpty() = _$ListSiloEmptyImpl;
 }

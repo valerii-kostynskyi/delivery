@@ -180,6 +180,26 @@ class S {
     );
   }
 
+  /// `Refilled`
+  String get refilled {
+    return Intl.message(
+      'Refilled',
+      name: 'refilled',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirmed`
+  String get confirmed {
+    return Intl.message(
+      'Confirmed',
+      name: 'confirmed',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Full`
   String get full {
     return Intl.message(
@@ -525,6 +545,36 @@ class S {
     return Intl.message(
       'Logout',
       name: 'logout',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No tasks available`
+  String get noTasksAvailable {
+    return Intl.message(
+      'No tasks available',
+      name: 'noTasksAvailable',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Something went wrong, try again...`
+  String get somethingWentWrong {
+    return Intl.message(
+      'Something went wrong, try again...',
+      name: 'somethingWentWrong',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Data updated`
+  String get dataUpdated {
+    return Intl.message(
+      'Data updated',
+      name: 'dataUpdated',
       desc: '',
       args: [],
     );

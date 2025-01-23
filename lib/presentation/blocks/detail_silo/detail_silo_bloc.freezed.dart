@@ -16,19 +16,20 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$DetailSiloEvent {
+  ListSiloItemModel get item => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() confirmCompletion,
+    required TResult Function(ListSiloItemModel item) confirmCompletion,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? confirmCompletion,
+    TResult? Function(ListSiloItemModel item)? confirmCompletion,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? confirmCompletion,
+    TResult Function(ListSiloItemModel item)? confirmCompletion,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -48,6 +49,12 @@ mixin _$DetailSiloEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
+  /// Create a copy of DetailSiloEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $DetailSiloEventCopyWith<DetailSiloEvent> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -55,6 +62,8 @@ abstract class $DetailSiloEventCopyWith<$Res> {
   factory $DetailSiloEventCopyWith(
           DetailSiloEvent value, $Res Function(DetailSiloEvent) then) =
       _$DetailSiloEventCopyWithImpl<$Res, DetailSiloEvent>;
+  @useResult
+  $Res call({ListSiloItemModel item});
 }
 
 /// @nodoc
@@ -66,13 +75,32 @@ class _$DetailSiloEventCopyWithImpl<$Res, $Val extends DetailSiloEvent>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of DetailSiloEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? item = freezed,
+  }) {
+    return _then(_value.copyWith(
+      item: freezed == item
+          ? _value.item
+          : item // ignore: cast_nullable_to_non_nullable
+              as ListSiloItemModel,
+    ) as $Val);
+  }
 }
 
 /// @nodoc
-abstract class _$$ConfirmCompletionImplCopyWith<$Res> {
+abstract class _$$ConfirmCompletionImplCopyWith<$Res>
+    implements $DetailSiloEventCopyWith<$Res> {
   factory _$$ConfirmCompletionImplCopyWith(_$ConfirmCompletionImpl value,
           $Res Function(_$ConfirmCompletionImpl) then) =
       __$$ConfirmCompletionImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({ListSiloItemModel item});
 }
 
 /// @nodoc
@@ -82,51 +110,81 @@ class __$$ConfirmCompletionImplCopyWithImpl<$Res>
   __$$ConfirmCompletionImplCopyWithImpl(_$ConfirmCompletionImpl _value,
       $Res Function(_$ConfirmCompletionImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of DetailSiloEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? item = freezed,
+  }) {
+    return _then(_$ConfirmCompletionImpl(
+      item: freezed == item
+          ? _value.item
+          : item // ignore: cast_nullable_to_non_nullable
+              as ListSiloItemModel,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$ConfirmCompletionImpl implements ConfirmCompletion {
-  const _$ConfirmCompletionImpl();
+  const _$ConfirmCompletionImpl({required this.item});
+
+  @override
+  final ListSiloItemModel item;
 
   @override
   String toString() {
-    return 'DetailSiloEvent.confirmCompletion()';
+    return 'DetailSiloEvent.confirmCompletion(item: $item)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$ConfirmCompletionImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$ConfirmCompletionImpl &&
+            const DeepCollectionEquality().equals(other.item, item));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(item));
+
+  /// Create a copy of DetailSiloEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ConfirmCompletionImplCopyWith<_$ConfirmCompletionImpl> get copyWith =>
+      __$$ConfirmCompletionImplCopyWithImpl<_$ConfirmCompletionImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() confirmCompletion,
+    required TResult Function(ListSiloItemModel item) confirmCompletion,
   }) {
-    return confirmCompletion();
+    return confirmCompletion(item);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? confirmCompletion,
+    TResult? Function(ListSiloItemModel item)? confirmCompletion,
   }) {
-    return confirmCompletion?.call();
+    return confirmCompletion?.call(item);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? confirmCompletion,
+    TResult Function(ListSiloItemModel item)? confirmCompletion,
     required TResult orElse(),
   }) {
     if (confirmCompletion != null) {
-      return confirmCompletion();
+      return confirmCompletion(item);
     }
     return orElse();
   }
@@ -161,7 +219,18 @@ class _$ConfirmCompletionImpl implements ConfirmCompletion {
 }
 
 abstract class ConfirmCompletion implements DetailSiloEvent {
-  const factory ConfirmCompletion() = _$ConfirmCompletionImpl;
+  const factory ConfirmCompletion({required final ListSiloItemModel item}) =
+      _$ConfirmCompletionImpl;
+
+  @override
+  ListSiloItemModel get item;
+
+  /// Create a copy of DetailSiloEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ConfirmCompletionImplCopyWith<_$ConfirmCompletionImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -171,6 +240,7 @@ mixin _$DetailSiloState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() completed,
+    required TResult Function(String errorMessage) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -178,6 +248,7 @@ mixin _$DetailSiloState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function()? completed,
+    TResult? Function(String errorMessage)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -185,6 +256,7 @@ mixin _$DetailSiloState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? completed,
+    TResult Function(String errorMessage)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -193,6 +265,7 @@ mixin _$DetailSiloState {
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
     required TResult Function(Completed value) completed,
+    required TResult Function(DetailSiloError value) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -200,6 +273,7 @@ mixin _$DetailSiloState {
     TResult? Function(Initial value)? initial,
     TResult? Function(Loading value)? loading,
     TResult? Function(Completed value)? completed,
+    TResult? Function(DetailSiloError value)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -207,6 +281,7 @@ mixin _$DetailSiloState {
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(Completed value)? completed,
+    TResult Function(DetailSiloError value)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -228,6 +303,9 @@ class _$DetailSiloStateCopyWithImpl<$Res, $Val extends DetailSiloState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of DetailSiloState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -244,6 +322,9 @@ class __$$InitialImplCopyWithImpl<$Res>
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of DetailSiloState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -271,6 +352,7 @@ class _$InitialImpl implements Initial {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() completed,
+    required TResult Function(String errorMessage) error,
   }) {
     return initial();
   }
@@ -281,6 +363,7 @@ class _$InitialImpl implements Initial {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function()? completed,
+    TResult? Function(String errorMessage)? error,
   }) {
     return initial?.call();
   }
@@ -291,6 +374,7 @@ class _$InitialImpl implements Initial {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? completed,
+    TResult Function(String errorMessage)? error,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -305,6 +389,7 @@ class _$InitialImpl implements Initial {
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
     required TResult Function(Completed value) completed,
+    required TResult Function(DetailSiloError value) error,
   }) {
     return initial(this);
   }
@@ -315,6 +400,7 @@ class _$InitialImpl implements Initial {
     TResult? Function(Initial value)? initial,
     TResult? Function(Loading value)? loading,
     TResult? Function(Completed value)? completed,
+    TResult? Function(DetailSiloError value)? error,
   }) {
     return initial?.call(this);
   }
@@ -325,6 +411,7 @@ class _$InitialImpl implements Initial {
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(Completed value)? completed,
+    TResult Function(DetailSiloError value)? error,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -352,6 +439,9 @@ class __$$LoadingImplCopyWithImpl<$Res>
   __$$LoadingImplCopyWithImpl(
       _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of DetailSiloState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -379,6 +469,7 @@ class _$LoadingImpl implements Loading {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() completed,
+    required TResult Function(String errorMessage) error,
   }) {
     return loading();
   }
@@ -389,6 +480,7 @@ class _$LoadingImpl implements Loading {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function()? completed,
+    TResult? Function(String errorMessage)? error,
   }) {
     return loading?.call();
   }
@@ -399,6 +491,7 @@ class _$LoadingImpl implements Loading {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? completed,
+    TResult Function(String errorMessage)? error,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -413,6 +506,7 @@ class _$LoadingImpl implements Loading {
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
     required TResult Function(Completed value) completed,
+    required TResult Function(DetailSiloError value) error,
   }) {
     return loading(this);
   }
@@ -423,6 +517,7 @@ class _$LoadingImpl implements Loading {
     TResult? Function(Initial value)? initial,
     TResult? Function(Loading value)? loading,
     TResult? Function(Completed value)? completed,
+    TResult? Function(DetailSiloError value)? error,
   }) {
     return loading?.call(this);
   }
@@ -433,6 +528,7 @@ class _$LoadingImpl implements Loading {
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(Completed value)? completed,
+    TResult Function(DetailSiloError value)? error,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -460,6 +556,9 @@ class __$$CompletedImplCopyWithImpl<$Res>
   __$$CompletedImplCopyWithImpl(
       _$CompletedImpl _value, $Res Function(_$CompletedImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of DetailSiloState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -487,6 +586,7 @@ class _$CompletedImpl implements Completed {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() completed,
+    required TResult Function(String errorMessage) error,
   }) {
     return completed();
   }
@@ -497,6 +597,7 @@ class _$CompletedImpl implements Completed {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function()? completed,
+    TResult? Function(String errorMessage)? error,
   }) {
     return completed?.call();
   }
@@ -507,6 +608,7 @@ class _$CompletedImpl implements Completed {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? completed,
+    TResult Function(String errorMessage)? error,
     required TResult orElse(),
   }) {
     if (completed != null) {
@@ -521,6 +623,7 @@ class _$CompletedImpl implements Completed {
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
     required TResult Function(Completed value) completed,
+    required TResult Function(DetailSiloError value) error,
   }) {
     return completed(this);
   }
@@ -531,6 +634,7 @@ class _$CompletedImpl implements Completed {
     TResult? Function(Initial value)? initial,
     TResult? Function(Loading value)? loading,
     TResult? Function(Completed value)? completed,
+    TResult? Function(DetailSiloError value)? error,
   }) {
     return completed?.call(this);
   }
@@ -541,6 +645,7 @@ class _$CompletedImpl implements Completed {
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(Completed value)? completed,
+    TResult Function(DetailSiloError value)? error,
     required TResult orElse(),
   }) {
     if (completed != null) {
@@ -552,4 +657,159 @@ class _$CompletedImpl implements Completed {
 
 abstract class Completed implements DetailSiloState {
   const factory Completed() = _$CompletedImpl;
+}
+
+/// @nodoc
+abstract class _$$DetailSiloErrorImplCopyWith<$Res> {
+  factory _$$DetailSiloErrorImplCopyWith(_$DetailSiloErrorImpl value,
+          $Res Function(_$DetailSiloErrorImpl) then) =
+      __$$DetailSiloErrorImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String errorMessage});
+}
+
+/// @nodoc
+class __$$DetailSiloErrorImplCopyWithImpl<$Res>
+    extends _$DetailSiloStateCopyWithImpl<$Res, _$DetailSiloErrorImpl>
+    implements _$$DetailSiloErrorImplCopyWith<$Res> {
+  __$$DetailSiloErrorImplCopyWithImpl(
+      _$DetailSiloErrorImpl _value, $Res Function(_$DetailSiloErrorImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of DetailSiloState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? errorMessage = null,
+  }) {
+    return _then(_$DetailSiloErrorImpl(
+      errorMessage: null == errorMessage
+          ? _value.errorMessage
+          : errorMessage // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$DetailSiloErrorImpl implements DetailSiloError {
+  const _$DetailSiloErrorImpl({required this.errorMessage});
+
+  @override
+  final String errorMessage;
+
+  @override
+  String toString() {
+    return 'DetailSiloState.error(errorMessage: $errorMessage)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DetailSiloErrorImpl &&
+            (identical(other.errorMessage, errorMessage) ||
+                other.errorMessage == errorMessage));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, errorMessage);
+
+  /// Create a copy of DetailSiloState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DetailSiloErrorImplCopyWith<_$DetailSiloErrorImpl> get copyWith =>
+      __$$DetailSiloErrorImplCopyWithImpl<_$DetailSiloErrorImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() completed,
+    required TResult Function(String errorMessage) error,
+  }) {
+    return error(errorMessage);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function()? completed,
+    TResult? Function(String errorMessage)? error,
+  }) {
+    return error?.call(errorMessage);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? completed,
+    TResult Function(String errorMessage)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(errorMessage);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Initial value) initial,
+    required TResult Function(Loading value) loading,
+    required TResult Function(Completed value) completed,
+    required TResult Function(DetailSiloError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Initial value)? initial,
+    TResult? Function(Loading value)? loading,
+    TResult? Function(Completed value)? completed,
+    TResult? Function(DetailSiloError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
+    TResult Function(Loading value)? loading,
+    TResult Function(Completed value)? completed,
+    TResult Function(DetailSiloError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DetailSiloError implements DetailSiloState {
+  const factory DetailSiloError({required final String errorMessage}) =
+      _$DetailSiloErrorImpl;
+
+  String get errorMessage;
+
+  /// Create a copy of DetailSiloState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$DetailSiloErrorImplCopyWith<_$DetailSiloErrorImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

@@ -1,25 +1,26 @@
-import 'package:delivery/data/models/list_silo_item_model.dart';
+import 'package:delivery/data/models/list_silo_item/list_silo_item_model.dart';
 import 'package:delivery/presentation/utility/extension/change_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class ListSiloItem extends StatelessWidget {
   final ListSiloItemModel cardItemModel;
+  final int index;
   final void Function()? onTap;
 
   const ListSiloItem({
     super.key,
     required this.cardItemModel,
     required this.onTap,
+    required this.index,
   });
 
   @override
   Widget build(BuildContext context) {
+    bool isEmpty = cardItemModel.status != 'full';
     final theme = Theme.of(context);
     return Card(
-      color: cardItemModel.isEmpty
-          ? theme.secondaryHeaderColor
-          : theme.colorScheme.onSurface,
+      color: isEmpty ? theme.secondaryHeaderColor : theme.colorScheme.onSurface,
       child: InkWell(
         onTap: onTap,
         child: Padding(
@@ -37,16 +38,16 @@ class ListSiloItem extends StatelessWidget {
                     SizedBox(
                       height: 72,
                       child: Text(
-                        '${cardItemModel.index}',
+                        index.toString(),
                         style: theme.textTheme.labelLarge!.copyWith(
                           fontSize: 60,
-                          color: cardItemModel.isEmpty
+                          color: isEmpty
                               ? theme.colorScheme.onPrimary
                               : theme.focusColor,
                         ),
                       ),
                     ),
-                    if (cardItemModel.isEmpty)
+                    if (isEmpty)
                       SvgPicture.asset(
                         'assets/icons/silo_load.svg',
                         width: 30,
@@ -64,9 +65,9 @@ class ListSiloItem extends StatelessWidget {
               ),
               const SizedBox(height: 8),
               Text(
-                cardItemModel.isEmpty
-                    ? context.localizations.empty
-                    : context.localizations.full,
+                cardItemModel.status == 'full'
+                    ? context.localizations.full
+                    : context.localizations.empty,
                 style: theme.textTheme.bodyLarge,
               ),
             ],

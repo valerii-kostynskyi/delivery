@@ -22,13 +22,13 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m0(number) => "Дільниця № ${number}";
 
-  static String m1(number) => "Приміщення № ${number}";
+  static String m1(number) => "Пташник № ${number}";
 
   static String m2(number) => "Рейс № ${number}";
 
-  static String m3(number) => "Склад № ${number} порожній";
+  static String m3(number) => "Бункер № ${number} порожній";
 
-  static String m4(number) => "Склад № ${number}";
+  static String m4(number) => "Бункер № ${number}";
 
   static String m5(number) => "Завдання № ${number}";
 
@@ -45,6 +45,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Підтвердити виконання"),
         "confirmExecution":
             MessageLookupByLibrary.simpleMessage("Підтвердити виконання"),
+        "confirmed": MessageLookupByLibrary.simpleMessage("Підтверджено"),
+        "dataUpdated": MessageLookupByLibrary.simpleMessage("Дані оновлено"),
         "distributionKKZ": MessageLookupByLibrary.simpleMessage("Розподіл ККЗ"),
         "email": MessageLookupByLibrary.simpleMessage("Пошта"),
         "empty": MessageLookupByLibrary.simpleMessage("Порожній"),
@@ -60,7 +62,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Неправильний код"),
         "incorrectPassword": MessageLookupByLibrary.simpleMessage(
             "Пароль невірний. Зверніться до керівника"),
-        "kkzDelivery": MessageLookupByLibrary.simpleMessage("Доставка товару"),
+        "kkzDelivery":
+            MessageLookupByLibrary.simpleMessage("Доставка комбікорму"),
         "loadingPleaseWait":
             MessageLookupByLibrary.simpleMessage("Зачекайте, йде завантаження"),
         "logout": MessageLookupByLibrary.simpleMessage("Вийти"),
@@ -68,26 +71,31 @@ class MessageLookup extends MessageLookupByLibrary {
         "noFeed": MessageLookupByLibrary.simpleMessage("Нема корму"),
         "noServerResponse": MessageLookupByLibrary.simpleMessage(
             "Не отримано відповідь від сервера"),
+        "noTasksAvailable":
+            MessageLookupByLibrary.simpleMessage("На зараз завдання відсутні"),
         "password": MessageLookupByLibrary.simpleMessage("Пароль"),
         "phoneNumber": MessageLookupByLibrary.simpleMessage("Номер телефону"),
         "pointCameraToBarcode": MessageLookupByLibrary.simpleMessage(
             "Наведіть камеру на штрих-код накладної"),
-        "poultryHouse": MessageLookupByLibrary.simpleMessage("Приміщення"),
+        "poultryHouse": MessageLookupByLibrary.simpleMessage("Пташник"),
         "poultryHouseNumber": m1,
         "pressButtonToScanTtn": MessageLookupByLibrary.simpleMessage(
             "Натисніть на кнопку, щоб почати сканування ТТН"),
+        "refilled": MessageLookupByLibrary.simpleMessage("Поповнений"),
         "required": MessageLookupByLibrary.simpleMessage("Потрібно"),
         "scanTtn": MessageLookupByLibrary.simpleMessage("Скануйте ТТН"),
         "scanTtnButton": MessageLookupByLibrary.simpleMessage("Сканувати ТТН"),
         "selectPoultryHouse":
             MessageLookupByLibrary.simpleMessage("Оберіть пташник"),
         "selectShipment": MessageLookupByLibrary.simpleMessage("Оберіть РЕЙС"),
-        "selectSilo": MessageLookupByLibrary.simpleMessage("Оберіть склад"),
+        "selectSilo": MessageLookupByLibrary.simpleMessage("Оберіть бункер"),
         "selectTask": MessageLookupByLibrary.simpleMessage("Оберіть завдання"),
         "shipmentNumber": m2,
-        "silo": MessageLookupByLibrary.simpleMessage("Склад"),
+        "silo": MessageLookupByLibrary.simpleMessage("Бункер"),
         "siloEmpty": m3,
         "siloNumber": m4,
+        "somethingWentWrong": MessageLookupByLibrary.simpleMessage(
+            "Щось пішло не так, спробуйте ще раз..."),
         "start": MessageLookupByLibrary.simpleMessage("Старт"),
         "taskNumber": m5,
         "totalActual": MessageLookupByLibrary.simpleMessage("Факт загальний"),

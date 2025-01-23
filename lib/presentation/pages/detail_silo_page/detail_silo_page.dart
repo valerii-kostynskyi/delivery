@@ -1,4 +1,4 @@
-import 'package:delivery/data/models/list_silo_item_model.dart';
+import 'package:delivery/data/models/list_silo_item/list_silo_item_model.dart';
 import 'package:delivery/presentation/blocks/detail_silo/detail_silo_bloc.dart';
 import 'package:delivery/presentation/custom_widget/back_button_widget.dart';
 import 'package:delivery/presentation/custom_widget/custom_button.dart';
@@ -20,7 +20,8 @@ class DetailSiloPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final String iconName = item.isEmpty ? 'silo_load' : 'silo_full';
+    final String iconName = item.status == 'full' ? 'silo_full' : 'silo_load';
+    bool isEmpty = item.status != 'full';
 
     return BlocProvider(
       create: (context) => DetailSiloBloc(),
@@ -57,12 +58,12 @@ class DetailSiloPage extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            "Дільниця №1",
+                            context.localizations.farmNumber(item.farm),
                             style: theme.textTheme.bodySmall!
                                 .copyWith(fontSize: 14),
                           ),
                           Text(
-                            "Бункер 2",
+                            context.localizations.siloNumber(item.silos),
                             style: theme.textTheme.labelMedium,
                           ),
                         ],
@@ -75,7 +76,7 @@ class DetailSiloPage extends StatelessWidget {
                           borderRadius: BorderRadius.circular(8.0),
                         ),
                         child: Text(
-                          "Поповнений",
+                          context.localizations.refilled,
                           style: theme.textTheme.bodyLarge!
                               .copyWith(color: theme.canvasColor),
                         ),
@@ -104,28 +105,42 @@ class DetailSiloPage extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          SvgPicture.asset(
-                            'assets/icons/$iconName.svg',
-                            width: 60,
-                            height: 60,
-                            colorFilter: item.isEmpty
-                                ? ColorFilter.mode(
-                                    theme.colorScheme.onPrimary,
-                                    BlendMode.srcIn,
-                                  )
-                                : null,
+                          Container(
+                            width: 96,
+                            height: 96,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: isEmpty
+                                  ? theme.colorScheme.onBackground
+                                  : theme.highlightColor,
+                            ),
+                            child: Center(
+                              child: SizedBox(
+                                width: 60,
+                                height: 60,
+                                child: SvgPicture.asset(
+                                  'assets/icons/$iconName.svg',
+                                  colorFilter: isEmpty
+                                      ? ColorFilter.mode(
+                                          theme.colorScheme.onPrimary,
+                                          BlendMode.srcIn,
+                                        )
+                                      : null,
+                                ),
+                              ),
+                            ),
                           ),
                           const SizedBox(height: 24),
                           Text(context.localizations.ttnTask),
                           const SizedBox(height: 12),
                           Text(
-                            context.localizations.ttnNumber('123123123123123'),
+                            item.ttnNumber!,
                             style: theme.textTheme.labelMedium,
                             textAlign: TextAlign.center,
                           ),
                           const SizedBox(height: 12),
                           Text(
-                            context.localizations.farmNumber(1),
+                            context.localizations.farmNumber(item.farm),
                             style: theme.textTheme.titleMedium!
                                 .copyWith(color: theme.dividerColor),
                           ),
@@ -135,18 +150,18 @@ class DetailSiloPage extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Text(
-                                '${item.index} ',
+                                '${item.silos} ',
                                 style: theme.textTheme.labelLarge!.copyWith(
-                                    fontSize: 40,
-                                    color: item.isEmpty
+                                    fontSize: 45,
+                                    color: isEmpty
                                         ? theme.colorScheme.onPrimary
                                         : null),
                               ),
                               Text(
                                 context.localizations.silo,
                                 style: theme.textTheme.labelLarge!.copyWith(
-                                    fontSize: 40,
-                                    color: item.isEmpty
+                                    fontSize: 45,
+                                    color: isEmpty
                                         ? theme.colorScheme.onPrimary
                                         : null),
                               )
@@ -157,16 +172,28 @@ class DetailSiloPage extends StatelessWidget {
                     ),
                     const SizedBox(height: 24),
                     if (state is Loading) const CircularProgressIndicator(),
-                    if (item.isEmpty)
-                      CustomButton(
-                        isLoading: state is Loading,
-                        onPressed: () {
-                          context
-                              .read<DetailSiloBloc>()
-                              .add(const DetailSiloEvent.confirmCompletion());
-                        },
-                        label: context.localizations.confirmCompletion,
-                      ),
+                    isEmpty
+                        ? CustomButton(
+                            isLoading: state is Loading,
+                            onPressed: () {
+                              context.read<DetailSiloBloc>().add(
+                                  DetailSiloEvent.confirmCompletion(
+                                      item: item));
+                            },
+                            label: context.localizations.confirmCompletion,
+                          )
+                        : Container(
+                            padding: const EdgeInsets.all(8),
+                            decoration: BoxDecoration(
+                              color: theme.highlightColor,
+                              borderRadius: BorderRadius.circular(16.0),
+                            ),
+                            child: Text(
+                              context.localizations.confirmed,
+                              style: theme.textTheme.bodyLarge!
+                                  .copyWith(color: theme.focusColor),
+                            ),
+                          ),
                     const SizedBox(height: 12),
                     TextButton(
                       onPressed: () => context.pop(),

@@ -1,43 +1,30 @@
-import 'package:delivery/data/models/task_list_item_model.dart';
+import 'package:delivery/data/models/track_wraper/track_wraper.dart';
 import 'package:delivery/presentation/utility/extension/change_localization.dart';
+import 'package:delivery/presentation/utility/extension/formatter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class TaskListItem extends StatelessWidget {
-  final TaskListItemModel itemModel;
+  final TrackWraper itemModel;
   final void Function()? onTap;
+  final bool isClicable;
 
   const TaskListItem({
     super.key,
     required this.itemModel,
     this.onTap,
+    this.isClicable = false,
   });
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
 
-    Color backgroundColor;
-    Color textColor;
-    String iconName;
-    switch (itemModel.status) {
-      case Status.full:
-        backgroundColor = theme.colorScheme.onSurface;
-        textColor = theme.focusColor;
-        iconName = 'check';
-
-        break;
-      case Status.empty:
-        backgroundColor = theme.colorScheme.background;
-        textColor = theme.unselectedWidgetColor;
-        iconName = 'upload';
-        break;
-      case Status.inProcess:
-        backgroundColor = theme.secondaryHeaderColor;
-        textColor = theme.colorScheme.onPrimary;
-        iconName = 'upload';
-        break;
-    }
+    final taskStatus = _determineTaskStatus(
+      isDone: itemModel.task.isDone,
+      isLocked: itemModel.task.isLocked,
+      theme: theme,
+    );
 
     return GestureDetector(
       onTap: onTap,
@@ -46,16 +33,23 @@ class TaskListItem extends StatelessWidget {
         margin: const EdgeInsets.only(bottom: 8),
         height: 96,
         decoration: BoxDecoration(
-          color: backgroundColor,
+          color: taskStatus.backgroundColor,
           borderRadius: BorderRadius.circular(12.0),
+          boxShadow: [
+            BoxShadow(
+              color: theme.primaryColor.withOpacity(0.15),
+              offset: isClicable ? const Offset(2, 2) : const Offset(0, 0),
+              blurRadius: isClicable ? 2 : 0,
+            ),
+          ],
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              '${itemModel.index}',
+              '${itemModel.task.sequenceNumber}',
               style: theme.textTheme.labelLarge!.copyWith(
-                color: textColor,
+                color: taskStatus.textColor,
               ),
             ),
             const SizedBox(width: 16.0),
@@ -64,20 +58,16 @@ class TaskListItem extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  itemModel.title,
+                  itemModel.task.houseName,
                   style: theme.textTheme.bodyLarge!.copyWith(
-                    color: itemModel.status == Status.empty
-                        ? textColor
-                        : theme.primaryColor,
+                    color: theme.primaryColor,
                   ),
                 ),
                 Text(
-                  'status',
+                  "старт, фініш, ріст",
                   style: theme.textTheme.labelSmall!.copyWith(
                     fontSize: 16,
-                    color: itemModel.status == Status.empty
-                        ? textColor
-                        : theme.primaryColor,
+                    color: theme.primaryColor,
                   ),
                 ),
               ],
@@ -93,24 +83,24 @@ class TaskListItem extends StatelessWidget {
                       width: 16,
                       height: 16,
                       child: SvgPicture.asset(
-                        'assets/icons/$iconName.svg',
+                        'assets/icons/${taskStatus.iconName}.svg',
                         colorFilter: ColorFilter.mode(
-                          textColor,
+                          taskStatus.textColor,
                           BlendMode.srcIn,
                         ),
                       ),
                     ),
                     const SizedBox(width: 4.0),
                     Text(
-                      '${itemModel.tons}т',
+                      formatWeight(itemModel.task.amount),
                       style: theme.textTheme.bodyLarge!.copyWith(
-                        color: textColor,
+                        color: taskStatus.textColor,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                   ],
                 ),
-                if (itemModel.status == Status.empty)
+                if (itemModel.task.isLocked && !itemModel.task.isDone)
                   Row(
                     children: [
                       SizedBox(
@@ -128,7 +118,9 @@ class TaskListItem extends StatelessWidget {
                       Text(
                         context.localizations.noFeed,
                         style: theme.textTheme.headlineSmall!.copyWith(
-                            fontSize: 12, color: theme.colorScheme.error),
+                          fontSize: 12,
+                          color: theme.colorScheme.error,
+                        ),
                       ),
                     ],
                   ),
@@ -139,4 +131,42 @@ class TaskListItem extends StatelessWidget {
       ),
     );
   }
+
+  _TaskStatus _determineTaskStatus({
+    required bool isDone,
+    required bool isLocked,
+    required ThemeData theme,
+  }) {
+    if (isDone) {
+      return _TaskStatus(
+        backgroundColor: theme.indicatorColor,
+        textColor: theme.focusColor,
+        iconName: 'check',
+      );
+    } else if (isLocked) {
+      return _TaskStatus(
+        backgroundColor: theme.colorScheme.background,
+        textColor: theme.unselectedWidgetColor,
+        iconName: 'upload',
+      );
+    } else {
+      return _TaskStatus(
+        backgroundColor: theme.secondaryHeaderColor,
+        textColor: theme.colorScheme.onPrimary,
+        iconName: 'upload',
+      );
+    }
+  }
+}
+
+class _TaskStatus {
+  final Color backgroundColor;
+  final Color textColor;
+  final String iconName;
+
+  _TaskStatus({
+    required this.backgroundColor,
+    required this.textColor,
+    required this.iconName,
+  });
 }
